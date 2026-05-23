@@ -1,0 +1,783 @@
+\documentclass[12pt,reqno]{amsart}
+\usepackage[margin=1in]{geometry}                % See geometry.pdf to learn the layout options. There are lots.
+\geometry{letterpaper}                   % ... or a4paper or a5paper or ... 
+%\geometry{landscape}                % Activate for for rotated page geometry
+%\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}
+\usepackage{comment}
+\usepackage{changepage}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{enumerate}
+\usepackage{float}
+\usepackage{hyperref}
+\usepackage{MnSymbol}%
+\usepackage{wasysym}%
+
+\usepackage{xcolor}
+
+\usepackage{mathtools}
+
+\usepackage{subcaption}
+\usepackage{thmtools, thm-restate}
+\usepackage{array}
+
+
+%\usepackage{fancyhdr}
+%\usepackage{hyperref}
+%\usepackage{wasysym}
+
+% \usepackage[style=alphabetic]{biblatex}
+%\addbibresource{ref.bib}
+
+ %space between paragraphs
+%
+%
+%
+%
+%
+
+
+%\newtheorem{theorem}{Theorem}[section]
+%\newtheorem{proposition}[theorem]{Proposition}
+%\newtheorem{lemma}[theorem]{Lemma}
+%\newtheorem{corollary}[theorem]{Corollary}
+%\newtheorem{conjecture}[theorem]{Conjecture}
+%%\theoremstyle{definition}
+%\newtheorem{definition}[theorem]{Definition}
+%\newtheorem{example}[theorem]{Example}
+%\newtheorem{remark}[theorem]{Remark}
+%\newtheorem{notation}[theorem]{Notation}
+%\newtheorem{question}[theorem]{Question}
+%
+
+
+
+\declaretheorem{theorem}
+\numberwithin{theorem}{section}
+
+\declaretheorem[sibling=theorem]{corollary, lemma, proposition, conjecture}
+\theoremstyle{definition}
+\declaretheorem[sibling=theorem]{definition,notation}
+\theoremstyle{remark}
+\declaretheorem[sibling=theorem]{example, remark, question, exercise}
+
+
+
+
+
+
+
+
+\numberwithin{equation}{section}
+
+
+
+\newcommand{\pb}[1]{\marginpar{PB: #1}}
+\newcommand{\diam}{\textrm{diam}}
+
+%\input{dfmacros}
+%%% Mathcal
+\newcommand{\cA}{\mathcal{A}}
+\newcommand{\Bor}{\mathrm{Bor}}
+\newcommand{\cB}{\mathcal{B}}
+\newcommand{\cC}{\mathcal{C}}
+\newcommand{\cD}{\mathcal{D}}
+\newcommand{\cE}{\mathcal{E}}
+%\newcommand{\cF}{\mathcal{F}}
+\newcommand{\cG}{\mathcal{G}}
+\newcommand{\cH}{\mathcal{H}}
+\newcommand{\cI}{\mathcal{I}}
+\newcommand{\cJ}{\mathcal{J}}
+\newcommand{\cK}{\mathcal{K}}
+\newcommand{\cL}{\mathcal{L}}
+\newcommand{\cM}{\mathcal{M}}
+\newcommand{\cN}{\mathcal{N}}
+\newcommand{\cO}{\mathcal{O}}
+%\newcommand{\cP}{\mathcal{P}}
+%\newcommand{\cQ}{\mathcal{Q}}
+%\newcommand{\cR}{\mathcal{R}}
+\newcommand{\cS}{\mathcal{S}}
+\newcommand{\cT}{\mathcal{T}}
+\newcommand{\cU}{\mathcal{U}}
+\newcommand{\cV}{\mathcal{V}}
+\newcommand{\cW}{\mathcal{W}}
+\newcommand{\cX}{\mathcal{X}}
+\newcommand{\cY}{\mathcal{Y}}
+\newcommand{\cZ}{\mathcal{Z}}
+\newcommand{\proj}{\textrm{proj}}
+%%% Mathbb
+% \newcommand{\bA}{\mathbb{A}}
+% \newcommand{\bB}{\mathbb{B}}
+% \newcommand{\bC}{\mathbb{C}}
+% \newcommand{\bD}{\mathbb{D}}
+% %\newcommand{\bE}{\mathbb{E}}
+% \newcommand{\bF}{\mathbb{F}}
+% \newcommand{\bG}{\mathbb{G}}
+% \newcommand{\bH}{\mathbb{H}}
+% \newcommand{\bI}{\mathbb{I}}
+% \newcommand{\bJ}{\mathbb{J}}
+% \newcommand{\bK}{\mathbb{K}}
+% \newcommand{\bL}{\mathbb{L}}
+% \newcommand{\bM}{\mathbb{M}}
+% \newcommand{\bN}{\mathbb{N}}
+% \newcommand{\bO}{\mathbb{O}}
+% \newcommand{\bP}{\mathbb{P}}
+% \newcommand{\bQ}{\mathbb{Q}}
+% \newcommand{\bR}{\mathbb{R}}
+% \newcommand{\bS}{\mathbb{S}}
+% \newcommand{\bT}{\mathbb{T}}
+% \newcommand{\bU}{\mathbb{U}}
+% \newcommand{\bV}{\mathbb{V}}
+% \newcommand{\bW}{\mathbb{W}}
+% \newcommand{\bX}{\mathbb{X}}
+% \newcommand{\bY}{\mathbb{Y}}
+% \newcommand{\bZ}{\mathbb{Z}}
+
+%--------------Commands------------------
+\newcommand{\spt}{\mathrm{spt}}
+\newcommand{\RR}{\mathbb R}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\C}{\mathbb C}
+\newcommand{\N}{\mathbb N}
+\newcommand{\T}{\mathbb T}
+\newcommand{\F}{\mathbb F}
+\newcommand{\FP}{\mathbb{FP}}
+\newcommand{\A}{\Tilde{A}_{4,d}}
+\newcommand{\Aq}{\Tilde{A}_{q,d}}
+\newcommand{\B}{\mathbb B}
+\renewcommand{\S}{\mathbb S}
+\newcommand{\w}{\omega}
+\newcommand{\W}{\mathbb{W}}
+\newcommand{\e}{\epsilon}
+\newcommand{\g}{\gamma}
+\newcommand{\p}{\varphi}
+\newcommand{\s}{\psi}
+\newcommand{\z}{\zeta}
+\renewcommand{\l}{\ell}
+\renewcommand{\a}{\alpha}
+\renewcommand{\b}{\beta}
+\renewcommand{\d}{\de}
+\renewcommand{\k}{\kappa}
+\newcommand{\m}{\textfrak{m}}
+\renewcommand{\P}{\mathbb{P}}
+\newcommand{\Tr}{\textup{Tr}}
+\newcommand{\Fav}{\textrm{Fav}}
+
+\newcommand{\op}[1]{\operatorname{{#1}}}
+\newcommand{\im}{\operatorname{Im}}
+\newcommand{\pd}[2]{\frac{\itemtial #1}{\itemtial #2}}
+\newcommand{\rd}[2]{\frac{d #1}{d #2}}
+\newcommand{\ip}[2]{\left \langle #1 , #2 \right \rangle}
+\renewcommand{\j}[1]{\left \langle #1 \right \rangle}
+\newcommand{\set}[1]{\left \{ #1 \right \}}
+\newcommand{\cl}{\operatorname{cl}}
+\newcommand{\into}{\hookrightarrow}
+\newcommand{\pa}{\mathrm{pa}}
+\newcommand{\nd}{\mathrm{nd}}
+
+\newcommand{\mc}{\mathcal}
+\newcommand{\mb}{\mathbb}
+\newcommand{\f}{\mathfrak}
+\renewcommand{\Re}{\text{Re}}
+\renewcommand{\Im}{\text{Im}}
+\newcommand{\Fq}{\mathbb{F}_q}
+
+\def\bff{\mathbf f}
+\def\bE{\mathbf E}
+\def\bx{\mathbf x}
+\def\boldR{\mathbf R}
+\def\by{\mathbf y}
+\def\bz{\mathbf z}
+\def\rationals{\mathbb Q}
+\newcommand{\norm}[1]{ \|  #1 \|}
+\def\scriptl{{\mathcal L}}
+\def\scripti{{\mathcal I}}
+\def\scriptr{{\mathcal R}}
+
+\def\bEdagger{{\mathbf E}^\dagger}
+%\def\set4{\{1,2,3,4\}}
+%\def\set4{\overline{4}}
+%set4 changed to setf
+\def\setf{\mathcal I}
+%tup14 changed to tupd
+\def\tupf{(1,2,3,4)}
+\def\bk{\mathbf k}
+\def\sl{\operatorname{Sl}}
+\def\gl{\operatorname{Gl}}
+\def\eps{\varepsilon}
+\def\one{{\mathbf 1}}
+\def\bEstar{{\mathbf E}^\star}
+\def\be{{\mathbf e}}
+\def\bv{{\mathbf v}}
+\def\bw{{\mathbf w}}
+\def\br{{\mathbf r}}
+
+
+\newcommand{\hatf}{\hat{f}}
+\newcommand{\hatg}{\hat{g}}
+\newcommand{\hath}{\hat{h}}
+\newcommand{\cchi}{\Check{\chi}}
+\newcommand{\cpsi}{\Check{\psi}}
+\newcommand{\hchi}{\hat{\chi}}
+\newcommand{\lesim}{\lesssim}
+\newcommand{\RapDec}{\mathrm{RapDec}}
+\newcommand{\bT}{\mathbf{T}}
+
+\theoremstyle{definition}
+\newtheorem*{comm*}{Comment}
+\newtheorem*{lemma*}{Lemma}
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{ex}[thm]{Example}
+\newtheorem{conj}[thm]{Conjecture}
+\newtheorem{cor}[thm]{Corollary}
+\newcommand{\pp}{\mathbin{\!/\mkern-5mu/\!}}
+\newcommand{\supp}{\mathrm{supp}}
+
+
+\newtheorem{prop}[theorem]{Proposition}
+
+%\DeclareMathOperator{\Hopf}{Hopf}
+\DeclareMathOperator{\codim}{codim}
+
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\FF}{\mathbb{F}}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\del}{\itemtial}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\D}{\mathbb D}
+\newcommand{\de}{\delta} %%%%%\delta
+\newcommand{\De}{\Delta} %%%%%\delta
+\newcommand{\ga}{\gamma}
+\newcommand{\Ga}{\Gamma}
+\newcommand{\ZS}{\mathbb S}
+
+\newcommand{\wh}{\widehat}
+\newcommand{\wt}{\widetilde}
+\newcommand{\si}{\sigma}
+\newcommand{\Si}{\Sigma}
+\newcommand{\Tau}{\mathcal T}
+\newcommand{\poly}{\textup{Poly}}
+\newcommand{\thmc}{\textup{Thm}\Ga^n}
+\newcommand{\thmC}{\textup{Thm}\Ga^{n+1}}
+\newcommand{\thmm}{\textup{Thm}\mathcal M^n}
+\newcommand{\gn}{\Gamma_\circ}
+\newcommand{\mn}{\mathcal M_\circ}
+\newcommand{\en}{\epsilon_{\circ}}
+\newcommand{\I}{\mathbb I}
+\newcommand{\dist}{\textup{dist}}
+%\newcommand{\eps}{\epsilon}
+\newcommand{\Gn}{\Ga_{\circ}}
+\newcommand{\Id}{\boldsymbol 1}
+\newcommand{\Fp}{\mathbb{F}_p}
+\newcommand{\bdA}{\mathbf{A}}
+\newcommand{\bdE}{\mathbf{E}}
+%\newcommand{\bv}{\bold{v}}
+\newcommand{\ob}{\mathrm{ob}}
+\newcommand{\id}{\mathrm{id}}
+\newcommand{\Mor}{\mathrm{Mor}}
+\newcommand{\Sin}{\mathrm{Sin}}
+\renewcommand{\hom}{\mathrm{Hom}}
+\usepackage{tikz} 
+\usetikzlibrary{positioning}
+\newcommand{\ind}{\perp\!\!\!\!\!\perp} 
+
+\usepackage[
+backend=biber,
+style=alphabetic,
+sorting=nyt
+]{biblatex}
+\addbibresource{references.bib}
+
+\usepackage{tikz-cd}
+\begin{document}
+\title{Topology Reading Group Week 1}
+\maketitle
+We will begin our study in topology with the study of category theory. We will start abstracting away from thinking in terms of elements in a set to thinking in terms of maps between objects. Nevertheless, we will not neglect some basic topology.
+\begin{definition}
+    Let $X$ be a set, $\tau \subseteq \mathcal P(X)$. Then, we say $(X,\tau)$ is a topological space and $\tau$ a topology if
+    \begin{itemize}
+        \item $\varnothing, X \in \tau$
+        \item If $\mathcal A \subseteq \tau$, $\bigcup_{A \in \mathcal A}A \in \tau$ (Closure under arbitrary unions)
+        \item For all $n \in \mathbb N$, $A_1,A_2,\cdots,A_n\subseteq \tau$, $\bigcap_{i=1}^n A_i \in \tau$ (Closure under finite intersections)
+    \end{itemize}
+\end{definition}
+Note that $\varnothing \in \tau $ is redundant from Axiom 2, but I like to write it out in Axiom 1 anyway just to emphasize that $\varnothing , X$ are always open and closed sets, which we shall define now.
+\begin{definition}
+    If $\tau$ is a topology, elements in $\tau$ are called open sets. Complements of open sets are called closed sets.
+\end{definition}
+\begin{example}
+    Let $X$ be a set and $\tau = \mathcal P(X)$. This is called the discrete topology on $X$. In particular, for all $x \in X$, $\set x$ is open.
+\end{example}
+\begin{example}
+    Let $X$ be a set, $\tau = \set{\varnothing, X}$. This is called the trivial topology on $X$.
+\end{example}
+\begin{example}
+    Let $(M,d)$ be a metric space. It is given a metric topology where its open sets are unions of open balls.
+\end{example}
+\begin{definition}
+    Let $(X,\tau_X),(Y,\tau_Y)$ be topological spaces. Then, $f:X\rightarrow Y$ is called continuous if for all $V \in \tau_Y$, $f^{-1}(V) \in \tau_X$.
+\end{definition}
+I will leave it to the reader to think through the definition of this and how it relates to the $\varepsilon-\delta-$definition you see in analysis. 
+\begin{definition}
+    A continuous $f:X\rightarrow Y$ is called a homeomorphism if it has a continuous inverse. Topological spaces $X$ and $Y$ are homeomorphic if there exists a homeomorphism between them.
+\end{definition}
+Note that not every bijective continuous function is a homeomorphism, and an example is found in \cite{leinster} Example 1.17. We will go a little bit further into these definitions when we hit Topic 2.
+\section{Categories}
+\begin{definition}
+    A category $\cC$ consists of
+    \begin{itemize}
+        \item A class $\mathrm{ob}(\cC)$ of objects
+        \item For $X,Y \in \ob(\cC)$, (possibly) morphisms (also called arrows) $f:X\rightarrow Y$ 
+    \end{itemize}
+    and satisfies
+    \begin{itemize}
+        \item For all morphisms $f \in \Mor(X,Y),g \in \Mor(Y,Z), h \in \Mor(W,Z)$, a composition rule $\circ$ such that
+        $$(f\circ g )\circ h = f\circ (g\circ h)$$
+        (i.e. associativity) and we usually write the expression above as $fgh$. 
+        \item For each $X \in \ob(\cC)$, an identity morphism $\id_X : X\rightarrow X$ such that for all $Y \in \ob(\cC)$ and $f \in \Mor(X,Y)$, $f\id_X = \id_Xf$.
+    \end{itemize}
+\end{definition}
+Note that morphisms need not be functions, and $\ob(\cC)$ need not be a set at all. 
+\begin{example}
+    A monoid $(M,*)$ can be thought of a category with an unknown object $X$ whose morphisms are elements $m \in M$ and the composition rule between morphisms is the multiplication rule in the monoid. Of course, $\id_M$ is the identity element of $M$.
+\end{example}
+\begin{example}
+    We have the following examples of categories:
+    \begin{itemize}
+        \item The category $\mathbf{Set}$ whose objects consists of sets and morphisms are functions
+        \item The category $\mathbf{Group}$ whose objects consists of groups and morphisms are group homomorphisms
+        \item The category $\mathbf{Ab}$ whose objects consists of abelian groups and morphisms are group homomorphisms
+        \item The category $\mathbf{Ring}$ whose objects consists of rings and morphisms are ring homomorphisms
+        \item The category $\mathbf{CRing}$ whose objects consists of commutative rings and morphisms are ring homomorphisms
+        \item For any (commutative) ring $R$, the category $R-\mathbf{mod}$ of $R-$modules where morphisms are $R-$linear maps
+        \item The category $\mathbf{Top}$ whose objects consists of topological spaces and morphisms are continuous maps
+    \end{itemize}
+    and so on.
+\end{example}
+\begin{example}
+    Any directed multigraph with exactly one loop on each vertex is a category where vertices are objects, paths between two objects are morphisms and the composition is concatenating paths.
+\end{example}
+\begin{definition}
+    Let $X,Y \in \ob(\cC)$ and $f\in \Mor(X,Y)$.  Then, $f$ is called an isomorphism if there exists $g \in \Mor(Y,X)$ such that $gf = \id_X$ and $fg = \id_Y$. Objects $X,Y$ are called isomorphic if there exists an isomorphism between them.
+\end{definition}
+\begin{example}
+    A homeomorphism is an isomorphism in the category $\mathbf{Top}$.
+\end{example}
+The point of defining isomorphisms is that we want to speak of universal properties, that is, objects and collection of maps satisfying a property unique up to an isomorphism.
+\begin{example}
+    Working with $\cC=\mathbf{Set}$, and $X,Y \in \ob(\cC)$, the cartesian product $X,Y$ is an object $A$ and morphisms $\pi_X:A\rightarrow X,\pi_Y:A\rightarrow Y$ satisfying for all sets $B$ and functions $f:B\rightarrow X,g:B\rightarrow Y$, there exists a unique morphism $f\times g:B\rightarrow A$ such that the following diagram commutes:
+    \begin{center}
+        \begin{tikzcd}
+  & A \arrow[ld, "\pi_X"'] \arrow[rd, "\pi_Y"]                         &   \\
+X &                                                                    & Y \\
+  & B \arrow[uu, "f\times g", dashed] \arrow[ru, "g"'] \arrow[lu, "f"] &  
+\end{tikzcd}
+    \end{center}
+    We will leave the reader to verify that the usual definition of $X\times Y$ satisfies this property. We will prove that this property defines $A$ uniquely up to isomorphism:
+    \begin{proof}
+        Let $A,\pi_X,\pi_Y$ and $A',\pi'_X,\pi'_Y$ satisfy the properties above. We have the following commutative diagram:
+        \begin{center}
+        \begin{tikzcd}
+  & A \arrow[ld, "\pi_X"'] \arrow[rd, "\pi_Y"]                                                       &   \\
+X & A' \arrow[u, "\pi_X'\times \pi_Y'" description, dashed] \arrow[r, "\pi_Y'"] \arrow[l, "\pi'_X"'] & Y \\
+  & A \arrow[ru, "g"'] \arrow[lu, "f"] \arrow[u, "f\times g" description, dashed]                    &  
+\end{tikzcd}
+        \end{center}
+        Letting $f = \pi_X,g=\pi_Y$, we see that $\id_A$ satisfies $(\pi_X'\times \pi_Y')\circ (f\times g)$ and by uniqueness, $\id_A=(\pi_X'\times \pi_Y')\circ (\pi_X\times \pi_Y)$. One can verify that $\id_{A'}=(\pi_X\times \pi_Y)\circ (\pi_X'\times \pi_Y')$. Thus, there is a bijection between $A$ and $A'$ and hence $X\times Y$ is unique up to isomorphism.
+    \end{proof}
+    Note that the above does not prove that $X\times Y$ with our definition above is a unique object in $\mathbf{Set}$, but only that it is unique up to cardinality. 
+\end{example}
+\begin{example}
+    Recall the commutator group of a group $G$ is the subgroup $G'$ generated by all commutators $xyx^{-1}y^{-1}$ of $G$. The group $G/G'$ is then called the abelianization of $G$. One can define the abelianization more generally as a group $\tilde G$ and a map $\pi: G \rightarrow \tilde G$ such that for every group $\tilde G$ and abelian group $H$ and homomorphism $f:G\rightarrow H$, there exists a unique map $\bar f$ such that the following diagram commutes:
+    \begin{center}
+        \begin{tikzcd}
+G \arrow[d, "\pi"'] \arrow[r, "f"]     & H \\
+\tilde G \arrow[ru, "\bar f"', dashed] &  
+\end{tikzcd}
+    \end{center}
+    Again, this does not define $G/G'$ uniquely as an object but it defines it uniquely up to isomorphism. 
+\end{example}
+We introduce the definitions of pushforwards and pullbacks.
+\begin{definition}
+    Let $X,Y\in \ob(\cC)$, $f\in \Mor(X,Y)$. The pushforward of $f$ is the map $f^*$ that sends for each $Z \in \ob(\cC)$, for each $g \in \Mor(Z,X)$ to $fg \in \Mor(Z,Y)$. That is, $f^*$ is the collection of maps such that for all $Z \in \ob(\cC)$, for all $g \in \Mor(Z,X)$ , the following diagram commutes:
+    \begin{center}
+        \begin{tikzcd}
+X \arrow[r, "f"]                               & Y \\
+Z \arrow[u, "g"] \arrow[ru, "f^*(g)"', dashed] &  
+\end{tikzcd}
+    \end{center}
+    Likewise, the pullback of $f$ is the map $f_*$ that sends for each $Z \in \ob(\cC)$, for each $g \in \Mor(X,Z)$ to $gf \in \Mor(Y,Z)$. That is, $f_*$ is the collection of maps such that 
+    such that for all $Z \in \ob(\cC)$, for all $g \in \Mor(X,Z)$ , the following diagram commutes:
+    \begin{center}
+        \begin{tikzcd}
+X \arrow[d, "g"'] & Y \arrow[ld, "f_*(g)", dashed] \arrow[l, "f"'] \\
+Z                 &                                               
+\end{tikzcd}
+    \end{center}
+\end{definition}
+This will show up again when we discuss functors. The convention for pushforwards and pullbacks is to put the stars above, but really putting a star beneath is a convention for many things (and we will see one repeated use later). 
+
+Lastly we define the opposite category for any category.
+\begin{definition}
+    Given a category $\cC$, the opposite category denoted $\cC^{\mathrm{op}}$ is the category whose objects are $\ob(\cC)$ and the directions of $f\in \Mor(X,Y)$ in $\cC$ are reversed in $\cC^{\mathrm{op}}$. That is, $f\in \Mor(X,Y)$ in $\cC$ if and only if $f\in \Mor(Y,X)$ in $\cC^{\mathrm{op}}$.
+\end{definition}
+\begin{exercise}
+    Let $R$ be a commutative ring. We shall work with the category of $R-$modules. Given two $R-$modules $M,N$, define the tensor product of $M$ and $N$ as the $R-$module $M\otimes_RN$ satisfying the universal property that there is an $R-$bilinear map $j: M\times N \rightarrow M\otimes_R N$ where for every $R-$module $L$ $R-$bilinear map $f:M\times N \rightarrow L$, there is a unique $R-$linear map such that the following diagram commutes:
+    \begin{center}
+        \begin{tikzcd}
+M\times N \arrow[rd, "f"] \arrow[d, "j"'] &   \\
+M\otimes_R N \arrow[r, "\bar f"]          & L
+\end{tikzcd}
+    \end{center}
+    Verify that this defines $M\otimes_RN$ uniquely up to isomorphism.
+\end{exercise}
+\begin{remark}
+    You may view pretty much any algebra textbook for a construction of $M\otimes_RN$. Given $M\otimes_RN$ and the bilinear map $j:M\times N \rightarrow M\otimes_RN$, write $j(m,n)=m\otimes n$.
+    We just need to think of $M\otimes_RN$ as a module consisting of all finite sums of the form $\sum_{i=1}^rm_i\otimes n_i$ where $m_i \in M,n_i \in N$ where
+    \begin{align*}
+        a(m\otimes n) = am\otimes n =m\otimes an \\
+        (m+m')\otimes n = m\otimes n + m'\otimes n \\
+        m\otimes (n+n') = m\otimes n + m\otimes n'
+    \end{align*}
+\end{remark}
+\section{Functors}
+We now move up from maps between objects (morphisms are analogous to maps) to talk about maps between categories.
+\begin{definition}
+    A functor $F$ between categories $\cC,\cD$ consists of
+    \begin{itemize}
+        \item A map $\ob(C) \rightarrow \ob(\cD)$. We write the image of $X\in \ob(C)$ under this map as $FX$.
+        \item For all $X,Y \in \cC$, a map $\Mor(X,Y)\rightarrow \Mor(FX,FY)$. We write the image of $f$ under this map as $Ff$.
+    \end{itemize}
+    such that 
+    \begin{itemize}
+        \item $F(fg)=FfFg$ for all $X,Y,Z\in \ob(C)$, $f \in \Mor(X,Y),g \in \Mor(Y,Z)$.
+        \item $F\id_X = \id_{FX}$ for all $X \in \ob(C)$.
+    \end{itemize}
+\end{definition}
+Note that composition of functors is a functor, and such a composition is associative.
+\begin{example}
+    When working in many categories such as $\mathbf{Grp},\mathbf{Ab},\mathbf{Top}$ and so on, one can think of the underlying set of an object. If the morphisms between objects are all functions, there is a forgetful functor $F:\cC \rightarrow \mathbf{Set}$ from these categories that maps every object and morphism to themself. Note that the objects and morphisms have not changed at all, but we forget any structure that these objects have. For instance, the multiplicative structure in $\mathbf{Grp}$. A forgetful functor is just a functor that forgets some structure, there is not really a rigorous definition but this term is very commonly used.
+\end{example}
+\begin{example}
+    There is a functor $M_n:\mathbf{Ring}\rightarrow \mathbf{Ring}$ that sends rings $R$ to $M_n(R)$ and homomorphisms $f:R\rightarrow S$ to the map $f':M_n(R)\rightarrow M_n(S)$ that maps the matrix $(a_{ij}) \in M_n(R)$ to the matrix $(f(a_{ij}))\in M_n(S)$.
+\end{example}
+\begin{example}
+    There is a functor $Z:\mathbf{Grp}\rightarrow\mathbf{Ab}$ given by $G \mapsto G/G'$ where $G'$ is the commutator subgroup, and homomorphisms $f:G\rightarrow H$ are mapped to $\bar f:G/G' \rightarrow H/H'$. We leave it for the reader to verify that $\bar f$ is well defined.
+\end{example}
+\begin{definition}
+    A functor $F:\cC\rightarrow \cD$ is called a covariant functor from $\cC$ to $\cD$. A functor $F:\cC^{\mathrm{op}}\rightarrow \cD$ is called a contravariant functor from $\cC$ to $\cD$.
+\end{definition}
+\begin{example}
+    Fix an $R-$module $N$ where $R \in \mathbf{CRing}$. There is the $\hom(N,-)$ functor and the $\hom(-,N)$ functor from $\cC=R-\mathbf{mod}$ that does the following respectively:
+    \begin{itemize}
+        \item The $\hom (N,-)$ functor maps $M \in \ob(\cC)$ to $\hom(N,M)$ and $R-$linear maps $f:M\rightarrow M'$ to $f^*$.
+         \item The $\hom (N,-)$ functor maps $M \in \ob(\cC)$ to $\hom(M,N)$ and $R-$linear maps $f:M\rightarrow M'$ to $f_*$.
+    \end{itemize}
+    The $\hom(N,-)$ functor is a covariant functor and the $\hom(-,N)$ is a contravariant functor (from $\cC$ to $\cC$).
+\end{example}
+Let us now also introduce some terminology to do with functors.
+\begin{definition}
+    Let $F:\cC\rightarrow \cD$ be a functor.
+    \begin{itemize}
+        \item $F$ is called faithful if for all $X,Y \in \cC$ the map $\Mor(X,Y)\rightarrow \Mor(FX,FY)$ given by $f \mapsto Ff$ is injective.
+        \item $F$ is called full if for all $X,Y \in \cC$ the map $\Mor(X,Y)\rightarrow \Mor(FX,FY)$ given by $f \mapsto Ff$ is surjective.
+        \item $F$ is called fully faithful if it is full and faithful.
+    \end{itemize}
+\end{definition}
+All functors map isomorphisms to isomorphisms, but a functor needs to be fully faithful in order to reflect isomorphisms. Note that a faithful $F$ need not be injective on objects, and a full $F$ need not be surjective on objects.
+\begin{example}\label{example2.7}
+    Consider the following graph:
+    \begin{center}
+        \begin{tikzpicture}[node distance={15mm}, thick, main/.style = {draw, circle}]
+\node[main] (1) {1}; 
+\node[main, below=of 1] (2) {2};
+\node[main, right=of 2] (3) {3};
+\draw[->] (2) -- (3);
+\end{tikzpicture}
+    \end{center}
+    Let $\cC$ be the category where vertices are as in the graph above and morphisms are paths in the graph (this includes loops, which are omitted in the notation above). Consider the functor $F:\cC \rightarrow \cC$ which maps $1\mapsto 2, 2\mapsto 2, 3\mapsto 3$, the only non-trivial path $(2,3)$ to $(2,3)$, and all other self loops to what you would expect. Then, $F$ is fully faithful, but it is neither injective nor surjective on the objects.
+\end{example}
+We will do a deeper discussion to do with functors and isomorphisms when we discuss monics and epics next week.
+\par
+Finally, we will construct a functor $\mathbf{Top}\rightarrow \mathbf{Ab}$. Given $x_0,\cdots,x_n \in \mathbb R^n$ such that they are affinely independent (that is, $x_1-x_0,x_2-x_0,\cdots,x_n-x_0$ are linearly independent), define an $n-$simplex to be 
+$$\Delta^n = \set{\sum_{i=0}^n\alpha_ix_i: \in \mathbb R^n | \sum_{i=0}^n \alpha_i = 1, \alpha_i\in \mathbb R_{\geq 0}}$$
+In each of the simplices, $x_0,\cdots,x_n$ are precisely the vertices of the simplex. The definition above tells us that every point in the simplex is a linear combination of the $x_0,\cdots,x_n$ where the coefficients sum up to 1. 
+\begin{example}
+    \begin{itemize}
+        \item A 0-simplex is a point
+        \item A 1-simplex is a closed interval
+        \item A 2-simplex is a triangle 
+        \item A 3-simplex is a pyramid
+    \end{itemize}
+    This includes the interiors of these shapes
+\end{example}
+Note that for any $n$, all $n-$simplexes are homeomorphic. From now on, give $\Delta^n$ the Euclidean topology, and fix a topological space $(X,\tau)$.
+\begin{definition}
+    The singular $n-$simplex is the set
+    $$\Sin_n(X) = \set{\sigma :\Delta^n \rightarrow X \ \text{is continuous}}$$
+\end{definition}
+\begin{definition}
+    The group of singular $n-$chains, denoted $S_n(X)$, is the free abelian group generated by $\Sin_n(X)$. That is, it is a $\Z-$module with $\Sin_n(X)$ as a basis.
+\end{definition}
+We wish to obtain a functor $S_n:\mathbf{Top}\rightarrow \mathbf{Ab}$, and we will be working with this functor (or rather, a functor derived from this functor) for most of the reading group. We shall map $X \mapsto S_n(X)$. To obtain a way to map continuous functions $f:X\rightarrow Y$, we first define $f^*:\Sin_n(X)\rightarrow \Sin_n(Y)$ on $ \Sin_n(X)$ as $f^*(\sigma)=f\circ \sigma$ for all $\sigma \in \Sin_n(X)$. We then extend it $\Z-$linearly by defining $f^*:S_n(X)\rightarrow S_n(Y)$ by setting $f^*(a\sigma)=af^*(\sigma)$ where $a \in \Z$ and $f^*$ on the right hand side is the map we already defined on $\Sin_n(X)$ so that the definition is not circular. Then, $S_n:\mathbf{Top}\rightarrow \mathbf{Ab}$ is a functor that sends $X \mapsto S_n(X)$ and $f \mapsto f^*$.
+\begin{exercise}
+    Fix an $R-$module $N$ where $R \in \mathbf{CRing}$. Given $R-$modules $M,N,M',N'$ and $R-$linear maps $f:M\rightarrow M'$, $g:N\rightarrow N'$, one can extend this to an $R-$bilinear map $f\times g: M\times N \rightarrow M'\otimes_R N'$ given by $f\times g(m,n)=f(m)\otimes_R g(n)$. The induced map $\bar f$ given by the universal property of $M\otimes_RN$ then tells us that the map $f\otimes_R g: M\otimes_R N \rightarrow M'\otimes_R N'$ given by $f\otimes_R g(m\otimes_Rn)=f(m)\otimes_R g(n)$ extended linearly for other elements of $M\otimes_RN$.
+    \par 
+    There is a tensoring functor $F$ from $R-\mathbf{mod}$ to $R-\mathbf{mod}$ that maps $M$ to $M\otimes_R N$ and $f:M\rightarrow L$ to $f\otimes_R \id_N$. 
+    \begin{enumerate}
+        \item Verify that this is a covariant functor
+        \item Show that $F$ is neither full nor faithful. (Hint: Try seeing what the $\Z-$module $\Z/2\Z\otimes _\Z \Z/3\Z$ is isomorphic to for some inspiration)
+    \end{enumerate}
+\end{exercise}
+\section{Natural transformations}
+We moved from maps between objects to maps between categories. We now move up to maps between functors.
+\begin{definition}
+    Let $F,G:\cC\rightarrow \cD$ be functors. A natural transformation $\eta:F\rightarrow G$ is a collection of morphisms $\eta_X \in \Mor(FX,GX)$ for each $X \in \ob(\cC)$ such that for all $X,Y \in \ob(\cC),f \in \Mor(X,Y),$ the following diagram commutes:
+    \begin{center}
+        \begin{tikzcd}
+FX \arrow[d, "Ff"'] \arrow[r, "\eta_X"] & GX \arrow[d, "Gf"] \\
+FY \arrow[r, "\eta_Y"]                  & GY                
+\end{tikzcd}
+    \end{center}
+    the $\eta_X$ are called components of $\eta$ or natural maps.
+\end{definition}
+
+It is perhaps easier to think of the natural transformation as one map rather than in terms of its components. To give an analogy, when we are working with categories, we work with objects and morphisms. Lets say the objects consists of sets $X$ so that they have elements $x\in X$, and morphisms happen to be functions $f$. Then, the function $f$ is made up of $f(x)$ ranging over all $x$. Analogous, we can think of the functors as our objects, each $FX$ as an element, and $\eta_X$ as looking at $\eta$ as a map and evalutaing $\eta$ at $X$ (that is, $\eta(X)$). Just as we usually think of a function $f$ as just one thing in it of itself (rather than how it acts individually on each $x \in X$), it can help to think of $\eta$ as one thing in it of itself rather than how it depends on each $FX$.
+
+Thus, a possible alternative definition of a natural transformation is as follows:
+\begin{definition}
+    Let $F,G:\cC\rightarrow \cD$ be functors. A natural transformation $\eta:F\rightarrow G$ is a map $\eta:\ob(\cC) \rightarrow \Mor(FX,GX)$ where $\eta(X) = \eta_X$, and for all $X,Y \in \ob(\cC),f \in \Mor(X,Y),$ the following diagram commutes:
+    \begin{center}
+        \begin{tikzcd}
+FX \arrow[d, "Ff"'] \arrow[r, "\eta_X"] & GX \arrow[d, "Gf"] \\
+FY \arrow[r, "\eta_Y"]                  & GY                
+\end{tikzcd}
+    \end{center}
+    the $\eta_X$ are called components of $\eta$ or natural maps.
+\end{definition}
+In fact, given any two categories $\cC,\cD$, one can create a functor category whose objects are all functors $F:\cC\rightarrow \cD$. Then, the morphisms of this category will consist of natural transformations. 
+
+The big idea of a natural transformation is that if we know how the natural transformation behaves on one object $X \in \cC$ (that is, we understand $\eta_X:FX\rightarrow GX$), then we determine all other components in the natural transformation. We will see this idea with the following examples:
+\begin{example}
+    Let $R$ be a (commutative) ring. There is a functor $F:R-\mathbf{mod}\rightarrow R-\mathbf{mod}$ given by $M \mapsto M^n$ and $f\mapsto f^n$ where $f^n(x_1,\cdots,x_n) = (f(x_1),\cdots,f(x_n))$. Then, the collection of diagonal maps $\delta^n_M:M \rightarrow M^n$ given by $\delta^n_M(x) = (x,\cdots,x)$ is a natural transformation between the identity functor and $F$. Notice when we defined the components, even though each $\delta^n_M$ depends on which $M$ it originates from, the construction is the same. Thus, knowing how $\delta^n$ behaves on one $M$ is enough to know how it behaves on the rest of the $M$. We can therefore forget about which $M$ each component is coming from and just think of all these components collectively as $\delta^n$.
+\end{example}
+\begin{example}
+    Consider once again the graph $G=(V,E)$ and functor in \ref{example2.7}:
+    \begin{center}
+        \begin{tikzpicture}[node distance={15mm}, thick, main/.style = {draw, circle}]
+\node[main] (1) {1}; 
+\node[main, below=of 1] (2) {2};
+\node[main, right=of 2] (3) {3};
+\draw[->] (2) -- (3);
+\end{tikzpicture}
+    \end{center}
+    Consider the function $f:V\rightarrow V$ where $1 \mapsto 2$ and $2\mapsto 2, 3\mapsto 3$. Note that $f$ is not a natural transformation because there is no morphism $1 \rightarrow 2$ in the category. Now consider the following graph $G=(V,E')$ instead:
+     \begin{center}
+        \begin{tikzpicture}[node distance={15mm}, thick, main/.style = {draw, circle}]
+\node[main] (1) {1}; 
+\node[main, below=of 1] (2) {2};
+\node[main, right=of 2] (3) {3};
+\draw[->] (1) -- (2);
+\draw[->] (2) -- (3);
+\end{tikzpicture}
+    \end{center}
+    Turn it into a category as usual. Extend the functor $F$ in example \ref{example2.7} to map $1\rightarrow 2$ to $\mathrm{id}_2$. One can check that the new functor is a functor. The map $f$ is then a natural transformation between the identity functor and $F$. Note that this new $F$ is now neither full nor faithful.
+\end{example}
+    We will work with some things that require us to extend maps linearly from a basis to the rest of a module. We have seen it already when defining $f^*:S_n(X)\rightarrow S_n(Y)$ by first defining it on the basis $\Sin_n(X)$ and then extending it linearly to $S_n(X)$, but why does this work?
+\begin{proposition}
+    Let $M$ be a free module over a commutative ring $R$ with a basis $B$, and let $N$ be another $R-$module. Prove that for any function $f:B\rightarrow N$, there exists a unique $R-$linear map $\phi:M\rightarrow N$ such that $\phi(b)=f(b)$ for all $b \in B$.
+\end{proposition}
+\begin{proof}
+    Let $\phi,\psi : M \rightarrow N $ be $R-$linear and $\phi(b)=\psi(b)=f(b)$ for all $b \in B$. Let $x \in M$. Then, $x$ can be written uniquely in $M$ as $x = \sum_{i=1}^n c_ib_i $ so that $\phi(x) =  \sum_{i=1}^n c_i\phi (b_i) = \sum_{i=1}^n c_if (b_i)= \sum_{i=1}^n c_i\psi (b_i) =\psi(x)$ and thus $\phi = \psi$.
+\end{proof}
+Thus, given any free module over a commutative ring, there is a unique way to extend a function into an $R-$linear map.
+\begin{example}
+    As an addon, this allows us determine all natural transformations $\mathrm{id}_\mathbf{Ab}\rightarrow \mathrm{id}_\mathbf{Ab}$ where $\mathrm{id}_{\mathbf{Ab}}$ denotes the identity functor on $\mathbf{Ab}$. Here, I will use the additive notation for abelian groups.
+    \begin{proposition}
+        The set of all natural transformations is the set of $\nu^k : \mathrm{id}_\mathbf{Ab} \rightarrow \mathrm{id}_\mathbf{Ab}$ where $k \in \Z$. The components of $\nu^k$ are $\nu^k_G:G\rightarrow G$ given by $\nu^k_G(g) = kg$ for each $g\in G$
+    \end{proposition}
+    I will leave the reader to verify that each $\nu^k$ is a natural transformation. Instead, I will show that any natural transformation must be of the form above.
+    \begin{proof}
+        Take any arbitrary natural transformation $\nu$, let $G \in \mathbf{Ab}$, $\phi: \mathbb Z \rightarrow G$ be a homomorphism, and consider the following diagram:
+    \begin{center}
+    \begin{tikzcd}
+\mathbb Z \arrow[d, "\phi"'] \arrow[r, "\nu_\mathbb Z"] & \mathbb Z \arrow[d, "\phi"] \\
+G \arrow[r, "\nu_G"']                   & G                 
+\end{tikzcd}
+\end{center}
+This diagram commutes since we assume $\nu$ is a natural transformation. Moreover, from the previous proposition, since $\phi\circ  \nu_\Z: \mathbb Z \rightarrow G $ is a function from a free abelian group to another abelian group, for any $n \in \Z$, there is a unique homomorphism $\eta : \mathbb Z \rightarrow G$ such that $\eta(1) = \phi\circ  \nu_\Z(1) = \phi(n) =n \phi(1)$. This is satisfied by $\nu_G \circ \phi$ so $\nu_G \circ \phi = \eta$ and $\nu_G \circ \phi(1) = n \phi(1)$. This holds for arbitrary $\phi$ so $\nu_G (x) = nx$.
+    \end{proof}
+    The interested reader may want to read up on the Yoneda lemma. 
+\end{example}
+
+We wish to define a natural transformation $d_n:S_n\rightarrow S_{n-1}$ for any $n$. For any $n$ where $\set{x_0,\cdots,x_n}$ are the vertices of $\Delta^n$, we use $d^i$ to denote the map $d^i:\set{x_0,\cdots,x_n}\rightarrow \Delta^{n-1}$
+$$d^i(x_1,\cdots,x_n) = (x_1,\cdots,x_{i-1},x_{i+1},\cdots,x_n)$$
+Which is defined on the vertices of $\Delta^n$ where we omit the $i-$th vertex. Note that for any $n-$simplex, its faces are $(n-1)-$simplices where we ignore one vertex. We then extend this to all linear combinations $$d^i\left (\displaystyle \sum_{j=0}^n\alpha_i x_i \right ) = \alpha_0x_0 + \cdots + \alpha_{i-1}x_{i-1}+\alpha_{i+1}x_{i+1}+\cdots+\alpha_nx_n$$
+where $\alpha_i \geq 0$ and $\sum_{i=0}^n \alpha_i = 1$, which gives us a map $d^i: \Delta^n \rightarrow \Delta^{n-1}$. Essentially the map $d^i$ just kills off anything pointing towards the $i-$th vertex in $\Delta^n$ and maps all of $\Delta^n$ to the face on $\Delta^n$ that does not hit the vertex $x_i$. Note that $d^i$ is a continuous map. Since we extend $d^i$ linearly from the $x_i$, we can really think of what happens to every point in $\Delta^n$ just by thinking of what happens to $(x_1,\cdots,x_n)$.
+\begin{example}
+    Consider the following simplices $\Delta^1$ and $\Delta^2$:
+    \begin{center}
+    \begin{figure}[h]
+        \centering
+        
+    \begin{tikzpicture}[scale = 0.8]
+         \coordinate[label=left:$y_0$]  (A) at (0,0);
+    \coordinate[label=right:$y_1$] (B) at (4,0);
+    \draw [line width=1.5pt] (A) -- (B);
+    
+    \end{tikzpicture}
+    \quad \quad
+        \begin{tikzpicture}[scale=0.8]
+
+    \coordinate[label=left:$x_0$]  (A) at (0,0);
+    \coordinate[label=right:$x_1$] (B) at (4,0);
+    \coordinate[label=above:$x_2$] (C) at (2,3.464);
+
+    % the triangle
+    \draw [line width=1.5pt] (A) -- (B) -- (C) -- cycle;
+  \end{tikzpicture}
+  \caption{$\Delta^1$ on the left and $\Delta^2$ on the right}
+  \end{figure}
+    \end{center}
+    Let us take the maps $d^0,d^1:\Delta^1 \rightarrow \Delta^0$ and the maps $d^2,d^0,d^1:\Delta^2 \rightarrow \Delta^1$ and see what happens when we try composing them together. For $d^i\circ d^j$ (where $d^i: \Delta^1 \rightarrow 0$ and $d^2:\Delta^2 \rightarrow \Delta^1$)
+    \begin{itemize}
+        \item $d^0\circ d^0$ first maps $\Delta^2$ by taking $(x_0,x_1,x_2)$ and then deleting the first entry, so that $(y_0,y_1)=(x_1,x_2)$. Then, $d^0$ further deletes the first entry, so that $d^0\circ d^0$ is the map that sends $(x_0,x_1,x_2)\mapsto (x_2)$.
+        \item $d^0 \circ d^1$ is the map that first omits the second entry, so that $(y_0,y_1)=(x_0,x_2)$. Then, $d^0$ omits the first entry so actually $d^0\circ d^1 = d^0\circ d^0$!
+    \end{itemize}
+    We will leave the reader to check the following:
+    \begin{itemize}
+        \item $d^1 \circ d^1 = d^1 \circ d^2 = (x_0)$
+        \item $d^0 \circ d^2 = d^1 \circ d^0 = (x_1)$
+    \end{itemize}
+\end{example}
+Using the $d^i$, we will first define $d_n$ as a map $d_n:\Sin_n(X)\rightarrow S_{n-1}(X)$ by sending $d^n(\sigma)$ to $\displaystyle \sum_{i=0}^n (-1)^{i}\sigma \circ d^i$, and then extending this linearly to a map $d^n:S_n(X)\rightarrow S_{n-1}(X)$ by $d^n(a\sigma ) = ad^n(\sigma)$ for $a \in \Z$ where the $d^n$ on the right hand side is the map defined on $\Sin_n(X)\rightarrow S_{n-1}(X)$. 
+
+\begin{proposition}
+    $d_n$ is a natural transformation $S_n \rightarrow S_{n-1}$
+\end{proposition} 
+Some hints that this is likely true is that even though $d_n$ depends on the choice of $X$ for $S_n(X)$, the construction is the same regardless of the $X$. For the sake of notation, we will not specify where the components of $d^n$ originate in the proof for the proposition above.
+\begin{proof}
+    Let $f:X\rightarrow Y$ be continuous. Since $f^*$ and $d^n$ extend linearly from a map originating in $\Sin_n(X)$, it suffices to verify that $f^*d^n=d^nf^*$ for $\sigma \in \Sin_n(X)$. Notice
+    \begin{align*}
+        f^*d^n(\sigma) &= f^*\left ( \displaystyle \sum_{i=0}^n (-1)^{i}\sigma \circ d^i\right ) \\
+        &=\displaystyle \sum_{i=0}^n (-1)^{i}f^*(\sigma \circ d^i) & \text{by linearity of }f^* \\
+        &= \displaystyle \sum_{i=0}^n (-1)^{i}f\circ \sigma \circ d^i \\
+        &= \displaystyle \sum_{i=0}^n (-1)^{i}f^*( \sigma) \circ d^i & \text{by associativity} \\
+        &= d^nf^*(\sigma)
+    \end{align*}
+    and therefore the following diagram commutes:
+    \begin{center}
+        \begin{tikzcd}
+\Sin_n(X) \arrow[d, "f^*"'] \arrow[r, "d_{n}"] & \Sin_{n-1}(X) \arrow[d, "f^*"] \\
+\Sin_{n-1}(X) \arrow[r, "d_n"]                 & \Sin_{n-1}(Y)                 
+\end{tikzcd}
+    \end{center}
+    Thus, $d_n$ is a natural transformation. Note that the components are $\Z-$linear since we defined $d^n$ on the basis vectors and extended it linearly to $S_n(X)$.
+\end{proof}
+You may wonder why we introduced the alternating sign in $d_n$. There is something called the topologist's sign rule, which is really more of a heuristic where you guess and introduce an alternating sign. We will see this topologist's sign rule when we discuss the cross product for singular chain complexes. Let us first just extend the definition of $S_n(X)$ to be the trivial group with 1 element whenever $n \in \Z$ and $n<1$. We will just denote this group with $0$. We will also denote the zero map as $0$. One can check that for $n \leq 0$, defining $d_n$ to be the zero map gives a natural transformation $d_n:S_{n}\rightarrow S_{n-1}$. Let us see the first consequence of the alternating sign:
+\begin{proposition}
+     For any $n \in \Z$, $d_{n}\circ d_{n-1}(\sigma)=0$.
+\end{proposition}
+We will first make a useful observation. Notice that if $j\geq i$, doing $d^j\circ d^i$ means deleting the $i-$th entry in the list $(x_0,\cdots,x_n)$ and then deleting the $j-$th entry in  $(x_0,\cdots,x_{i-1},x_{i+1},\cdots,x_n)$. Since $j \geq i$, the $j-$th entry in the list $(x_0,\cdots,x_{i-1},x_{i+1},\cdots,x_n)$ is actually the $(j+1)-$th entry in the original list. Thus, when $j \geq i$, we have that $d^j \circ d^i = d^i\circ d^{j+1}$.
+\begin{proof}
+    We check that $\sigma \in \Sin_{n+1}(X)$ vanishes since $\Sin_{n+1}(X)$ is a basis for $S_{n+1}(X)$. This is trivially true for $n \leq 1$. For $n= 2$, we see that 
+    \begin{align*}
+        d_2d_1(\sigma)&=\sum_{i=0}^2 (-1)^i \left (\sum_{j=0}^1(-1)^j \sigma \circ d^j\right )\circ d^i \\
+        &=(\sigma \circ d^1 -\sigma\circ d^2  ) - (\sigma \circ d^0 +\sigma \circ d^2) + (\sigma \circ d^0 -\sigma \circ d^1) = 0
+    \end{align*}
+    just by tracing through and keeping track which entries $d^i$ deletes and how it affects $d^j$. We now induct on $n$ and assume this holds for $n-1$. Observe 
+    \begin{align*}
+        d_nd_{n-1}(\sigma) 
+        &= \sum_{i=0}^n(-1)^i \left (\sum_{j=0}^{n-1}(-1)^j\sigma\circ d^j \right )\circ d^i \\
+        &= \sum_{i=0}^{n-1}(-1)^i \left (\sum_{j=0}^{n-1}(-1)^j\sigma\circ d^j \right )\circ d^i + \sum_{j=0}^{n-1} (-1)^{j+n}\sigma\circ d^j \circ d^n \\
+         &= \sum_{i=0}^{n-1}(-1)^i \left (\sum_{j=0}^{n-2}(-1)^j\sigma\circ d^j \right )\circ d^i +\sum_{i=0}^{n-1}(-1)^{i+n-1}\sigma \circ d^{n-1} \circ d^i + \sum_{j=0}^{n-1} (-1)^{j+n}\sigma\circ d^j  \circ d^n \\
+         &= d_{n-1}d_{n-2}(\sigma) + \sum_{i=0}^{n-1}(-1)^{i+n-1}\sigma \circ d^{n-1} \circ d^i + \sum_{j=0}^{n-1} (-1)^{j+n}\sigma\circ d^j  \circ d^n
+    \end{align*}
+    By our observation above, for all $i < n-1$, we have that $d^{n-1}\circ d^i = d^i\circ d^n$. Thus, we have that 
+    \begin{align*}
+        d_nd_{n-1}(\sigma) &=  d_{n-1}d_{n-2}(\sigma) + \sum_{i=0}^{n-1}(-1)^{i+n-1}\sigma \circ d^i\circ d^n + \sum_{j=0}^{n-1} (-1)^{j+n}\sigma\circ d^j  \circ d^n \\
+        &= 0 + \sum_{k=0}^{n-1}((-1)^{k+n-1}+(-1)^{k+n})\sigma \circ d^k \circ d^n \\
+        &= 0 + \sum_{k=0}^{n-1}0 = 0
+    \end{align*}
+    which completes the induction.
+\end{proof}
+\begin{definition}
+    The boundary map $d$ is the collection of all $d_n:S_n\rightarrow S_{n-1}$ for all $n \in \Z$. 
+\end{definition}
+It is common to just even omit the $n$ in $d_n$ since the construction for $d_n$ remains the same for $n$ positive and $d_n$ is trivial for non-positive $n$. For instance, we may write the previous proposition as $d^2=0$. This is just for notational convenience, and we have done the hardwork that actually requires us to keep track of the subscripts $d_n$ in the proof above. 
+\begin{definition}
+    Let $R$ be a commutative ring. A sequence of $R-$modules $\set{A_i}_{i \in \Z}$ and $R-$linear maps $f=\set{f_i:A_i \rightarrow A_{i-1}}_{i \in \Z}$ satisfying $f_i\circ f_{i-1} = 0$ is called a chain complex. For convenience, this pair will be denoted $(A_*,f)$.
+\end{definition}
+\begin{example}
+    Given any topological space $X$, $\set{S_n(X)}_{n \in \Z}$ together with the boundary map is a chain complex $(S_*(X),d)$ of $\Z-$modules.
+    $$\cdots\rightarrow S_{n+1}(X)\xrightarrow[]{d}S_n(X)\xrightarrow[]{d}S_{n-1}(X)\rightarrow \cdots$$
+    The subscript star here means that the subscript varies over $n \in \mathbb Z$.
+\end{example}
+\begin{definition}
+    Let $(A,f)$ and $(B,g)$ be chain complexes. A chain map is a sequence of $R-$linear maps $h=\set{h_i:A_i\rightarrow B_i}_{i \in \Z}$ such that for each $i \in \Z$, the following diagram commutes:
+    \begin{center}
+        \begin{tikzcd}
+A_i \arrow[d, "h_i"'] \arrow[r, "f_{i}"] & A_{i-1} \arrow[d, "h_{i-1}"] \\
+B_i \arrow[r, "g_{i}"]                  & B_{i-1}                
+\end{tikzcd}
+    \end{center}
+\end{definition}
+One can check that there is a category $\mathbf{Ch}R-\mathbf{mod}$ whose objects are $R-$module chain complexes and morphisms are chain maps. In the special case where $R=\Z$, we shall denote this category as $\mathbf{ChAb}$.
+\begin{definition}
+    Let $(A,f)$ be a chain complex. 
+    \begin{itemize}
+        \item The $n-$th $R-$module of cycles of the chain complex is $Z_n(A)=\ker f_n$.
+        \item The $n-$th $R-$module of boundaries of the chain complex is $B_n(A) = \Im f_{n+1}$
+        \item The $n-$th homology $R-$module of the chain complex is the group $H_n(A)=Z_n(A)/B_n(A)$.
+    \end{itemize}
+    In the case where $R=\Z$, we just say group instead of $R-$module (abelian group is also a mouthful to say).
+\end{definition}
+The terminology of cycles, boundaries, and homology have their origins in algebraic topology which we will probably see soon. The terminology have since been generalized to arbitrary chain complexes. We will discuss more when we get to exact sequences.
+\begin{definition}
+    Given any topological space, its $n-$th singular homology is the group
+    $$H_n(X) = \frac{Z_n(X) }{B_n(X)}$$
+    where $Z_n(X) = \ker \set{d_n:S_n(X)\rightarrow S_{n-1}(X)}$ and $B_n(X) = \Im\set{d_{n+1}:S_{n+1}(X)\rightarrow S_n(X)}$.
+\end{definition}
+Note that by convention in topology, we will write the topological space inside the parentheses for the cycles, boundaries, and homology as opposed to $S_*(X)$.
+\begin{proposition}
+    There is a functor $H_*:\mathbf{Ch}R-\mathbf{mod} \rightarrow \mathbf{Ch}R-\mathbf{mod} $ that maps $(C,f)$ to $(H_*(C),\bar f)$ and chain maps $h:(C,f)\rightarrow (D,g)$ to chain maps $\bar h:(H_*(C),\bar f),(H_*(D),\bar g)$.
+\end{proposition}
+People usually just ignore the overline for both the chain map $\bar h$ and the maps $\bar f,\bar g$ in the chain complexes. It is also often common to not write the subscript for the maps $f_i,g_i$ in the chain complexes. We will do so as well.
+\begin{proof}
+We leave it to the reader to check that taking the homology of a chain complex always results in a chain complex. Let $(C,f),(D,g)$ be chain complexes and $h:C\rightarrow D$ a chain map. Then, the following diagram commutes:
+    \begin{center}
+    \begin{tikzcd}
+C_n\arrow[d, "h"'] \arrow[r, "f"] & C_{n-1} \arrow[d, "h"]  \\
+ D_n\arrow[r, "g"]                  & D_{n-1}         
+\end{tikzcd}
+    \end{center}
+   Let $a$ be a cycle. Since $a$ is a cycle, $f(a) = 0$ and therefore $hf(a) = 0$ so that by commutativity of the diagram, $g(h(a)) = 0$ as well. Thus, $h(a)$ is a cycle. Let $a$ be a boundary. Then, $f(a')= a$ for some $a$ so that $hf(a') = h(a) = gh(a')$ since $h$ and thus $g$ maps $h(a')$ to $h(a)$. Hence, $h(a)$ is a boundary. We thus see that $h$ maps cycles to cycles and boundaries to boundaries. Observe that we have the following commutative diagram:
+   \begin{center}
+   \begin{tikzcd}
+B_n(C)\arrow[d, "h"'] \arrow[r, "\iota", hook] & Z_n(C) \arrow[d, "h"]  \\
+ B_n(D)\arrow[r, "\iota", hook]                  & Z_n(D)  
+\end{tikzcd}
+\end{center}
+where $\iota$ is the canonical embedding. Thus, when forming quotients, the following diagram commutes:
+\begin{center}
+    \begin{tikzcd}
+H_n(C)\arrow[d, "h"'] \arrow[r, "f"] & H_{n-1}(C) \arrow[d, "h"]  \\
+H_n(D)\arrow[r, "g"]                  & H_{n-1}(D)         
+\end{tikzcd}
+    \end{center}
+    That is, given any $a+a' \in S_n(X)$ where $a$ is a cycle and $a'$ is a boundary, $h(f(a+a')) = hf(a)+hf(a') \equiv hf(a) \mod B_{n-1}(D)$, $gh(a+a') = gh(a)+gh(a') = hf(a)+hf(a')$ by commutativity of the earlier diagrams. Since $n$ was arbitrary, and the chain maps are still well defined under $H_*$, this shows $H_*$ is a functor.
+\end{proof}
+\begin{exercise}
+    Verify that $S_*$ given by mapping $X$ to the chain complex
+    $$\cdots\rightarrow S_{n+1}(X)\xrightarrow[]{d}S_n(X)\xrightarrow[]{d}S_{n-1}(X)\rightarrow \cdots$$
+    and continuous maps $f:X\rightarrow Y$ to $f_*$ is a functor $\mathbf{Top}\rightarrow \mathbf{ChAb}$. 
+\end{exercise}
+\end{document}
