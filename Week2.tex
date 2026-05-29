@@ -1,0 +1,820 @@
+\documentclass[12pt,reqno]{amsart}
+\usepackage[margin=1in]{geometry}                % See geometry.pdf to learn the layout options. There are lots.
+\geometry{letterpaper}                   % ... or a4paper or a5paper or ... 
+%\geometry{landscape}                % Activate for for rotated page geometry
+%\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}
+\usepackage{comment}
+\usepackage{changepage}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{enumerate}
+\usepackage{float}
+\usepackage{hyperref}
+\usepackage{MnSymbol}%
+\usepackage{wasysym}%
+
+\usepackage{xcolor}
+
+\usepackage{mathtools}
+
+\usepackage{subcaption}
+\usepackage{thmtools, thm-restate}
+\usepackage{array}
+
+
+%\usepackage{fancyhdr}
+%\usepackage{hyperref}
+%\usepackage{wasysym}
+
+% \usepackage[style=alphabetic]{biblatex}
+%\addbibresource{ref.bib}
+
+ %space between paragraphs
+%
+%
+%
+%
+%
+
+
+%\newtheorem{theorem}{Theorem}[section]
+%\newtheorem{proposition}[theorem]{Proposition}
+%\newtheorem{lemma}[theorem]{Lemma}
+%\newtheorem{corollary}[theorem]{Corollary}
+%\newtheorem{conjecture}[theorem]{Conjecture}
+%%\theoremstyle{definition}
+%\newtheorem{definition}[theorem]{Definition}
+%\newtheorem{example}[theorem]{Example}
+%\newtheorem{remark}[theorem]{Remark}
+%\newtheorem{notation}[theorem]{Notation}
+%\newtheorem{question}[theorem]{Question}
+%
+
+
+
+\declaretheorem{theorem}
+\numberwithin{theorem}{section}
+
+\declaretheorem[sibling=theorem]{corollary, lemma, proposition, conjecture}
+\theoremstyle{definition}
+\declaretheorem[sibling=theorem]{definition,notation}
+\theoremstyle{remark}
+\declaretheorem[sibling=theorem]{example, remark, question, exercise}
+
+
+
+
+
+
+
+
+\numberwithin{equation}{section}
+
+
+
+\newcommand{\pb}[1]{\marginpar{PB: #1}}
+\newcommand{\diam}{\textrm{diam}}
+
+%\input{dfmacros}
+%%% Mathcal
+\newcommand{\cA}{\mathcal{A}}
+\newcommand{\Bor}{\mathrm{Bor}}
+\newcommand{\cB}{\mathcal{B}}
+\newcommand{\cC}{\mathcal{C}}
+\newcommand{\cD}{\mathcal{D}}
+\newcommand{\cE}{\mathcal{E}}
+%\newcommand{\cF}{\mathcal{F}}
+\newcommand{\cG}{\mathcal{G}}
+\newcommand{\cH}{\mathcal{H}}
+\newcommand{\cI}{\mathcal{I}}
+\newcommand{\cJ}{\mathcal{J}}
+\newcommand{\cK}{\mathcal{K}}
+\newcommand{\cL}{\mathcal{L}}
+\newcommand{\cM}{\mathcal{M}}
+\newcommand{\cN}{\mathcal{N}}
+\newcommand{\cO}{\mathcal{O}}
+%\newcommand{\cP}{\mathcal{P}}
+%\newcommand{\cQ}{\mathcal{Q}}
+%\newcommand{\cR}{\mathcal{R}}
+\newcommand{\cS}{\mathcal{S}}
+\newcommand{\cT}{\mathcal{T}}
+\newcommand{\cU}{\mathcal{U}}
+\newcommand{\cV}{\mathcal{V}}
+\newcommand{\cW}{\mathcal{W}}
+\newcommand{\cX}{\mathcal{X}}
+\newcommand{\cY}{\mathcal{Y}}
+\newcommand{\cZ}{\mathcal{Z}}
+\newcommand{\proj}{\textrm{proj}}
+%%% Mathbb
+% \newcommand{\bA}{\mathbb{A}}
+% \newcommand{\bB}{\mathbb{B}}
+% \newcommand{\bC}{\mathbb{C}}
+% \newcommand{\bD}{\mathbb{D}}
+% %\newcommand{\bE}{\mathbb{E}}
+% \newcommand{\bF}{\mathbb{F}}
+% \newcommand{\bG}{\mathbb{G}}
+% \newcommand{\bH}{\mathbb{H}}
+% \newcommand{\bI}{\mathbb{I}}
+% \newcommand{\bJ}{\mathbb{J}}
+% \newcommand{\bK}{\mathbb{K}}
+% \newcommand{\bL}{\mathbb{L}}
+% \newcommand{\bM}{\mathbb{M}}
+% \newcommand{\bN}{\mathbb{N}}
+% \newcommand{\bO}{\mathbb{O}}
+% \newcommand{\bP}{\mathbb{P}}
+% \newcommand{\bQ}{\mathbb{Q}}
+% \newcommand{\bR}{\mathbb{R}}
+% \newcommand{\bS}{\mathbb{S}}
+% \newcommand{\bT}{\mathbb{T}}
+% \newcommand{\bU}{\mathbb{U}}
+% \newcommand{\bV}{\mathbb{V}}
+% \newcommand{\bW}{\mathbb{W}}
+% \newcommand{\bX}{\mathbb{X}}
+% \newcommand{\bY}{\mathbb{Y}}
+% \newcommand{\bZ}{\mathbb{Z}}
+
+%--------------Commands------------------
+\newcommand{\spt}{\mathrm{spt}}
+\newcommand{\RR}{\mathbb R}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\C}{\mathbb C}
+\newcommand{\N}{\mathbb N}
+\newcommand{\T}{\mathbb T}
+\newcommand{\F}{\mathbb F}
+\newcommand{\FP}{\mathbb{FP}}
+\newcommand{\A}{\Tilde{A}_{4,d}}
+\newcommand{\Aq}{\Tilde{A}_{q,d}}
+\newcommand{\B}{\mathbb B}
+\renewcommand{\S}{\mathbb S}
+\newcommand{\w}{\omega}
+\newcommand{\W}{\mathbb{W}}
+\newcommand{\e}{\epsilon}
+\newcommand{\g}{\gamma}
+\newcommand{\p}{\varphi}
+\newcommand{\s}{\psi}
+\newcommand{\z}{\zeta}
+\renewcommand{\l}{\ell}
+\renewcommand{\a}{\alpha}
+\renewcommand{\b}{\beta}
+\renewcommand{\d}{\de}
+\renewcommand{\k}{\kappa}
+\newcommand{\m}{\textfrak{m}}
+\renewcommand{\P}{\mathbb{P}}
+\newcommand{\Tr}{\textup{Tr}}
+\newcommand{\Fav}{\textrm{Fav}}
+
+\newcommand{\op}[1]{\operatorname{{#1}}}
+\newcommand{\im}{\operatorname{Im}}
+\newcommand{\pd}[2]{\frac{\itemtial #1}{\itemtial #2}}
+\newcommand{\rd}[2]{\frac{d #1}{d #2}}
+\newcommand{\ip}[2]{\left \langle #1 , #2 \right \rangle}
+\renewcommand{\j}[1]{\left \langle #1 \right \rangle}
+\newcommand{\set}[1]{\left \{ #1 \right \}}
+\newcommand{\cl}{\operatorname{cl}}
+\newcommand{\into}{\hookrightarrow}
+\newcommand{\pa}{\mathrm{pa}}
+\newcommand{\nd}{\mathrm{nd}}
+
+\newcommand{\mc}{\mathcal}
+\newcommand{\mb}{\mathbb}
+\newcommand{\f}{\mathfrak}
+\renewcommand{\Re}{\text{Re}}
+\renewcommand{\Im}{\text{Im}}
+\newcommand{\Fq}{\mathbb{F}_q}
+
+\def\bff{\mathbf f}
+\def\bE{\mathbf E}
+\def\bx{\mathbf x}
+\def\boldR{\mathbf R}
+\def\by{\mathbf y}
+\def\bz{\mathbf z}
+\def\rationals{\mathbb Q}
+\newcommand{\norm}[1]{ \|  #1 \|}
+\def\scriptl{{\mathcal L}}
+\def\scripti{{\mathcal I}}
+\def\scriptr{{\mathcal R}}
+
+\def\bEdagger{{\mathbf E}^\dagger}
+%\def\set4{\{1,2,3,4\}}
+%\def\set4{\overline{4}}
+%set4 changed to setf
+\def\setf{\mathcal I}
+%tup14 changed to tupd
+\def\tupf{(1,2,3,4)}
+\def\bk{\mathbf k}
+\def\sl{\operatorname{Sl}}
+\def\gl{\operatorname{Gl}}
+\def\eps{\varepsilon}
+\def\one{{\mathbf 1}}
+\def\bEstar{{\mathbf E}^\star}
+\def\be{{\mathbf e}}
+\def\bv{{\mathbf v}}
+\def\bw{{\mathbf w}}
+\def\br{{\mathbf r}}
+
+
+\newcommand{\hatf}{\hat{f}}
+\newcommand{\hatg}{\hat{g}}
+\newcommand{\hath}{\hat{h}}
+\newcommand{\cchi}{\Check{\chi}}
+\newcommand{\cpsi}{\Check{\psi}}
+\newcommand{\hchi}{\hat{\chi}}
+\newcommand{\lesim}{\lesssim}
+\newcommand{\RapDec}{\mathrm{RapDec}}
+\newcommand{\bT}{\mathbf{T}}
+\newcommand{\del}{\partial}
+
+\theoremstyle{definition}
+\newtheorem*{comm*}{Comment}
+\newtheorem*{lemma*}{Lemma}
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{ex}[thm]{Example}
+\newtheorem{conj}[thm]{Conjecture}
+\newtheorem{cor}[thm]{Corollary}
+\newcommand{\pp}{\mathbin{\!/\mkern-5mu/\!}}
+\newcommand{\supp}{\mathrm{supp}}
+
+
+\newtheorem{prop}[theorem]{Proposition}
+
+%\DeclareMathOperator{\Hopf}{Hopf}
+\DeclareMathOperator{\codim}{codim}
+
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\FF}{\mathbb{F}}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\D}{\mathbb D}
+\newcommand{\de}{\delta} %%%%%\delta
+\newcommand{\De}{\Delta} %%%%%\delta
+\newcommand{\ga}{\gamma}
+\newcommand{\Ga}{\Gamma}
+\newcommand{\ZS}{\mathbb S}
+
+\newcommand{\wh}{\widehat}
+\newcommand{\wt}{\widetilde}
+\newcommand{\si}{\sigma}
+\newcommand{\Si}{\Sigma}
+\newcommand{\Tau}{\mathcal T}
+\newcommand{\poly}{\textup{Poly}}
+\newcommand{\thmc}{\textup{Thm}\Ga^n}
+\newcommand{\thmC}{\textup{Thm}\Ga^{n+1}}
+\newcommand{\thmm}{\textup{Thm}\mathcal M^n}
+\newcommand{\gn}{\Gamma_\circ}
+\newcommand{\mn}{\mathcal M_\circ}
+\newcommand{\en}{\epsilon_{\circ}}
+\newcommand{\I}{\mathbb I}
+\newcommand{\dist}{\textup{dist}}
+%\newcommand{\eps}{\epsilon}
+\newcommand{\Gn}{\Ga_{\circ}}
+\newcommand{\Id}{\boldsymbol 1}
+\newcommand{\Fp}{\mathbb{F}_p}
+\newcommand{\bdA}{\mathbf{A}}
+\newcommand{\bdE}{\mathbf{E}}
+%\newcommand{\bv}{\bold{v}}
+\newcommand{\ob}{\mathrm{ob}}
+\newcommand{\id}{\mathrm{id}}
+\newcommand{\Mor}{\mathrm{Mor}}
+\newcommand{\Sin}{\mathrm{Sin}}
+\renewcommand{\hom}{\mathrm{Hom}}
+\newcommand{\coker}{\mathrm{coker}}
+\usepackage{tikz} 
+\usetikzlibrary{positioning}
+\newcommand{\ind}{\perp\!\!\!\!\!\perp} 
+
+\usepackage[
+backend=biber,
+style=alphabetic,
+sorting=nyt
+]{biblatex}
+\addbibresource{references.bib}
+
+\usepackage{tikz-cd}
+\usetikzlibrary{shapes}
+\usetikzlibrary{calc}
+\begin{document}
+\title{Topology Reading Group Week 2}
+\maketitle
+Last week, we introduced a tiny bit of basic topology, and some category theory concepts such as categories, functors, and natural transformations. We also explored a tiny bit of algebraic topology. In particular, we defined what singular homology is. This week, we will finish up our discussions with category theory, and we will be learning some basic point set topology. Much of the point set topology content can be found from Marius Furter's excellent introductory playlist in \cite{Furter} freely available on Youtube. 
+\section{Monics, epics, exact sequences}
+\begin{definition}
+    Let $m:X\rightarrow Y $ be a morphism. Then, $m$ is called
+    \begin{itemize}
+        \item A monomorphism if for any $Z \in \ob(\cC), f,g:Z\rightarrow X$ such that $mg=mf$, then $g=f$.
+        \item An epimorphism if for any $Z \in \ob(\cC), f,g:Y\rightarrow Z$ such that $gm=fm$, then $g=f$.
+    \end{itemize}
+\end{definition}
+Note that an epimorphism is precisely a monomorphism in the opposite category of $\cC$. Also, composing monomorphisms (and epimorphisms) return monomorphisms (and epimorphisms).
+\begin{proposition}
+    Every isomorphism is a monomorphism and an epimorphism.
+\end{proposition}
+\begin{proof}
+    Since the notion of epimorphism is dual to that of monomorphism, it suffices to just prove it for monomorphisms. Let $m:X\rightarrow Y$ be an isomorphism and suppose that $f, g :Z\rightarrow X$ are morphisms such that $mf = mg$. Since $m$ is an isomorphism, it has an inverse $m^{-1}$ so that $$f=\id_Xf=m^{-1}mf=m^{-1}mg =\id_Xg=g$$
+\end{proof}
+\begin{example}
+    Monomorphisms usually correspond to injective maps and epimorphisms usually correspond to surjective maps for a lot of categories where objects have underlying sets. This includes:
+    \begin{itemize}
+        \item $\mathbf{Grp},\mathbf{Ab}$
+        \item $\mathbf{Top}$
+        \item $R-\mathbf{Mod}$
+    \end{itemize}
+    and so on.
+\end{example}
+\begin{definition}
+    Let $f:X\rightarrow Y$ be a morphism. Then, $f$ is called
+    \begin{itemize}
+        \item A split monomorphism if there exists $g:Y\rightarrow X$ such that $gf = \id_X$
+        \item A split epimorphism if there exists $g:Y\rightarrow X$ such that $fg = \id_Y$
+    \end{itemize}
+\end{definition}
+Observe that every split monomorphism is a monomorphism, and every split epimorphism is an epimorphism. Moreover, $f$ is an isomorphism if and only if it is both split mono and split epi. However, mono and epi is not enough to imply isomorphism!
+\begin{example}
+    Just consider the graph
+    \begin{center}
+        \begin{tikzpicture}[node distance={15mm}, thick, main/.style = {draw, circle}]
+\node[main] (1) {1}; 
+\node[main, right=of 1] (2) {2};
+\draw[->] (1) -- (2);
+\end{tikzpicture}
+    \end{center}
+    The edge $(1,2)$ is a monomorphism and an epimorphism, but it is not an isomorphism!
+\end{example}
+In Example 1.2.11 of \cite{perrone}, we see that monomorphisms in $\mathbf{Top}$ are not necessarily split mono, but how do we actually prove that there is no retraction $D^2 \rightarrow S^1$? Stay tuned!
+
+\begin{proposition}
+    If $f:X\rightarrow Y$ is epi and split mono, then it is an isomorphism. Likewise, if it is mono and split epi, it is an isomorphism.
+\end{proposition}
+\begin{proof}
+    Let $f$ be epi and split mono. Then, there exists a map $f^{-1}:Y\rightarrow X$ such that $f^{-1}f = \id_X$. Now, $$ff^{-1}f =f \id_X = \id_X f = f$$
+    and since $f$ is epi, we must have $ff^{-1}=\id_X$. Hence, $f$ is also split epi, and $f$ is an isomorphism.
+\end{proof}
+\begin{proposition}
+    Let $F:\cC \rightarrow \cD$ be a faithful functor, $f:X\rightarrow Y$ a morphism such that $Ff$ is a monomorphism (epimorphism). Then, $f$ is a monomorphism (epimorphism). 
+\end{proposition}
+\begin{proof}
+    Let $g,h \in \Mor(Z,X)$. Assume $fg=fh$. Then, $F(f)F(g)=F(fg)=F(fh)=F(f)F(h)$ and $F(f)$ is mono, so $F(g)=F(h)$. Since $F$ is faithful, $g=h$ and thus $f$ is mono. The same argument works for epimorphism.
+\end{proof}
+\begin{proposition}
+     Let $F:\cC \rightarrow \cD$ be a fully faithful functor, $f:X\rightarrow Y$ an epimorphism (or monomorphism). Then, $Ff$ is an epimorphism (or monomorphism). 
+\end{proposition}
+\begin{proof}
+    Let $f:X\rightarrow Y$ be epi, and $g,h:FY \rightarrow FZ$ be maps such that $(Ff)g=(Ff)h$. Since $F$ is full, there exists $g',h'$ such that $Fg' = g, Fh' = h$. Hence, $FfFg'=F(fg')=F(fh')=FfFh'$. Since $F$ is faithful, $fg'=fh'$ so $g'=h'$ and $Fg'=Fh'$. Hence, $g=h$ so $Ff$ is epi. The same argument works for monomorphisms.
+\end{proof}
+Note that for fully faithful functors, they need not preserve monomorphisms nor epimorphisms.
+\begin{proposition}
+     Let $F:\cC \rightarrow \cD$ be a fully faithful functor, $Ff:X\rightarrow Y$ a split epimorphism (or monomorphism). Then, $f$ is a split epimorphism (or monomorphism).
+\end{proposition}
+\begin{proof}
+    Let $Ff:FX\rightarrow FY$ be split epi. That is, there exists $g:FY \rightarrow FX$ such that $Ff g = \id_{FY}$. Since the functor is full, there exists $h$ such that $Fh = g$. Thus, $F(fg)= \id_{FY} = F(\id_{Y})$. Since $F$ is faithful, $fg=\id_{Y}$ so $f$ is split epi. The argument for split mono is the same.
+\end{proof}
+\begin{corollary}
+    Fully faithful functors preserve and reflect isomorphisms.
+\end{corollary}
+\begin{proof}
+    Isomorphisms are always preserved. For reflecting isomorphisms, we just proved that full functors reflect monomorphisms and fully faithful functors reflect epimorphisms. Split mono and epi implies isomorphism and vice versa.
+\end{proof}
+\begin{proposition}
+    In categories where objects have underlying sets and morphisms are functions, split epi implies surjection implies epi, and split mono implies injection implies mono.
+\end{proposition}
+The proof will be left for the reader. As a hint, for such categories (called concrete categories), the forgetful functor is faithful.
+
+For some categories, mono is the same as injective, and epi is the same as surjective. This is the case for $R-\mathbf{mod}$ where $R$ is a commutative ring. (Note that split mono is not the same as mono in this category! Consider for example the inclusion $\iota :2\Z \hookrightarrow \Z$)
+\begin{definition}
+    Let $(A,f)$ be a chain complex of $R-$modules. Then, $(A,f)$ is said to be exact at $n$ if $\Im f_{n+1}=\ker f_n$ (in otherwords, $H_n(A) = 0$). $(A,f)$ is said to be an exact sequence if it is exact at every $n$.
+\end{definition}
+\begin{example}
+    Consider the sequence $0\rightarrow A \xrightarrow[]{f}B\rightarrow 0$ and suppose it is exact. Then, $\ker f = \Im(0) = 0$ so $f$ is injective. Also, $\Im(f) = \ker 0 = B$ so $f$ is also surjective. Thus, $A\cong B$ with $f$ as an isomorphism.
+\end{example}
+\begin{definition}
+    Let $F:R-\mathbf {mod}\rightarrow R-\mathbf {mod}$ be a functor. Then, 
+    \begin{itemize}
+        \item $F$ is called left exact if it maps exact sequences $0 \rightarrow M\rightarrow M'\rightarrow M''$ to exact sequences
+        \item $F$ is called right exact if it maps exact sequences $M\rightarrow M'\rightarrow M'' \rightarrow 0$ to exact sequences
+        \item $F$ is called exact if it is left and right exact
+    \end{itemize}
+\end{definition}
+\begin{example}
+    As an example, $\hom(N,-)$ and $\hom(-,N)$ are left exact (covariant and contravariant) functors. The tensoring functor is right exact. Modules $N$ such that $\hom(N,-)$, $\hom(-,N)$, or the tensoring functor is exact have special names, but we will suspend this discussion until maybe when we get to homological algebra.
+\end{example}
+\begin{definition}
+    A short exact sequence is an exact sequence of the form
+    $$0 \rightarrow M \xrightarrow[]{f}M'\xrightarrow[]{g}M''\rightarrow 0 $$
+\end{definition}
+Note that a sequence being short exact is saying that the map $f:M\rightarrow M'$ is injective, the map $g:M'\rightarrow M''$ is surjective, and $\im f = \ker g$. Thus, we can identify $M'' \cong M'/\Im f$ where $\im f \cong M$ by injectivity of $f$.
+\begin{lemma}
+    Given two exact sequences and maps as follows:
+    \begin{center}
+    \begin{tikzcd}
+A \arrow[r, "f"] \arrow[d, "h_0"] & B \arrow[r, "f"] \arrow[d, "h_1"] & C \arrow[r, "f"] \arrow[d, "h_2"] & D \arrow[r, "f"] \arrow[d, "h_3"] & E \arrow[d, "h_4"] \\
+A' \arrow[r, "g"]                 & B' \arrow[r, "g"]                 & C' \arrow[r, "g"]                 & D' \arrow[r, "g"]                 & E'                
+\end{tikzcd}
+\end{center}
+\begin{itemize}
+    \item If $h_4$ is injective, and $h_3,h_1$ are surjective, then $h_2$ is surjective.
+    \item If $h_0$ is surjective, and $h_1, h_3$ are injective, then $h_2$ is injective.
+\end{itemize}
+\begin{proof}
+    We shall do a diagram chase. Assume $h_4$ is injective and $h_3,h_1$ are surjective. Let $c' \in C'$. Then, by surjectivity of $f_3$, there exists $d \in D$ such that $h_3(d) = g(c') $. Now, notice $0=gg(c)=gh_3(d)=h_4f(d)$ since the diagram commutes, and by injectivity of $h_4$, $f(d) = 0$. However, by exactness of the first row, there exists $c$ such that $f(c)=d$. Mapping $c$ down by $h_2$, notice $gh_2(c)=h_3f(c)=h_3(d)=gc'$ so that $g(c'-h_2(c)) = 0$ and there exists $b'$ such that $g(b')=c'-h_2(c)$ by exactness of the bottom row. By surjectivity of $h_1$, we have $b$ such that $h_1(b) = b'$. Now, $$h_2(f(b)+c) =  h_2(f(b))+h_2(c)=gh_1(b')+h_2(c) =c'- h_2(c)+h_2(c)=c'$$
+    so $h_2$ is surjective. Similarly, let $h_0$ be surjective, $h_1,h_3$ be injective. Suppose $c \in C$ and $h_2(c) = 0$. Then, $0=g(0)=gh_2(c)=h_3f(c)$ so by injectivity of $h_3$, $f(c) = 0$. Thus, by exactness of the first row, there is $b \in B$ such that $f(b) = c$. Now, $0=h_2(c)=h_2f(b)=gh_1(b) $ so that by exactness of the last row, there exists $a'$ such that $g(a')=h_1(b)$. By surjectivity of $h_0$, we have $a$ such that $h_0(a) = a'$. Then, we have $h_1f(a) = gh_0(a) = g(a')=h_1(b)$ but by injectivity of $h_1$, we must have $f(a)=b$. Finally, recalling that $f(b) = c$, we have $c = f(b)=ff(a)=0$.
+\end{proof}
+\end{lemma}
+\begin{corollary}[The five lemma]
+    Given two exact sequences and maps as follows:
+    \begin{center}
+    \begin{tikzcd}
+A \arrow[r, "f"] \arrow[d, "h_0"] & B \arrow[r, "f"] \arrow[d, "h_1"] & C \arrow[r, "f"] \arrow[d, "h_2"] & D \arrow[r, "f"] \arrow[d, "h_3"] & E \arrow[d, "h_4"] \\
+A' \arrow[r, "g"]                 & B' \arrow[r, "g"]                 & C' \arrow[r, "g"]                 & D' \arrow[r, "g"]                 & E'                
+\end{tikzcd}
+\end{center}
+    if $ h_0,h_1,h_3,h_4$ are isomorphisms, then so $h_2$.
+\end{corollary}
+We can extend the definition of short exact sequences to chain complexes.
+\begin{definition}
+    A short exact sequence of chain complexes is a family of chain complexes $\set{(A_{*,i},f_{*,i})}_{i \in Z}$ and chain maps $\set{d_i:A_{*,i}\rightarrow A_{*,i-1}}_{i \in \Z}$ such that for each $n \in \Z$, we have an exact sequence
+    $$\cdots \rightarrow A_{n,i+1} \xrightarrow{d_{i+1}}A_{n,i}\xrightarrow{d_i}A_{n,i-1}\rightarrow \cdots$$
+    that is, if we line the chain complexes up in columns and make a commutative diagram using the chain maps, each row is an exact sequence.
+\end{definition}
+Last time, we introduced the definition of the homology of a chain complex. What is something that we can do with homology? We know that homology detects how far a chain complex is from being exact. Given three chain complexes $(M,f),(M',f),(M'',f'')$ and chain maps $h:M \rightarrow M', h':M' \rightarrow M''$ such that for each $i$,
+$$0 \rightarrow M_i \xrightarrow[]{h}M_i' \xrightarrow[]{h'} M''_i \rightarrow 0$$
+is exact, do we automatically get an exact sequence of homology as follows?
+$$0 \rightarrow H_i(M) \xrightarrow[]{h}H_i(M') \xrightarrow[]{h'} H_i(M'') \rightarrow 0$$
+That is, if we have a short exact sequence of chain complexes, do we get a short exact sequence of homologies of the chain complexes as well? The general answer is no. One can verify that the sequence is always exact at $H_i(M')$ for any $i$, but in general, it need not be exact elsewhere.
+\begin{theorem}
+    Given a short exact sequence of chain complexes $(M,d),(N,d),(L,d)$:
+    $$ 0 \rightarrow M_* \xrightarrow[]{f} N_*\xrightarrow[]{g}L_*\rightarrow 0$$
+    there is a natural chain map $\del $ such that the following diagram commutes:
+    \begin{center}
+        \begin{tikzcd}
+                      & \cdots                 & H_{n+1}(L) \arrow[lld, "\del"'] \\
+H_n(M) \arrow[r, "f"] & H_n(N) \arrow[r, "g"] & H_n(L) \arrow[lld, "\del"']     \\
+H_{n-1}(M)            & \cdots                 &                                
+\end{tikzcd}
+    \end{center}
+\end{theorem}
+\begin{proof}
+    We perform another diagram chase. For any $n \in \Z$, let $c \in Z_{n+1}(L)$. Then, $d(c) = 0$. Let $b \in N_{n+1}$ be such that $gb= c$, which exists since we have an exact sequence of chain complexes and hence $d'$ is surjective. Note that $d(b) \in N_n$. By commutativity of the diagram, we have that $gd(b)=dg(c)=0$ since $c \in Z_{n+1}(L)$. Thus, $d(b) \in \ker g = \Im f$.   and therefore there exists $a \in M_n$ such that $f(a) = d(b)$. Observe that $a$ is a cycle since $fd(a) = dfa = dd(b) = 0$ and injectivity of $f$ coming from exactness of the sequence tells us $d(a) = 0$. Define the map $\del (c) = a$. It suffices to show that $\del$ is well defined up to a boundary. That is, if $\del (c) = a$ and $\del (c) = a'$, then $a-a' \in B_n(A)$. To this end, let $fa= db$ and $fa'=db'$ by assumptions of how we picked $a$. Now, $g(b-b') = gf(a-a')= 0$ then, so that by exactness, there exists $\bar a $ such that $f(\bar a ) = b-b' $. Now, recalling our assumptions and using the commutativity of the diagram, $f(a-a')=d(b-b')=df(\bar a) = fd(\bar a) $. Finally, by injectivity of $f$, we have $d(\bar a) = a-a'$ so that $a-a' \in B_n(A)$ as desired.
+\end{proof} 
+\begin{definition}
+    Given an $R-$linear map $f:M\rightarrow N$, the cokernel of $f$ is the module $N /\Im f$.
+\end{definition}
+\begin{corollary}[Snake lemma]
+    Given short exact sequences and a commutative diagram 
+    \begin{center}
+        \begin{tikzcd}
+0 \arrow[r] & M \arrow[r, "f"] \arrow[d, "i"'] & N \arrow[r, "g"] \arrow[d, "j"'] & L \arrow[r] \arrow[d, "k"'] & 0 \\
+0 \arrow[r] & M' \arrow[r, "f'"]               & N' \arrow[r, "g'"]               & L'             \arrow[r]             & 0
+\end{tikzcd}
+    \end{center}
+    there is a natural exact sequence of the form
+    $$0 \rightarrow \ker i \rightarrow \ker j \rightarrow \ker k \xrightarrow[]{\del} \coker i \rightarrow \coker j \rightarrow \coker k \rightarrow 0 $$
+\end{corollary}
+\begin{proof}
+    View each column as a chain complex and apply the previous theorem. I will leave it to the reader to check the details (or to prove this to their own satisfaction).
+\end{proof}
+\begin{exercise}
+    Let $(A,f)$ be a chain complex. It is called acyclic if $H_*(A) = 0$. Prove that $(A,f)$ is acyclic if and only if it is an exact sequence (Easy!)
+\end{exercise}
+\begin{exercise}
+Consider the exact sequence
+$$0 \rightarrow M \xrightarrow[]{f}M'\xrightarrow[]{g}M''\rightarrow 0 $$
+    Prove the following are equivalent:
+    \begin{itemize}
+        \item There is an $R-$linear map $f': M' \rightarrow M$ such that $f'f = \id_M$
+        \item There is an $R-$linear map $g': M'' \rightarrow M$ such that $gg'=\id_{M''}$
+    \end{itemize}
+Hint: Both conditions are also equivalent to $M'$ being an internal direct sum $\Im f \oplus N$ so that your $f$ embeds $M'$ into $\Im f$ and your $g$ projects $M$ onto $M'' \cong N$, why?
+\end{exercise}
+\section{Basic topology}
+We have already done a little bit of basic topology in Week 1. We will simply expand on what we have already done. I will reuse some of my old notes for this section, add some remarks here and there and cut out longer proofs as well as many propositions already stated in the notes, as well as the less important definitions.
+\begin{definition}
+    Let $(X,\tau)$ be a topological space. Let $\tau'$ be another topology on $X$.
+    \begin{itemize}
+        \item If $\tau \subseteq \tau'$, $\tau'$ is called coarser than $\tau$.
+        \item If $\tau' \subseteq \tau$, $\tau'$ is called finer than $\tau$.
+    \end{itemize}
+\end{definition}
+Coarser means it is a bigger topology and finer means it is a smaller topology.
+\begin{prop}
+    A set $U \subseteq X$ is open if for all $x \in U$, $U$ is a neighbourhood of $x$. 
+\end{prop}
+\begin{definition}
+    Let $S \subseteq X$ and let $p \in S$. Then, $p$ is called an interior point of $S$ if $S$ is a neighbourhood of $p$.
+\end{definition}
+\begin{definition}
+    Let $S^o$ denote the interior of $S\subseteq X$. Then, 
+    $$S^o = \set{p \in S | p \ \text{is an interior point of} \ S}$$
+\end{definition}
+\begin{prop}
+    The interior of a set $S \subseteq X$ is the largest possible open subset $U \subseteq S$. Equivalently, the interior of $S$ is the union of all open subsets of $S$, so
+    $$S^o = \bigcup_{i \in J} A_i$$
+    where $A_i$ is open and a subset of $S$ for all $i \in J$
+\end{prop}
+\begin{definition}
+    Let $\overline S$ denote the closure of $S$. We define it as $((S^c)^o)^c$
+\end{definition}
+\begin{prop}
+    The closure of a set $S \subseteq X$ is the smallest possible closed set $U$ such that $S \subseteq U \subseteq X$. Equivalently,
+    $$\overline S = \bigcap_{i\in J} A_i$$
+    where $A_i$ is closed, $S \in A_i$ for all $i \in J$
+\end{prop}
+\begin{definition}
+    A subset $A \subseteq X$ is called dense if its closure is $X$.
+\end{definition}
+\begin{definition}
+    Let $f:X\rightarrow Y$ be a function. Then, $f$ is called
+    \begin{itemize}
+        \item An open map if $f$ maps open sets to open sets
+        \item A closed map if $f$ maps closed sets to closed sets
+    \end{itemize}
+\end{definition}
+Note that open maps and closed maps need not be continuous at all.
+\begin{prop}
+    Let $f:X\rightarrow Y$ be bijective and continuous. Then, $f$ is a homeomorphism if and only if it is an open map if and only if it is a closed map.
+\end{prop}
+That is the big chunk of terminology for most of the point set stuff. Next, we define the important notion of a Hausdorff space.
+\begin{definition}
+    Let $(X,\tau)$ be a topological space. We say $(X,\tau)$ is a Hausdorff space if for all $x\neq y \in X$, there exists $U_x,U_y \in \tau$ such that $x \in U_x, y \in U_y$ and $U_x \cap U_y = \varnothing$.  (Any two points in $X$ can have separate open neighbourhoods)
+\end{definition}
+\begin{example}
+    Any metric space $(M,d)$ is a Hausdorff space. Let $x,y \in M$ be distinct. Then, $r=d(x,y) > 0$ so that $B_\frac{r}{2}(x),B_{\frac{r} 2}(y)$ are disjoint open neighborhoods of $x$ and $y$ respectively. We denote $B_r (x) = \set{y \in M : d(x,y)< r}$.
+\end{example}
+\begin{example}
+    Of course, $\mathbb{R}$ endowed with the usual metric topology is Hausdorff. Let us give $\mathbb R$ a different topology this time. Given $\mathbb{R}$ endowed with the topology $\tau = \set{\varnothing,\mathbb{R}}\cup\set{(a,\infty) | a\in\mathbb{R}}$), $\R$ would not be a Hausdorff space. Let $x,y \in \mathbb R$ be distinct, and $x\in (a,\infty), y \in (b,\infty)$. Then, $\max \set{x,y} > a$ and $\max \set{x,y} > b$ so that $\max \set{x,y}$ lies in both neighborhoods and $x,y$ have no disjoint neighborhoods. 
+\end{example}
+\begin{example}
+    Let $R$ be a commutative ring, and $\mathrm{Spec}(R)$ be its prime ideals. For $X \subseteq R$, define $V(X) = \set{P \in \mathrm{Spec}(R) | X \subseteq P}$. We can define a topology on it called the Zariski topology by letting $V(X)$ be closed sets in $\mathrm{Spec}(R)$. This topology is usually not Hausdorff. 
+
+    In the case where $R=k$ is an (algebraically closed) field, and $\mathbb A^n$ is an affine space over $k$, for any $S \subseteq k[x_1,x_2,\cdots,x_n]$, let $V(S) = \set{x \in \mathbb A^n| f(x) = 0 \quad \forall f \in S}$. One can then let $V(S)$ as $S$ ranges over subsets of $k[x_1,\cdots,x_n]$ be defined as closed sets in $\mathbb A^n$, which defines the Zariski topology of $\mathbb A^n$. Setting $\mathbb A^n = \mathbb C^n$ for instance, its Zariski topology is an example of a non-Hausdorff topology on $\mathbb C^n$.
+
+    This machinery is a very fundamental part of algebraic geometry, which we will unfortunately not be dealing with for pretty much all of the rest of this reading group.
+\end{example}
+Let us check some basic propertie for Hausdorff spaces.
+\begin{prop}
+    Singleton sets are closed in Hausdorff spaces.
+\end{prop}
+\begin{proof}
+    If $X$ is Hausdorff, given any $x \in X$, $y \notin X$, there exists open disjoint neighborhoods $U_y,V_y$ such that $x \in U_y,y \in V_y$. Then, $X\backslash \set{x} = \bigcup_{y \in X\backslash \set{x}}V_y$ so that $\set x$ is closed.
+\end{proof}
+\begin{corollary}
+    Any finite subset is closed in a Hausdorff space.
+\end{corollary}
+\begin{proof}
+    Finite intersections of open sets being open is equivalent to finite unions of closed sets being closed. 
+\end{proof}
+Note that Hausdorffness also implies that limits are unique in Hausdorff spaces, but limits are not important to us in this reading course even though they are an important part of point set topology. Thus, we will omit this from our discussion. That should however, give you an idea about why Hausdorff spaces are essential in analysis.
+
+Beyond analysis, from a topologist's point of view, what makes Hausdorff spaces important? This comes into play when we discuss CW-complexes and manifolds. We usually assume manifolds to be Hausdorff, and there is a sufficient and necessary condition for Hausdorff spaces to be homeomorphic to CW-complexes. The reason we want to work with CW-complexes is that they allow for much easier computations of homology, and as for manifolds, that will be our capstone -- Poincaré duality!
+\begin{prop}
+    In a Hausdorff space $Y$, let $f,g:X \rightarrow Y$ be continuous functions and $A\subseteq X$ be dense. Then, $f(a)=g(a)$ for all $a \in A$ if and only if $f(x)=g(x)$ for all $x \in X$. 
+\end{prop}
+\begin{proof}
+    The backwards direction is trivial. For the forward direction,
+     suppose for the contradiction that there exists $x_0 \in X$ such that $f(x_0)\neq g(x_0)$. By Hausdorffness of $Y$, there exists disjoint open $U,V$ such that $f(x_0) \in U,g(x_0) \in V$. Thus, $x_0 \in f^{-1}(U) \cap g^{-1}(V)$. Since $f^{-1}(U) \cap g^{-1}(V)$ is open from continuity of $f,g,$ by density of $A$, there exists $a \in A$ such that $a \in f^{-1}(U) \cap g^{-1}(V)$, but then $z=f(a)=g(a)$ for some $z\in Y$ and $z \in U, z \in V$, contradicting that $U$ and $V$ are disjoint.
+\end{proof}
+In other words, for mappings into a Hausdorff space, the continuous functions are determined entirely by dense sets of the domain.
+
+We now define bases in topological spaces.
+\begin{definition}
+    Let $(X,\tau)$ be a topological space and let $\mathcal{B} \subseteq \tau$ be a collection of open sets. Then, $\mathcal{B}$ is called a basis of $\tau$ if for all $U \in \tau$, there exists $(B_i)_{i\in J}$ with $B_i \in \mathcal{B}$ such that
+    $$\bigcup_{i\in J} B_i = U$$
+\end{definition}
+\begin{example}
+    Singleton sets are a basis for the discrete topology.
+\end{example}
+\begin{example}
+    The set of open balls forms a basis for a metric space.
+\end{example}
+\begin{example}
+    Let $k$ be an (algebraically closed) field, $\mathbb A^n$ be a $k-$affine space given the Zariski topology. For any $S \subseteq k[x_1,\cdots,x_n]$, one can check that $V(S) = V((S))$ where $(S)$ is the ideal generated by $S$. Thus, we see that open sets in $\mathbb A^n$ are sets of the form $\mathbb A^n\backslash V(I)$ where $I\subseteq k[x_1,\cdots,x_n]$ is an ideal. Moreover, one can check that given ideals $I,J$, $V(I) \cap V(J) = V(I+J)$. By Hilbert's basis theorem, if $k$ is a field, every ideal in $k[x_1,\cdots,x_n]$ is finitely generated so that $I = (f_1,\cdots,f_r)$ where $f_i \in k[x_1,\cdots,x_n]$. Hence, $$\mathbb A^n \backslash V(I) = \mathbb A^n \backslash V(f_1,\cdots,f_r)  =\mathbb A^n \backslash \bigcap_{i=1}^r V(f_i) = \bigcup_{i=1}^r \mathbb A^n \backslash V(f_i)$$
+    Therefore, we obtain a basis for the Zariski topology consisting of sets $\mathbb A^n\backslash V((f))$ where $f \in k[x_1,\cdots,x_n]$.
+\end{example}
+ Essentially, a basis for a topological space is a collection of open sets that generates all open sets. The concept of a basis is useful since we can determine whether a function is continuous just based on how it acts on basis elements.
+\begin{prop}
+    Let $(X,\tau_X), (Y,\tau_Y)$ be topological spaces and $\mathcal{B}$ be a basis for $Y$. Then, $f:X\mapsto Y$ is continuous if and only if $f^{-1}(B)$ is open for all $B \in \mathcal{B}$
+\end{prop}
+We leave the proof as an exercise. 
+
+The rest of today was dedicated to exploring some constructions of topological spaces. Notably, they all come from the constructions from $\mathbf{Set}$. The big picture I want everyone to get is that we are coming up with definitions by thinking of what are properties that one object must satisfy in order to canonically induce the topology onto the other construction. That is, we want to (usually) induce the coarsest topology one can apply that is compatible with a choice of maps and objects.
+\subsection{Subspace topology}
+Let $A \subseteq X$ be a set. Let us first examine what properties $A \subseteq X$ satisfies. We note that we are working in the category of $\mathbf {Set}$. Thus, if we are thinking in terms of morphisms, we have a canonical inclusion $\iota:A\hookrightarrow X$ that identifies $A$ inside of $X$. Given any set $Y$ and any function $f:Y \rightarrow A$, $f$ must be compatible with the $\iota$ that identifies $A$ as a subset.
+
+\begin{center}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\linewidth]{Subset.jpg}
+\end{figure}
+\end{center}
+That is, if $f:Y\rightarrow A$ is a function, one should then be able to identify its image as a subset of $A\subseteq X$. Another way to phrase the above is that the following diagram commutes:
+\begin{center}
+        \begin{tikzcd}
+Y \arrow[r, "f"] \arrow[rd, "\iota f"'] & A \arrow[d, "\iota", hook] \\
+                                        & X                         
+\end{tikzcd}
+    \end{center}
+    
+If we want to transport the notion of subset into the notion of a subspace, we want this diagram to commute as well whenever $f$ is continuous. In particular, we would also want the map $\iota$ to be continuous. If $\tau_A$ is a topology for $A$ satisfying the property above, that means that the continuous maps into $A$ can be thought of as continuous maps into $X$ that maps into $A$ identified within $X$. One can think of this as ``every open set in $A$ can be lifted to an open set in $X$ in a compatible manner''. However, we also want to be able to go the other way around, that is, if we have a continuous map $f:Y\rightarrow X$ that maps into $A$, that we can just forget about the surrounding space and think of it as a continuous map into $A$. A way to rephrase this is that if $f:Y\rightarrow A$ is not continuous, then $\iota f:Y\rightarrow X$ better not be as well. Another way of thinking of this is that ``every open set in $X$ can be projected down to an open set in $A$ in a compatible manner''.
+
+Combining all of the above, we would like the subspace topology to satisfy the following universal property:
+\begin{proposition}[Universal property of the subspace topology]
+    Let $(X,\tau)$ be a topological space, $A\subseteq X$ and $\iota: A \hookrightarrow X$ be the canonical map. For every topological space $(Y,\tau')$ and function $f:Y\rightarrow A$, 
+    \begin{center}
+        \begin{tikzcd}
+Y \arrow[r, "f"] \arrow[rd, "\iota f"'] & A \arrow[d, "\iota", hook] \\
+                                        & X                         
+\end{tikzcd}
+    \end{center}
+    $f$ is continuous if and only if $\iota \circ f$ is continuous.
+\end{proposition}
+One can check that the above defines $A$ uniquely up to homeomorphism. Since we have specified a choice of $A$ and $\iota$ as a canonical map, this determines $A$ uniquely as an object. Let us now give a construction for the subspace topology.
+\begin{definition}
+    Let $(X,\tau)$ be a topological space and $A \subseteq X$. Then, the subspace topology of $A$ is
+    $$\tau_A = \set{A \cap U : U \in \tau}$$
+\end{definition}
+One can check that this object satisfies the universal property we proposed. From now on, unless otherwise stated, whenever we write $A\subseteq X$, we shall always assume that $A$ is given the subspace topology. In proving the universal property holds, we may use some or all of the following:
+\begin{prop}
+Let $X,Y,Z$ be topological spaces, $f:X\rightarrow Y$ be continuous. Then,
+    \begin{itemize}
+        \item The canonical embedding $\iota:A\rightarrow X$ is continuous.
+        \item If $A \subseteq X$, then $f|_A:A\rightarrow  Y$ is also continuous.
+        \item If $B \subseteq Y$ and $f(X) \subseteq B$, then $f:X\rightarrow B$ is continuous.
+        \item If $Y\subseteq Z$, then $f:X\rightarrow Z$ is continuous
+    \end{itemize}
+\end{prop}
+
+\begin{prop}
+    Let $A \subseteq X$ be a topological subspace. 
+    \begin{itemize}
+        \item If $U \subseteq A$ is a subspace of $A$, then it is also a subspace of $X$. 
+        \item If $\mathcal{B}$ is a basis for $X,$ then $
+        \mathcal{B}_S\set{B \cap S | B \in \mathcal{B}}$ is a basis for $S$.
+        \item Subspaces preserve the Hausdorff property.
+    \end{itemize}
+\end{prop}
+
+\subsection{Product topology}
+In Week 1, one of the examples of a universal property we did is that of a Cartesian product $X\times Y$, which is a special case of a product in a category (in this case, $\mathbf{Set})$. Let $X_i$ be sets and $i\in J$ where $J$ is an indexing set. Let $X=\prod_{i \in J}X_i$ be their Cartesian product. Similarly to the case of the Cartesian product of two sets, $X$ must satisfy the universal property that if $\pi_i$ are the natural projections, for any set $Y$ and collection of functions $\set{f_i:Y\rightarrow X_i}_{i \in J}$, there is a unique function $\prod_{i \in J} f_i$ such that for each $i \in J$, the following diagram commutes: 
+    \begin{center}
+        \begin{tikzcd}
+X \arrow[r, "\pi_i"]                                        & X_i \\
+Y \arrow[u, "\prod_{i \in J}f_i", dashed] \arrow[ru, "f_i"] &    
+\end{tikzcd}
+    \end{center}
+We wish to make the diagram above commute if we restrict the above to the category $\mathbf{Top}$. That is, we want the product topology to satisfy the following universal property:
+\begin{proposition}[Universal property of product topology]
+    Given $X=\prod_{i \in J} X_i$ with the product topology, it is the product in the category $\mathbf{Top}$. That is, it satisfies the universal property where if $\pi_i$ are the natural projections, for every topological space $(Y,\tau)$ and collection of continuous maps $\set{f_i:Y\rightarrow X_i}_{i \in J}$, there is a unique continuous map $\prod_{i \in J} f_i$ such that for each $i \in J$, the following diagram commutes: 
+    \begin{center}
+        \begin{tikzcd}
+X \arrow[r, "\pi_i"]                                        & X_i \\
+Y \arrow[u, "\prod_{i \in J}f_i", dashed] \arrow[ru, "f_i"] &    
+\end{tikzcd}
+    \end{center}
+\end{proposition}
+A topology on the Cartesian product satisfying the above would be the coarsest topology we can put on the cartesian product such that the natural projections are compatible with the original spaces. Note that since the Cartesian product is a product in the category $\mathbf{Set}$, our construction above will give a product in the category $\mathbf{Top}$.
+
+We now define a product topology for cartesian products of topological spaces.
+\begin{definition}
+    Let $(X_i,\tau_i)_{i \in J}$ be topological spaces where $J$ is an indexing set. The product topology on $\prod_{i \in J} X_i$ is the topology generated by the basis $\set{\prod_{i \in J} U_i : U_i \in \tau_i}$.
+\end{definition}
+One can check that this construction satisfies the universal property. It should also be noted that in the verification, one may discover that each natural projection $\pi_i:X \rightarrow X_i$ is continuous.
+
+As with before, we will assume that $X=\prod_{i \in J} X_i$ is given the product topology unless stated otherwise (or if the sentence has a better flow).
+\begin{prop}
+    Let $\prod_{i \in J} X_i$ be given the product topology, $(Y,\tau)$ a topological space, $\set{f_i:X_i\rightarrow Y}_{i \in J}$ be functions.
+    \begin{itemize}
+        \item If each $f_i$ is continuous, then so is $\prod_{i\in J} f_i$
+        \item If each $f_i$ is a homeomorphism, then so is $\prod_{i\in J} f_i$
+    \end{itemize}
+\end{prop}
+
+\begin{prop}
+    Let $X=\prod_{i \in J} X_i$ be given the product topology and $\pi_i$ be natural projections.
+    \begin{itemize}
+        \item If $\cB_i$ is a basis for $X_i$, then 
+        $$\cB = \set{\prod_{i \in J}B_i:B_i \in \cB_i}$$
+        is a basis for $X$
+        \item If $S_i\subseteq X_i$ are subspaces, the subspace topology of $\prod_{i\in J}S_i$ coincide with their product topology
+        \item Product topology preserves Hausdorffness
+    \end{itemize}
+\end{prop}
+\begin{example}
+    Given any topological space $(X,\tau)$, we can form the cylinder $X\times I$ where $I$ is the unit interval $[0,1]$. Of course, $X\times I$ is given the product topology. We usually represent the space as follows:
+    \begin{center}
+        \begin{tikzpicture}[node distance={1mm}, >=latex,shorten >=2pt,shorten <=2pt,shape aspect=1]
+\node (A) [cylinder, shape border rotate=90, draw,minimum height=3cm,minimum width=2cm]
+{$X \times I$};
+\node[above=10mm] (B) {$X\times \set{1}$};
+\node[below=of A] (C) {$X\times \set{0}$};
+\end{tikzpicture}
+    \end{center}
+    since we are stacking one copy of $X$ for each $t \in [0,1]$. We usually omit writing $X\times \set{1}$ and $X\times \set{0}$, but they are written in the figure above to explicitly show how one can think of the cylinder space.
+\end{example}
+\begin{prop}
+    $X$ is Hausdorff if and only if the diagonal $\Delta = \set{(x,x)| x\in X} \subseteq X\times X$ is closed.
+\end{prop}
+Note that the diagonal map is not necessarily closed. 
+\begin{proof}
+    Let $X$ be Hausdorff and $x,y \in X$ be distinct. Then, there exists $U_x,V_y$ such that $U_x \cap V_y = \varnothing$. That is, for all $z \in U_x$, $z \notin V_y$ and vice versa. Hence, $(U_x \times V_y)\cap \Delta = \varnothing$. Thus, $\bigcup_{x\neq y \in X}U_x \times V_y = (X\times X )\backslash \Delta$ is open. If the diagonal is closed, let $x \neq y$. Then, $(x,y) \in (X\times X) \backslash \Delta$ which is open. Since $\set{U\times V |U,V\in \tau}$ is a basis, we can find open $U,V\subseteq X$ such that $(x,y) \in U\times V \subseteq (X\times X) \backslash \Delta$, but that implies $U\cap V = \varnothing$ since $(U\times V )\cap \Delta = \varnothing$.
+\end{proof}
+
+\subsection{Disjoint union topology}
+I will first illustrate the concept of a disjoint union of sets. Let us first illustrate the concepts of two sets $A,B$. We want the disjoint union $A\sqcup B$ to be the set that has an identifiable copy of $A$, and an identifiable copy of $B$. That is, we have canonical injections $\iota_A:A\rightarrow A\sqcup B$ and $\iota_B:B\rightarrow A\sqcup B$. Pictorially, it looks as follows:
+
+\begin{center}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{Disjointunion.jpg}
+\end{figure}
+\end{center}
+
+On the top, we are considering $A,B$ as separate sets. In the bottom, our $A\sqcup B$ is a set that has precisely one part that can be identified with $A$ and one part that can be identified with $B$ given our canonical injections, and nothing extra. One can think of this as taking the union $A\cup B$ but you allow repeats of elements.
+
+To reflect the notion that $A\sqcup B$ is really the idea as above, let us think of it in terms of functions. We want the property that nothing extra can be produced. Let $C$ be any other set. Then, for any function $f:A\rightarrow C, g:B \rightarrow C$, there better be a canonical way for us to carry the functions over to $A\sqcup B$. That is, we know everything about $A\sqcup B$ given what we know about $A$ and $B$. This gives us the universal property that there is a unique function $f\sqcup g$ such that the following diagram commutes:
+\begin{center}
+    \begin{tikzcd}
+                                             & C                                                    &                                                \\
+A \arrow[r, "\iota_A", hook] \arrow[ru, "f"] & A\sqcup B \arrow[u, "f\sqcup g" description, dashed] & B \arrow[l, "\iota_B"', hook] \arrow[lu, "g"']
+\end{tikzcd}
+\end{center}
+Notice, if we flip the direction of all the arrows, we get the universal property for the product $A\times B$. This means that the disjoint union is the coproduct in the category $\mathbf{Set}$.
+
+As with before, we can generalize this to the disjoint union of arbitrarily many sets. Let $J$ be an indexing set and $X_i$ be sets for $i \in J$. Let $X= \coprod_{i \in J} X_i$ be their disjoint union. Then, if $\iota_i$ are the natural inclusions, for every set $Y$ and collection of functions $\set{f_i: X_i\rightarrow Y}_{i \in J} $, there is a unique function $\coprod_{i \in J} f_i$ such that for each $i \in J$, the following diagram commutes: 
+    \begin{center}
+        \begin{tikzcd}
+X \arrow[d, "\coprod_{i \in J}f_i"', dashed] & X_i \arrow[l, "\iota_i"'] \arrow[ld, "f_i"] \\
+Y                                          &                                          
+\end{tikzcd}
+\end{center}
+Like with the product topology, we want to carry this notion over to $\mathbf{Top}$ by replacing sets with topological spaces and functions with continuous maps, i.e., we want to construct a coproduct in the category $\mathbf{Top}$. We want $X=\coprod_{i \in J} X_i$ to satisfy the following universal property:
+\begin{prop}[Universal property for the disjoint union topology]
+    Given $X=\coprod_{i \in J} X_i$ with the disjoint union topology, if $\iota_i$ are the natural inclusions, for every topological space $(Y,\tau)$ and collection of continuous maps $\set{f_i: X_i\rightarrow Y}_{i \in J} $, there is a unique continuous map $\coprod_{i \in J} f_i$ such that for each $i \in J$, the following diagram commutes: 
+    \begin{center}
+        \begin{tikzcd}
+X \arrow[d, "\coprod_{i \in J}f_i"', dashed] & X_i \arrow[l, "\iota_i"'] \arrow[ld, "f_i"] \\
+Y                                          &                                          
+\end{tikzcd}
+\end{center}
+\end{prop}
+This gives us the coarsest topology on the disjoint union that is compatible with the natural inclusions and the topologies of $X_i$.
+
+Let us give a contruction for such a topology:
+\begin{definition}
+    Let $(X_i,\tau_i)_{i \in J}$ be topological spaces where $J$ is an indexing set. The disjoint union topology on $X=\coprod_{i \in J} X_i$ is the topology where $U\subseteq X$ is open if and only if $U\cap X_i\in \tau_i$ for all $i \in J$.
+\end{definition}
+Here, by $U\cap X_i$, we mean that we identify the $X_i$ component in the disjoint union, and that we are looking at all $U$ that lies in this component. We are then considering its preimage under $\iota_i$, where since $\iota_i$ is an embedding, we will use $U\cap X_i$ synonymously with its preimage.
+
+Once again, we leave this for the reader to verify. Note that as with before, one should find that the natural inclusions $\iota_{i}:X_i \hookrightarrow X$ are continuous.
+\begin{remark}
+Notice, when applying the forgetful functor $\mathbf{Top} \rightarrow \mathbf{Set}$, products are mapped to products and coproducts are mapped to coproducts. This is because the product and disjoint union topologies are constructed out of the product and coproduct objects in $\mathbf{Set}$. The same is not true for many other categories such as $\mathbf{Grp},R-\mathbf{mod}$ and so on, where for instance, a free group is \textit{not} a disjoint union of the underlying sets.
+\end{remark}
+\begin{prop}
+    Let $X=\coprod_{i \in J} X_i$ be given the disjoint union topology.
+    \begin{itemize}
+        \item $F\subseteq X$ is closed if and only if $F\cap X_i$ is closed for all $i \in J$.
+        \item Disjoint unions preserve Hausdorffness
+    \end{itemize}
+\end{prop}
+\begin{exercise}
+    Prove that $\mathbb R^n$ given the metric topology is homeomorphic to $\mathbb R^n$ given the product topology.
+\end{exercise}
+\begin{exercise}
+\begin{enumerate}
+\item Let $\mathbf{Top}(X,Y)$ denote the continuous maps from $X$ to $Y$. Prove that for all topological spaces $A$, if $f$ is a monomorphism, the induced map $f^* : \mathbf{Top}(A,X)\rightarrow \mathbf{Top}(A,Y)$ where $f^*(g) = f\circ g$ is injective.
+\item
+    Prove that for any $A\subseteq X$ where $X$ is a topological space, the following diagram commutes for all $n \in \mathbb Z$:
+    \begin{center}
+    \begin{tikzcd}
+S_n(A) \arrow[r, "d"] \arrow[d, "\iota_*"] & S_{n-1}(A) \arrow[d, "\iota_*"] \\
+S_{n}(X) \arrow[r, "d"]                    & S_{n-1}(X)                     
+\end{tikzcd}
+\end{center}
+\end{enumerate}
+\end{exercise}
+\begin{exercise}[Extra]
+Given any set $X$, map it to the topological space $(X,\tau)$ given the discrete topology and any function to itself. This is called the discrete functor. Let $F $ be the discrete functor and $G$ be the forgetful functor.
+\begin{enumerate}
+    \item Prove that there are natural transformations $\varepsilon:FG\rightarrow \id$ and $\eta: \id \rightarrow GF$ (called a counit and a unit respectively) such that the following diagrams commute:
+    \begin{center}
+        \begin{tikzcd}
+F \arrow[r, "F\eta"] \arrow[rr, "\id_F"', bend right] & FGF \arrow[r, "\varepsilon F"] & F
+\end{tikzcd} \\
+\begin{tikzcd}
+ G \arrow[r, "\eta G"] \arrow[rr, "\id_G"', bend right] & GFG \arrow[r, "G\varepsilon "] & G
+\end{tikzcd}
+    \end{center}
+    That is, $F$ is a left adjoint of $G$.
+    \item For each $A \in \mathbf{Top}$, let $\mathbf{Top}(A,-)$ be the functor that sends $X$ to $\mathbf{Top}(A,X)$ and $f:X\rightarrow Y$ to $f^* : \mathbf{Top}(A,X)\rightarrow \mathbf{Top}(A,Y)$ . Prove that for any topological space $A$, for any $a \in A$, $a$ defines a unique natural transformation $\mathbf{Top}(A,-) \rightarrow G$, and that any natural transformation $\mathbf{Top}(A,-) \rightarrow G$ is determined uniquely by some $a \in A$. 
+\item Prove that for any $X$ with the discrete topology and topological space $Y$, there is a natural isomorphism between $\mathbf{Top}(X,Y)$ and $\hom_{\mathbf{Set}}(X,Y)$.
+\end{enumerate}
+\end{exercise}
+
+
+\printbibliography
+\end{document}
