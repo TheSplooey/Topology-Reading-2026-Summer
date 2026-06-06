@@ -1,0 +1,657 @@
+\documentclass[12pt,reqno]{amsart}
+\usepackage[margin=1in]{geometry}                % See geometry.pdf to learn the layout options. There are lots.
+\geometry{letterpaper}                   % ... or a4paper or a5paper or ... 
+%\geometry{landscape}                % Activate for for rotated page geometry
+%\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}
+\usepackage{comment}
+\usepackage{changepage}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{enumerate}
+\usepackage{float}
+\usepackage{hyperref}
+\usepackage{MnSymbol}%
+\usepackage{wasysym}%
+
+\usepackage{xcolor}
+
+\usepackage{mathtools}
+
+\usepackage{subcaption}
+\usepackage{thmtools, thm-restate}
+\usepackage{array}
+
+
+%\usepackage{fancyhdr}
+%\usepackage{hyperref}
+%\usepackage{wasysym}
+
+% \usepackage[style=alphabetic]{biblatex}
+%\addbibresource{ref.bib}
+
+ %space between paragraphs
+%
+%
+%
+%
+%
+
+
+%\newtheorem{theorem}{Theorem}[section]
+%\newtheorem{proposition}[theorem]{Proposition}
+%\newtheorem{lemma}[theorem]{Lemma}
+%\newtheorem{corollary}[theorem]{Corollary}
+%\newtheorem{conjecture}[theorem]{Conjecture}
+%%\theoremstyle{definition}
+%\newtheorem{definition}[theorem]{Definition}
+%\newtheorem{example}[theorem]{Example}
+%\newtheorem{remark}[theorem]{Remark}
+%\newtheorem{notation}[theorem]{Notation}
+%\newtheorem{question}[theorem]{Question}
+%
+
+
+
+\declaretheorem{theorem}
+\numberwithin{theorem}{section}
+
+\declaretheorem[sibling=theorem]{corollary, lemma, proposition, conjecture}
+\theoremstyle{definition}
+\declaretheorem[sibling=theorem]{definition,notation}
+\theoremstyle{remark}
+\declaretheorem[sibling=theorem]{example, remark, question, exercise}
+
+
+
+
+
+
+
+
+\numberwithin{equation}{section}
+
+
+
+\newcommand{\pb}[1]{\marginpar{PB: #1}}
+\newcommand{\diam}{\textrm{diam}}
+
+%\input{dfmacros}
+%%% Mathcal
+\newcommand{\cA}{\mathcal{A}}
+\newcommand{\Bor}{\mathrm{Bor}}
+\newcommand{\cB}{\mathcal{B}}
+\newcommand{\cC}{\mathcal{C}}
+\newcommand{\cD}{\mathcal{D}}
+\newcommand{\cE}{\mathcal{E}}
+%\newcommand{\cF}{\mathcal{F}}
+\newcommand{\cG}{\mathcal{G}}
+\newcommand{\cH}{\mathcal{H}}
+\newcommand{\cI}{\mathcal{I}}
+\newcommand{\cJ}{\mathcal{J}}
+\newcommand{\cK}{\mathcal{K}}
+\newcommand{\cL}{\mathcal{L}}
+\newcommand{\cM}{\mathcal{M}}
+\newcommand{\cN}{\mathcal{N}}
+\newcommand{\cO}{\mathcal{O}}
+%\newcommand{\cP}{\mathcal{P}}
+%\newcommand{\cQ}{\mathcal{Q}}
+%\newcommand{\cR}{\mathcal{R}}
+\newcommand{\cS}{\mathcal{S}}
+\newcommand{\cT}{\mathcal{T}}
+\newcommand{\cU}{\mathcal{U}}
+\newcommand{\cV}{\mathcal{V}}
+\newcommand{\cW}{\mathcal{W}}
+\newcommand{\cX}{\mathcal{X}}
+\newcommand{\cY}{\mathcal{Y}}
+\newcommand{\cZ}{\mathcal{Z}}
+\newcommand{\proj}{\textrm{proj}}
+%%% Mathbb
+% \newcommand{\bA}{\mathbb{A}}
+% \newcommand{\bB}{\mathbb{B}}
+% \newcommand{\bC}{\mathbb{C}}
+% \newcommand{\bD}{\mathbb{D}}
+% %\newcommand{\bE}{\mathbb{E}}
+% \newcommand{\bF}{\mathbb{F}}
+% \newcommand{\bG}{\mathbb{G}}
+% \newcommand{\bH}{\mathbb{H}}
+% \newcommand{\bI}{\mathbb{I}}
+% \newcommand{\bJ}{\mathbb{J}}
+% \newcommand{\bK}{\mathbb{K}}
+% \newcommand{\bL}{\mathbb{L}}
+% \newcommand{\bM}{\mathbb{M}}
+% \newcommand{\bN}{\mathbb{N}}
+% \newcommand{\bO}{\mathbb{O}}
+% \newcommand{\bP}{\mathbb{P}}
+% \newcommand{\bQ}{\mathbb{Q}}
+% \newcommand{\bR}{\mathbb{R}}
+% \newcommand{\bS}{\mathbb{S}}
+% \newcommand{\bT}{\mathbb{T}}
+% \newcommand{\bU}{\mathbb{U}}
+% \newcommand{\bV}{\mathbb{V}}
+% \newcommand{\bW}{\mathbb{W}}
+% \newcommand{\bX}{\mathbb{X}}
+% \newcommand{\bY}{\mathbb{Y}}
+% \newcommand{\bZ}{\mathbb{Z}}
+
+%--------------Commands------------------
+\newcommand{\spt}{\mathrm{spt}}
+\newcommand{\RR}{\mathbb R}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\C}{\mathbb C}
+\newcommand{\N}{\mathbb N}
+\newcommand{\T}{\mathbb T}
+\newcommand{\F}{\mathbb F}
+\newcommand{\FP}{\mathbb{FP}}
+\newcommand{\A}{\Tilde{A}_{4,d}}
+\newcommand{\Aq}{\Tilde{A}_{q,d}}
+\newcommand{\B}{\mathbb B}
+\renewcommand{\S}{\mathbb S}
+\newcommand{\w}{\omega}
+\newcommand{\W}{\mathbb{W}}
+\newcommand{\e}{\epsilon}
+\newcommand{\g}{\gamma}
+\newcommand{\p}{\varphi}
+\newcommand{\s}{\psi}
+\newcommand{\z}{\zeta}
+\renewcommand{\l}{\ell}
+\renewcommand{\a}{\alpha}
+\renewcommand{\b}{\beta}
+\renewcommand{\d}{\de}
+\renewcommand{\k}{\kappa}
+\newcommand{\m}{\textfrak{m}}
+\renewcommand{\P}{\mathbb{P}}
+\newcommand{\Tr}{\textup{Tr}}
+\newcommand{\Fav}{\textrm{Fav}}
+
+\newcommand{\op}[1]{\operatorname{{#1}}}
+\newcommand{\im}{\operatorname{Im}}
+\newcommand{\pd}[2]{\frac{\itemtial #1}{\itemtial #2}}
+\newcommand{\rd}[2]{\frac{d #1}{d #2}}
+\newcommand{\ip}[2]{\left \langle #1 , #2 \right \rangle}
+\renewcommand{\j}[1]{\left \langle #1 \right \rangle}
+\newcommand{\set}[1]{\left \{ #1 \right \}}
+\newcommand{\cl}{\operatorname{cl}}
+\newcommand{\into}{\hookrightarrow}
+\newcommand{\pa}{\mathrm{pa}}
+\newcommand{\nd}{\mathrm{nd}}
+
+\newcommand{\mc}{\mathcal}
+\newcommand{\mb}{\mathbb}
+\newcommand{\f}{\mathfrak}
+\renewcommand{\Re}{\text{Re}}
+\renewcommand{\Im}{\text{Im}}
+\newcommand{\Fq}{\mathbb{F}_q}
+
+\def\bff{\mathbf f}
+\def\bE{\mathbf E}
+\def\bx{\mathbf x}
+\def\boldR{\mathbf R}
+\def\by{\mathbf y}
+\def\bz{\mathbf z}
+\def\rationals{\mathbb Q}
+\newcommand{\norm}[1]{ \|  #1 \|}
+\def\scriptl{{\mathcal L}}
+\def\scripti{{\mathcal I}}
+\def\scriptr{{\mathcal R}}
+
+\def\bEdagger{{\mathbf E}^\dagger}
+%\def\set4{\{1,2,3,4\}}
+%\def\set4{\overline{4}}
+%set4 changed to setf
+\def\setf{\mathcal I}
+%tup14 changed to tupd
+\def\tupf{(1,2,3,4)}
+\def\bk{\mathbf k}
+\def\sl{\operatorname{Sl}}
+\def\gl{\operatorname{Gl}}
+\def\eps{\varepsilon}
+\def\one{{\mathbf 1}}
+\def\bEstar{{\mathbf E}^\star}
+\def\be{{\mathbf e}}
+\def\bv{{\mathbf v}}
+\def\bw{{\mathbf w}}
+\def\br{{\mathbf r}}
+
+
+\newcommand{\hatf}{\hat{f}}
+\newcommand{\hatg}{\hat{g}}
+\newcommand{\hath}{\hat{h}}
+\newcommand{\cchi}{\Check{\chi}}
+\newcommand{\cpsi}{\Check{\psi}}
+\newcommand{\hchi}{\hat{\chi}}
+\newcommand{\lesim}{\lesssim}
+\newcommand{\RapDec}{\mathrm{RapDec}}
+\newcommand{\bT}{\mathbf{T}}
+\newcommand{\del}{\partial}
+
+\theoremstyle{definition}
+\newtheorem*{comm*}{Comment}
+\newtheorem*{lemma*}{Lemma}
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{ex}[thm]{Example}
+\newtheorem{conj}[thm]{Conjecture}
+\newtheorem{cor}[thm]{Corollary}
+\newcommand{\pp}{\mathbin{\!/\mkern-5mu/\!}}
+\newcommand{\supp}{\mathrm{supp}}
+
+
+\newtheorem{prop}[theorem]{Proposition}
+
+%\DeclareMathOperator{\Hopf}{Hopf}
+\DeclareMathOperator{\codim}{codim}
+
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\FF}{\mathbb{F}}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\D}{\mathbb D}
+\newcommand{\de}{\delta} %%%%%\delta
+\newcommand{\De}{\Delta} %%%%%\delta
+\newcommand{\ga}{\gamma}
+\newcommand{\Ga}{\Gamma}
+\newcommand{\ZS}{\mathbb S}
+
+\newcommand{\wh}{\widehat}
+\newcommand{\wt}{\widetilde}
+\newcommand{\si}{\sigma}
+\newcommand{\Si}{\Sigma}
+\newcommand{\Tau}{\mathcal T}
+\newcommand{\poly}{\textup{Poly}}
+\newcommand{\thmc}{\textup{Thm}\Ga^n}
+\newcommand{\thmC}{\textup{Thm}\Ga^{n+1}}
+\newcommand{\thmm}{\textup{Thm}\mathcal M^n}
+\newcommand{\gn}{\Gamma_\circ}
+\newcommand{\mn}{\mathcal M_\circ}
+\newcommand{\en}{\epsilon_{\circ}}
+\newcommand{\I}{\mathbb I}
+\newcommand{\dist}{\textup{dist}}
+%\newcommand{\eps}{\epsilon}
+\newcommand{\Gn}{\Ga_{\circ}}
+\newcommand{\Id}{\boldsymbol 1}
+\newcommand{\Fp}{\mathbb{F}_p}
+\newcommand{\bdA}{\mathbf{A}}
+\newcommand{\bdE}{\mathbf{E}}
+%\newcommand{\bv}{\bold{v}}
+\newcommand{\ob}{\mathrm{ob}}
+\newcommand{\id}{\mathrm{id}}
+\newcommand{\Mor}{\mathrm{Mor}}
+\newcommand{\Sin}{\mathrm{Sin}}
+\renewcommand{\hom}{\mathrm{Hom}}
+\newcommand{\coker}{\mathrm{coker}}
+\usepackage{tikz} 
+\usetikzlibrary{positioning}
+\newcommand{\ind}{\perp\!\!\!\!\!\perp} 
+
+\usepackage[
+backend=biber,
+style=alphabetic,
+sorting=nyt
+]{biblatex}
+\addbibresource{references.bib}
+
+\usepackage{tikz-cd}
+\usetikzlibrary{shapes}
+\usetikzlibrary{calc}
+\begin{document}
+\title{Topology Reading Group Week 3}
+\maketitle
+Last week, we continued our discussion to do with topology. This week, we will dedicate our entire attention to quotient spaces. Quotients are fundamental to topology, and adjunction spaces motivate the definition of a CW-complex, which will become an essential tool later.
+\section{Quotient topology}
+\begin{definition}
+    Let $X$ be a set and $\sim$ be an equivalence relation on $X$. We call $X/\sim$ a quotient set and we define it as the set of equivalence classes of $X$ under $\sim$. We call $q:X \ni x \mapsto [x] \in X/\sim$ the canonical mapping under $X/\sim$. Note that $q$ is a surjection.
+\end{definition}
+\begin{definition}
+    Let $(X,\tau)$ be a topological space, $\sim$ be an equivalence relation on $X$, and $[x]_\sim$ be the equivalence class of $x$ under $\sim$. Then, we say $(X/\sim,\bar{\tau})$ is a topological quotient space with the quotient topology $\bar{\tau}$ where
+    $$\bar{\tau} = \set{U \subseteq X/\sim \mid q^{-1}(U) \in \tau}$$
+\end{definition}
+Usually, we omit the brackets in $[x]_\sim$ and simply write it as $x$.
+\begin{example}
+    Let $n \in \N$. The real projective $n-$space $\R\P^n$ is $\R^{n+1}\backslash \set{0}$ quotiented by the equivalence relation $x \sim y$ if and only if $x= \lambda y$ for some $\lambda \in \R$. Similarly, the complex projective $n-$space $\C\P^n$ is $\C^{n+1}\backslash \set{0}$ quotiented by the equivalence relation $x \sim y$ if and only if $x= \lambda y$ for some $\lambda \in \C$. 
+
+    There are other ways to understand these spaces apart from these examples. Let $\S^n$ denote the unit $n-$sphere, and $\sim$ be the relation on $\S^n$ defined by $x \sim y$ if and only if $x = \pm y$ where $-y$ denotes the antipodal point of $y$ on the sphere. Then, $\mathbb{R}\P^n \cong \S^n/\sim$ where the topology induced on $\mathbb{R}\P^n$ is the quotient topology. 
+\end{example}
+We shall use $\R\P^n$ and $\C\P^n$ as some of our central examples later on. One of the nice properties is that
+\begin{prop}
+    $\mathbb{R}\P^n$ is Hausdorff
+\end{prop}
+
+\begin{proof}
+    Let $x,y \in \mathbb{R}\P^n$ and assume $x\neq y$. It follows that $\pm x,\pm y \in \S^n$. Since $\S^n$ is Hausdorff, we can choose $\pm U_x,\pm U_y \in \tau$ as disjoint neighbourhoods for $\pm x,\pm y$ respectively. Notice we can choose ${U}_x,{U}_y$ to be a neighbourhood around $x,y$ such that $q^{-1}({U}_x) =  U_x\cup -U_x$ in the preimage and $q^{-1}({U}_y)= U_y \cup -U_y$ in the preimage, which are open under $\tau$ on $S^n$, so ${U}_x,{U}_y$ are open under ${\tau}$. Now, \begin{align*}
+        q^{-1}({U}_x \cap {U}_y) &= q^{-1}({U}_x)\cap q^{-1}({U}_y) \\
+        &= (U_x\cup -U_x) \cap (U_y \cup -U_y) = \varnothing
+    \end{align*}
+    By the surjectivity of $q$, we know there does not exist $X \subseteq \mathbb{R}\P^n$ such that $q^{-1}(X) = \varnothing$, so it follows that ${U}_x \cap {U}_y = \varnothing$ and $\mathbb{R}\P^n$ is Hausdorff.
+\end{proof}
+Actually, $\R\P^n$ and $\C\P^n$ satisfy a lot more nice properties. In particular, they are smooth manifolds (which implies that they are Hausdorff).
+
+There is another of thinking of quotient spaces. We can think of $X/\sim$ as a topological space $S$ abstractly with a surjective continuous map $q:X\rightarrow S$. 
+\begin{definition}
+    If $q:X\rightarrow S$ is surjective, the quotient topology on $S$ is the finest topology such that $q$ is continuous.
+\end{definition}
+We give an explicit construction as follows:
+\begin{definition}
+    The quotient topology on $S$ is the topology where $U\subseteq S$ is open if and only if $q^{-1}(U)$ is open in $X$.
+\end{definition}
+One can check that this does define a topology. We shall take both ways of viewing (the thinking of endowing a quotient topology on a quotient set versus defining it based on a surjective function) and take whichever view is more convenient.
+\begin{definition}
+    Let $A\subseteq X$ be a subspace. We define the quotient space $X/A$ to be the quotient space $X/\sim$ where $\sim$ is the relation that $a \sim a'$ if and only if $a \in A$ and $[x] = \set x$ for all $x \notin A$. In other words, we identify all of $A$ as one point.
+\end{definition}
+\begin{example}
+    Given the unit interval $I$, we can collapse the two endpoints into one and obtain a space homeomorphic to $\S^1$.
+\end{example}
+\begin{example}
+    Given a topological $(X,\tau)$ and the cylinder space $X \times I$, we can form the cone space $Y=(X \times I)/(X\times \set{1})$.
+
+    \begin{center}
+        \begin{tikzpicture}[node distance={16.2mm}]
+    \draw[dashed] (0,0) arc (170:10:2cm and 0.4cm)coordinate[pos=0] (a);
+    \draw (0,0) arc (-170:-10:2cm and 0.4cm)coordinate (b);
+    \draw (a) -- ([yshift=4cm]$(a)!0.5!(b)$) -- (b);
+    \node[right=of a] (X) {$X_0$};
+    \node[above=of X] (Y) {$Y$};
+    \node[above=of Y] {$X_1$};
+  \end{tikzpicture}
+    \end{center}
+    Here, $X_0$ is the collection of equivalence classes of elements in $X\times \set 0$ where $X_1$ is the collection of equivalence classes of elements in $X\times \set 1$. In this equivalence relation, we are collapsing $X\times \set 1$ into one point. That is, we are collapsing the top surface of the cylinder into one point, so we can think of the space $Y$ as a cone.
+\end{example}
+\begin{example}
+    Using the notation from the previous example where $Y$ is the cone space of $X$, we can also form the suspension space of $X$ by taking the quotient $Y/X_0$. This squishes the bottom surface of the cone into a point (That is, we squished the top surface of the cylinder space into one point and the bottom surface into another point). I will leave it to the reader to sketch a picture if they desire.
+\end{example}
+
+Recall how we defined a quotient topology from a map. We can look at maps that already induce quotient maps. Such maps are called quotient maps.
+\begin{definition}
+    A quotient map $q:X\rightarrow Y$ is a map such that for all $U \subseteq Y$, $U$ is open if and only if $q^{-1}(U)$ is open.
+\end{definition}
+Note that one direction tells us that every quotient map is continuous, but that fact is proven when verifying the universal property. 
+
+Recall earlier that we called the quotient map the finest topology you could put on a surjective function to make it continuous. We can generalize this as follows:
+\begin{definition}
+    Let $\mathcal F = \set{f_i:X_i\rightarrow Y}_{i \in J}$ be a family of functions. The final topology with respect to $\mathcal F$ is the finest topology on $Y$ such that every function in $\mathcal F$ is continuous.
+\end{definition}
+A final topology also has a universal property analogous to that of a quotient space:
+\begin{prop}[Universal property of final topology]
+    Let $\mathcal F = \set{f_i:X_i\rightarrow Y}_{i \in J}$ be a family of functions. Then, for any topological space $Z$, and continuous map $g:Y\rightarrow Z$, for each $i \in J$, $g$ is continuous if and only if $g f_i$ is.
+    \begin{center}
+    \begin{tikzcd}
+Y \arrow[r, "g"] \arrow[d, "f_i"'] & Z \\
+X_i \arrow[ru, "g \circ f_i"']          &  
+\end{tikzcd}
+    \end{center}
+\end{prop}
+In this view, a quotient topology is just the final topology with respect to a surjection.
+\begin{prop}
+    Let $q:X\rightarrow Y$ be a quotient map. Then, $Y$ has the final topology with respect to $q$.
+\end{prop}
+Note that when proving that something has a final topology with respect to something, one direction is always trivial (in this case, $g\circ q$ is continuous if $g$ is.)
+\begin{proof}
+    Let $g:Y\rightarrow Z$ be a function. Now suppose $g\circ q$ is continuous. Then, for any open set $U \subseteq Z$, the preimage $(g\circ q)^{-1}(U) = q^{-1}(g^{-1}(U))$ is open. Now, $q(q^{-1}(g^{-1}(U))) = g^{-1}(U)$. Since $q^{-1}(q(q^{-1}(g^{-1}(U)))) = q^{-1}(g^{-1}(U))$, $q^{-1}(g^{-1}(U))$ is saturated and open and hence $q(q^{-1}(g^{-1}(U))) = g^{-1}(U)$ is open. Therefore, $g$ is continuous.
+\end{proof}
+\begin{definition}
+    Let $f:X\rightarrow Y$ be a function. We say that $U\subseteq X$ is saturated with respect to $f$ if $f^{-1}(f(U)) = U$.
+\end{definition}
+\begin{prop}
+    Given a surjective continuous map $X\rightarrow Y$, $q$ is a quotient if and only if $q(U)$ is open for every saturated open $U$ (equivalently if and only if $q(U)$ is closed for every saturated closed $U$).
+\end{prop}
+\begin{proof}
+    Let $q$ be a quotient, and assume to the contrary that $U$ is saturated but $q(U)$ is not open. Since $q^{-1}(q(U)) = U$ is open but $q(U)$ is not open, contradicting the definition of the quotient topology of $S$, so $q$ cannot be a quotient map. If $q$ is not a quotient map, there exists $V \subseteq Y$ that is not open but $q^{-1}(V)$ is open (we note that there does not exists $q^{-1}(V)$ that is not open but $V \subseteq $ that is open since $q$ is continuous). Surjectivity of $q$ tells us that $q(q^{-1}(V)) = V$, but then $q^{-1}(q(q^{-1}(V)))=q^{-1}(V)$ so that $q^{-1}(V)$ is a saturated open set whose image is not open.
+\end{proof}
+
+\begin{prop}\label{Prop3}
+    Let $q:X\rightarrow S$ be an open quotient map. Then, $S$ is Hausdorff if and only if the set $\set{(x_1,x_2)\in X\times X:q(x_1)=q(x_2)}$ is closed in $X\times X$ given the product topology.
+\end{prop}
+\begin{prop}
+    If $q:X\rightarrow S$ is surjective, continuous, and an open (or closed) map, then $q$ is a quotient map.
+\end{prop}
+This follows immediately by considering saturated sets.
+
+Last Monday, we did a bunch of things to do with exact sequences. In particular, we constructed a natural $\del$ giving rise to a long exact sequence of homology groups. Why do we care that we can have such a long exact sequence in the first place for homology? Let $X,A$ be topological spaces where $A\subseteq X$ is given the subspace topology. 
+\begin{remark}
+    Observe that this forms a category $\mathbf{Top}_2$ called the pairs of spaces category
+\end{remark}
+Then, we have a natural way of embedding $S_*(A)$ into $S_*(X)$ induced by the natural inclusion $A \hookrightarrow X$. Projecting $S_*(X)$ onto $S_*(X)/\iota(S_*(A))$ then gives us an exact sequence of chain complexes $0 \rightarrow S_*(A)\rightarrow S_*(X)\rightarrow S_*(X)/\iota(S_*(A))\rightarrow 0$. 
+\begin{definition}
+    The chain complex $S_*(X,A) = S_*(X)/\iota(S_*(A))$ is called the relative chain complex of $A$ to $X$.
+\end{definition}
+\begin{definition}
+    The relative homology of $A$ to $X$ is the homology of the chain complex
+    $$H_*(X,A) = H_*(S_*(X,A))$$
+\end{definition} 
+Now, given a subspace $A \subseteq X$, we can form the quotient space $X/A$ where we identify all of $A$ as one point. A natural question is to ask how much does $H_*(X/A)$ line up with $H_*(X,A)$. It turns out that for good pairs (yes, that really is the terminology!), we do in fact have $H_*(X/A,A/A) \cong H_*(X,A)$ and therefore $H_n(X/A)\cong H_n(X,A)$ for all $n \neq 0$. Stay tuned!
+
+Lastly, we will look at one example of quotient spaces. These arise from groups.
+\begin{definition}
+    A group $G$ is called a topological group if the multiplication $\cdot : G\times G\rightarrow G$ is continuous and the inversion map $^{-1}:G\rightarrow G$ given by $g \mapsto g^{-1}$ is continuous.
+\end{definition}
+\begin{example}
+    Given any group $G$, giving it the discrete topology turns it into a topological group, and this is the usual topology for finite groups (as with finite sets).
+\end{example}
+\begin{example}\label{groupexample}
+    Any subgroup of $M_n(\mathbb R)$ or $M_n(\mathbb C)$ can be identified as a subset of $\mathbb R^{n^2}$ or $\C^{n^2}$ and can be given the subspace topology induced by the metric topology of $\mathbb R^{n^2}$ or $\C^{n^2}$. Many of such examples are Lie groups. For instance,
+    \begin{itemize}
+        \item $GL_n(\R),SL_n(\R)$
+        \item $GL_n(\C),SL_n(\C)$
+        \item $O(n),SO(n)$
+        \item $U(n),SU(n)$
+    \end{itemize}
+\end{example}
+Let the set $X/G$ is the collection of all orbits in $G$, i.e. equivalence classes under the equivalence relation $x \sim y$ if and only if there exists $g \in G$ such that $y = g\cdot x$. This is called the coset space. 
+\begin{definition}
+    Let $X$ be a topological space, $G$ a topological group, and let $G$ act on $X$. Then, quotienting $X$ by the group action from $G$ is the quotient space $X/G$.
+\end{definition}
+What are some consequences of this? A big, but obvious, one is the follows:
+\begin{prop}
+    Multiplication by $g$ is a homeomorphism on $X$.
+\end{prop}
+\begin{proof}
+    It has a continuous inverse $g^{-1}$ and the multiplication and inverse map of $G$ are continuous.
+\end{proof}
+
+\begin{prop}
+    Let $X$ be a topological space, $G$ a topological group, and let $G$ act on $X$. The quotient map $q:X \rightarrow X/G$ is an open map.
+\end{prop}
+\begin{proof}
+    Let $U\subseteq X$ be open. Notice $q^{-1}(q(U)) = \bigcup_{g \in G} g\cdot U $. Note that $g:U\rightarrow g\cdot U$ is a homeomorphism, but $U$ is open and every $g\cdot U$ is as well since multiplication by $g$ is a homeomorphism of $X$ with itself. Thus, $q^{-1}(q(U))$ is open. However, $q$ is a quotient map, so $q(U)$ is open.
+\end{proof}
+
+\begin{example}
+    Returning to the example of how we constructed $\R \P^n$, we identified it as quotienting it by $x \sim \pm y$ on the sphere $\S^n$. Let $O(n)$ be the usual orthogonal group. When $n=1$, $O(1)$ consists of multiplication by $1$ and multiplication by $-1$. We can therefore identify $O(1) = \set{1,-1}$. Note that by multiplying the $n\times n$ identity matrix with any element in $O(1)$, the matrix is still going to be orthonormal and therefore $O(1)$ embeds canonically into $O(n)$ in this manner.
+    
+    Notice $O(n+1)$ acts on $\R^{n+1}$ by matrix multiplication. $O(1)$ in particular then acts on $\R^{n+1}$ by multiplying each entry with something in $O(1)$ via the embedding just described. Since $O(n)$ consists of isometries, the action is also on $\S^n$.
+    
+    The orbits of each $x \in \R^{n+1}$ (and hence $\S^n$) under the action from $O(1)$ is exactly $\set{x,-x}$. Hence, $\R\P^n$ is the quotient  $\S^n/O(1)$ by the multiplication group action. 
+
+    The analogy of $O(1)$ with complex numbers is $U(1)$. We have $\S^{2n+1}\subseteq \C^{n+1} \cong \mathbb R^{2n+2}$. Similarly to $\R\P^n$, one can recover $\C \P^n$ as the quotient $\S^{2n+1}/U(1)$ with the multiplication group action.
+\end{example}
+\begin{exercise}
+    Prove Proposition \ref{Prop3}.
+\end{exercise}
+\begin{exercise}
+    Given a genus 2 torus (that is, a two holed torus), can you recover it as a quotient by identifying edges of a polygon?
+\end{exercise}
+\section{Adjunction spaces}
+
+\begin{definition}
+    Let $B,X$ be topological spaces and $A\subseteq X$ be closed. Let $f:A\rightarrow B$ be continuous. The adjunction space $B\cup_f X$ is the quotient space $(B\sqcup X)/\sim$ where $f(a) \sim a$ for all $a \in A$. 
+\end{definition}
+This is equivalent to the adjunction space having the final topology relative to $\bar \iota_B,\bar \iota_X$.
+
+The way to think about the definition of an adjunction space is that we glue all of $f(A)\subseteq B$ to $A$. This is illustrated in the following picture:
+
+\begin{center}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{Adjunction.jpg}
+\end{figure}
+\end{center}
+
+We will think of $X$ as an extended sort of domain for $f$ (note that $f$ has no reason to be well defined on all of $X$ and has no reason to be extendable to all of $X$), Note that in the notation $B\cup_fX$, the codomain of $f$ lies on the left rather than on the right! Of course, the labelling is arbitrary, but I will stick to this convention since introducing both $X$ and $Y$ in this context in my opinion will only make the notation more confusing (I tried playing with it but it just looked too incompatible with other sources I am referencing for the reading group). Later on, in \cite{miller}, we will swap the ordering of $B\cup_f X$ into $X \cup_fB$ to mean the quotient space $X\sqcup B$ by the same relation. Of course, these two spaces are canonically homeomorphic.
+
+As with before, we wish to characterize this construction with a universal property. Let us introduce the concept of a pushout. 
+\begin{definition}
+Let $\cC$ be a category, $X_1,X_2,Y$ be objects, $f_1:Z\rightarrow X_1$ and $f_2:Y\rightarrow X_2$. The pushout of $f_1$ and $f_2$ is an object $P$ and morphisms $i_1,i_2$ such that for any object $Q$ and morphisms $j_1:X_1 \rightarrow Q, j_2:X_2 \rightarrow Q$, there exists a unique morphism $\bar f: P \rightarrow Q$ such that following diagram commutes:
+    \begin{center}
+        \begin{tikzcd}
+Y \arrow[d, "f_2"'] \arrow[r, "f_1"]                 & X_1 \arrow[d, "i_1"] \arrow[rdd, "j_1"', bend left] &   \\
+X_2 \arrow[r, "i_2"'] \arrow[rrd, "j_2", bend right] & P \arrow[rd, "\bar f", dashed]                      &   \\
+                                                     &                                                     & Q
+\end{tikzcd}
+    \end{center}
+We then also call the following square a pushout:
+\begin{center}
+    \begin{tikzcd}
+Y \arrow[d, "f_2"'] \arrow[r, "f_1"] & X_1 \arrow[d, "i_1"] \\
+X_2 \arrow[r, "i_2"']                & P                   
+\end{tikzcd}
+\end{center}
+\end{definition}
+
+\begin{example}
+    The $\mathrm{lcm}$ of two elements $a,b$ in a general ring theory definition is any element $d$ divisible by $a$ and $b$ such that for any $c $ such that $a \mid c, b \mid c$, $d \mid c$. For any ring $R$, there is a category whose objects are elements of $R$, and for any two objects $a,b$, we assign it a morphism $a \rightarrow b$ if and only if $a \mid b$ (read up the preorder category). The $\mathrm{lcm}$ is then defined to satisfy the property above. Given any morphisms $c \mid a, c \mid b$, the triple $(\mathrm{lcm}(a,b), a\mid \mathrm{lcm}(a,b), b \mid \mathrm{lcm}(a,b))$ then forms a pushout for those morphisms.
+\end{example}
+\begin{example}
+    If $A,B$ are sets ,$f_1 : A\cap B\hookrightarrow A$ and $f_2: A\cap B \hookrightarrow B$ are canonical embeddings, then the triple $(A\cup B, \iota_A,\iota_B)$ is a pushout for $f_1,f_2$ where $\iota_A,\iota_B$ are canonical embeddings.
+\end{example}
+
+If we view $B\cup_f X$ as its underlying set, then the triple $(B\cup_f X,\bar \iota_B,\bar \iota_X)$ forms a pushout for $f,\iota$ where $\iota:A\rightarrow X$ is the canonical embedding, $\iota_B: B\rightarrow B\sqcup X, \iota_X: X\rightarrow B\sqcup X$ are the canonical embeddings into the disjoint union space, and the bar on top denotes composing with the quotient $q:B\sqcup X \rightarrow B\cup_f X$. Hence, we can take the universal property of an adjunction space to be as follows:
+\begin{prop}
+    Let $B,X$ be topological spaces and $A\subseteq X$ be closed. Let $f:A\rightarrow B$ be continuous. The adjunction space with maps $\bar \iota_B, \bar \iota_X$ is then the pushout of $f,\iota$. That is, for any  topological space $Q$ and continuous functions $j_1:X \rightarrow Q, j_2:B \rightarrow Q$, there exists a unique continuous function $\bar f: B\cup_f X \rightarrow Q$ such that following diagram commutes:
+    \begin{center}
+        \begin{tikzcd}
+A \arrow[d, "\iota"'] \arrow[r, "f"]                 & B \arrow[d, "\bar \iota_B"] \arrow[rdd, "j_1"', bend left] &   \\
+X \arrow[r, "\bar \iota_X"'] \arrow[rrd, "j_2", bend right] & B\cup_f X \arrow[rd, "\bar f", dashed]                      &   \\
+                                                     &                                                     & Q
+\end{tikzcd}
+    \end{center}
+\end{prop}
+
+\begin{prop}
+    Let $B\cup _f X$ be an adjunction space where $A\subseteq X$ is closed. Then, \begin{enumerate}
+        \item $\bar \iota_X$ is a closed map
+        \item $\bar \iota_B|_{B\backslash A}$ is an open map
+    \end{enumerate}
+\end{prop}
+We will sometimes identify $\iota(U) = U$ for any embedding and subset $U$ of a space for the sake of convenience when the distinction is not as important or when omitting the distinction does not make the overall message less clear.
+\begin{proof}
+    Let $F \subseteq B$ be closed. Then, $\iota_B$ is an embedding into $B\sqcup X$ and since $B\sqcup X$ is a disjoint union, the embedding is a closed map. For the quotient $q:B\sqcup X\rightarrow B\cup_fX$, consider $q^{-1}(q(\iota_B(F)))$. By definition, this is exactly $F\sqcup f^{-1}(f(A)\cap F) $. Now, $f:A\rightarrow B$ so then $f^{-1}(f(A)\cap F) = f^{-1}(F) $. Therefore, each component of $F\sqcup  f^{-1}(f(A)\cap F)$ is closed and therefore $q^{-1}(q(\iota_Y(F)))$ is closed. Since $q$ is a quotient, $q(\iota_Y(F))$ is closed as well and $\bar \iota_Y$ is a closed map.
+
+    For the second assertion, for any open set $U$ not intersecting with $A$, $\iota_B$ is an embedding and the embedding is an open map into the disjoint union. For the quotient $q:B\sqcup X\rightarrow B\cup_fX$, consider $q^{-1}(q(\iota_B(U)))$. Note that for any $U \subseteq X$, we have $q^{-1}q(\iota_B(U)) =  U\sqcup f(U\cap A)$. Thus, $q^{-1}q(\iota_B(U)) =  U\sqcup \varnothing = \iota_B(U)$ which is open, and therefore so is $q(\iota_B(U))$ since $q$ is a quotient. Thus, $\bar \iota_B|_{B\backslash A}$ is an open map.
+\end{proof}
+\begin{corollary}
+    $\bar \iota_B(B)$ is a closed subset of $B\cup_f X$ and $\bar \iota_X(X\backslash A)$ is an open subset of $B \cup_f X$.
+\end{corollary}
+\begin{corollary}\label{corollary1}
+$\bar \iota_B$ and $\bar \iota_{X}|_{X\backslash A} $ are embeddings.
+\end{corollary}
+\begin{proof}
+    The maps are bijective and continuous if we restrict the codomain to their images. Since the maps are closed and open respectively, the maps are homeomorphisms of the domain with the image, i.e. the maps are embeddings.
+\end{proof}
+In practice, since we have the above embeddings, we will usually just identify $B, X\backslash A$ as subspaces of $B\cup_f X$ as opposed to always referring to them as $\bar \iota_B(B)$ or $
+\bar \iota_X(X\backslash A)$.
+
+The following seems obvious, and there are several ways to prove it. I shall prove this via universal properties.
+\begin{proposition}
+    $B\cup_f X \cong \bar \iota_B (B)\sqcup \bar \iota_{X}(X\backslash A)$
+\end{proposition}
+\begin{proof}
+    Let $P_1= \bar \iota_B (B),P_2= \bar \iota_X|_{X\backslash A}(X)$. We verify that $B\cup_f X$ satisfies the universal property of the disjoint union space $P_1 \sqcup P_2$. Note that $\bar \iota_B, \bar \iota_X|_{X\backslash A}$ are embeddings by Corollary \ref{corollary1}. For the sake of distinguishing between viewing these maps as mappings into $B\cup_fX$ versus mappings to the image, we denote $i_1,i_2$ to be the maps $\bar \iota_B, \bar \iota_X|_{X\backslash A}$ viewed as maps to their images. Let $Q$ be a topological space, $\eta_1:P_1\rightarrow Q$ and $\eta_2:P_2\rightarrow Q$ be continuous. 
+
+     Define $j_1:B \rightarrow Q$ by $j_1 = \eta_1\bar \iota_B$, and define $j_2:X \rightarrow Q$ by
+    $$j_2(x) = \begin{cases}
+        \eta_1 \bar \iota_B f(x) & \mathrm{if} \ x \in A \\
+        \eta_2 \bar \iota_X(x) & \mathrm{otherwise}
+    \end{cases}$$ 
+    The continuity of $j_1$ is obvious. To show the map $j_2$ is continuous, let $U \subseteq Q$ be closed.
+    \begin{align*}
+        j_2^{-1}(U) &= \set{x \in X | j_2(x) \in U} \\
+                    &= \set{x \in X \backslash A |\eta_2 \bar \iota_X(x) \in U} \cup \set{a \in A | \eta_1 \bar \iota_B (f(a)) \in U} \\
+                    &= (\eta_{2}\bar \iota_X)^{-1}(U) \cup (\eta_1 \bar \iota_B f(a))^{-1}(U)
+    \end{align*}
+    and since $\eta_{2}\bar \iota_X$ and $\eta_1 \bar \iota_B f(a)$ are continuous, their preimages are closed in $X$ and $A$ respectively. Since $A$ is closed, $(\eta_1 \bar \iota_B f(a))^{-1}(U)$  is the intersection of a closed set and $A$ which is closed in $X$. Thus, $j_2^{-1}(U)$ is a finite union of closed sets which is closed, and therefore $j_2$ is continuous. 
+    
+    Let $g$ be a continuous map such that the following diagram commutes:
+    \begin{center}
+        \begin{tikzcd}
+                                                  & B\cup_f X \arrow[dd, "g"] &                                                   \\
+P_1 \arrow[ru, "i_1", hook] \arrow[rd, "\eta_1"'] &                           & P_2 \arrow[lu, "i_2"', hook] \arrow[ld, "\eta_2"] \\
+                                                  & Q                         &                                                  
+\end{tikzcd}
+    \end{center}
+
+    Now let $b \in B$. Then, note that
+    \begin{align*}
+        j_1(b) = \eta_1 \bar \iota_B(b) = \eta_1 (i_1(\iota_B(b))) = g(\bar\iota_B(b)) = g\bar\iota_B (b)
+    \end{align*}
+    As for $x \in X\backslash A$ and $a \in A$, we have
+    \begin{align*}
+        j_1 (x) &= \eta_2 \bar \iota_X(x) = \eta_2 (i_2(\bar\iota_X(x))) = g(\bar\iota_X|_{X\backslash A}(x))) = g\bar \iota_X (x) \\
+        j_1 (a) &= \eta_1\bar \iota_B f(a) = \eta_1 (i_1(\bar\iota_B(f(a)))) = g(\bar \iota_B(f(a))) =  g(\bar \iota_X(a))= g\bar \iota_X (a)
+    \end{align*}
+    and thus the following diagram commutes, where the universal property for adjunction spaces guarantees that $g$ is unique:
+    \begin{center}
+        \begin{tikzcd}
+A \arrow[d, "\iota"'] \arrow[r, "f"]                 & B \arrow[d, "\bar \iota_B"] \arrow[rdd, "j_1"', bend left] &   \\
+X \arrow[r, "\bar \iota_X"'] \arrow[rrd, "j_2", bend right] & B\cup_f X \arrow[rd, "g", dashed]                      &   \\
+                                                     &                                                     & Q
+\end{tikzcd}
+    \end{center}
+\end{proof}
+\begin{proposition}
+    If $f$ is a quotient map, then so is $\bar \iota_X:X \rightarrow B\cup_fX$.
+\end{proposition}
+\begin{proof}
+    Clearly, $\bar \iota_X$ is surjective. Let $g:B\cup_fX \rightarrow Z$ be continuous. Suppose $g\bar \iota_X$ is continuous. Then, by commutativity we have $g\bar \iota_X \iota= g\bar \iota_B f$. Since $f$ is a quotient map, we must have that $g\bar \iota_B$ is continuous. The continuous maps $g\iota_B$ and $g\iota_X$ then gives rise to the following commutative diagram:
+    \begin{center}
+        \begin{tikzcd}
+A \arrow[d, "\iota"'] \arrow[r, "f"]                 & B \arrow[d, "\bar \iota_B"] \arrow[rdd, "g\iota_B"', bend left] &   \\
+X \arrow[r, "\bar \iota_X"'] \arrow[rrd, "g\iota_X", bend right] & B\cup_f X \arrow[rd, "g", dashed]                      &   \\
+                                                     &                                                     & Q
+\end{tikzcd}
+    \end{center}
+    where since $g$ makes the diagram above commute as sets, the existence and uniqueness of such a continuous map in the diagram above forces $g$ to be continuous. Clearly, if $g$ is continuous then so is $g\circ \iota_X$. Hence, $\iota_X$ is a quotient map.
+\end{proof}
+\begin{example}
+    For a single point space $*$ and $A \subseteq X$ that is closed, let $c_*:A\rightarrow *$ be the unique map. Then, $*\sqcup_{c_*}X$ identifies all of $A$ as one point with $*$. Thus, $*\sqcup_{c_*}X \cong X/A$.
+\end{example}
+\begin{example}
+    Let $D^2$ be the 2D disk, $\S^1$ be the unit sphere parametrized by $e^{2\pi i x}$, which is a closed subspace of $D^2$. Let $f:\S^{1} \rightarrow D^{2}$ be the map $z\mapsto z^2$. This maps every $z$ to its antipodal point. Then, notice for all $z \in \S^1$, $z^2 = (-z)^2$ in the image, so that antipodal points are identified using this map $f$. The space $\S^1 \cup_f D^2$ is another possible model for $\R\P^2$!
+\end{example}
+\begin{example}
+    Let $X, B$ be spaces that share one point $x_0$ in common, and suppose $\set {x_0}$ is a closed subspace of $X$. One can make an identification $f$ between these points and form the adjunction $B\cup_fX$. In the case where $X,B$ are spheres $\S^n,\S^m$, this construction is called the wedge $\S^n \vee \S^m$.
+\end{example}
+\begin{remark}
+    There is a category $\mathbf{Top}_*$ of pointed spaces $(X,x_0)$. 
+\end{remark}
+
+Finally, we will give a condition for which when certain squares can be pushouts. A proof can be found in \cite{brown}.
+\begin{prop}
+Let $A\subseteq X$ and $B\subseteq P$ be closed, $f:X\rightarrow P$ be continuous such that $f|_A: A \rightarrow B$. Let $\iota_1 :B \rightarrow P, \iota_2:A\rightarrow X$ be inclusions, and suppose the following diagram commutes:
+\begin{center}
+    \begin{tikzcd}
+A \arrow[d, "\iota_2"'] \arrow[r, "f|_A"] & B \arrow[d, "\iota_1"] \\
+X \arrow[r, "f"]                   & P                    
+\end{tikzcd}
+\end{center}
+    If $f(X)$ is a closed subspace of $P$ and $\bar \iota_X:X\rightarrow B\cup_f X$ is a quotient map, then the square is a pushout.
+\end{prop}
+
+\begin{exercise}
+    Suppose the following diagram commutes and the left square is a pushout:
+    \begin{center}
+        \begin{tikzcd}
+A \arrow[d] \arrow[r] & B \arrow[d] \arrow[r] & C \arrow[d] \\
+D \arrow[r]           & E \arrow[r]           & F          
+\end{tikzcd}
+    \end{center}
+    Prove that the entire rectangle is a pushout if and only if the square on the right is a pushout.
+\end{exercise}
+\printbibliography
+\end{document}
+
