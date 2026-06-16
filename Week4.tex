@@ -1,0 +1,800 @@
+\documentclass[12pt,reqno]{amsart}
+\usepackage[margin=1in]{geometry}                % See geometry.pdf to learn the layout options. There are lots.
+\geometry{letterpaper}                   % ... or a4paper or a5paper or ... 
+%\geometry{landscape}                % Activate for for rotated page geometry
+%\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}
+\usepackage{comment}
+\usepackage{changepage}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{enumerate}
+\usepackage{float}
+\usepackage{hyperref}
+\usepackage{MnSymbol}%
+\usepackage{wasysym}%
+
+\usepackage{xcolor}
+
+\usepackage{mathtools}
+
+\usepackage{subcaption}
+\usepackage{thmtools, thm-restate}
+\usepackage{array}
+
+
+%\usepackage{fancyhdr}
+%\usepackage{hyperref}
+%\usepackage{wasysym}
+
+% \usepackage[style=alphabetic]{biblatex}
+%\addbibresource{ref.bib}
+
+ %space between paragraphs
+%
+%
+%
+%
+%
+
+
+%\newtheorem{theorem}{Theorem}[section]
+%\newtheorem{proposition}[theorem]{Proposition}
+%\newtheorem{lemma}[theorem]{Lemma}
+%\newtheorem{corollary}[theorem]{Corollary}
+%\newtheorem{conjecture}[theorem]{Conjecture}
+%%\theoremstyle{definition}
+%\newtheorem{definition}[theorem]{Definition}
+%\newtheorem{example}[theorem]{Example}
+%\newtheorem{remark}[theorem]{Remark}
+%\newtheorem{notation}[theorem]{Notation}
+%\newtheorem{question}[theorem]{Question}
+%
+
+
+
+\declaretheorem{theorem}
+\numberwithin{theorem}{section}
+
+\declaretheorem[sibling=theorem]{corollary, lemma, proposition, conjecture}
+\theoremstyle{definition}
+\declaretheorem[sibling=theorem]{definition,notation}
+\theoremstyle{remark}
+\declaretheorem[sibling=theorem]{example, remark, question, exercise}
+
+
+
+
+
+
+
+
+\numberwithin{equation}{section}
+
+
+
+\newcommand{\pb}[1]{\marginpar{PB: #1}}
+\newcommand{\diam}{\textrm{diam}}
+
+%\input{dfmacros}
+%%% Mathcal
+\newcommand{\cA}{\mathcal{A}}
+\newcommand{\Bor}{\mathrm{Bor}}
+\newcommand{\cB}{\mathcal{B}}
+\newcommand{\cC}{\mathcal{C}}
+\newcommand{\cD}{\mathcal{D}}
+\newcommand{\cE}{\mathcal{E}}
+%\newcommand{\cF}{\mathcal{F}}
+\newcommand{\cG}{\mathcal{G}}
+\newcommand{\cH}{\mathcal{H}}
+\newcommand{\cI}{\mathcal{I}}
+\newcommand{\cJ}{\mathcal{J}}
+\newcommand{\cK}{\mathcal{K}}
+\newcommand{\cL}{\mathcal{L}}
+\newcommand{\cM}{\mathcal{M}}
+\newcommand{\cN}{\mathcal{N}}
+\newcommand{\cO}{\mathcal{O}}
+%\newcommand{\cP}{\mathcal{P}}
+%\newcommand{\cQ}{\mathcal{Q}}
+%\newcommand{\cR}{\mathcal{R}}
+\newcommand{\cS}{\mathcal{S}}
+\newcommand{\cT}{\mathcal{T}}
+\newcommand{\cU}{\mathcal{U}}
+\newcommand{\cV}{\mathcal{V}}
+\newcommand{\cW}{\mathcal{W}}
+\newcommand{\cX}{\mathcal{X}}
+\newcommand{\cY}{\mathcal{Y}}
+\newcommand{\cZ}{\mathcal{Z}}
+\newcommand{\proj}{\textrm{proj}}
+%%% Mathbb
+% \newcommand{\bA}{\mathbb{A}}
+% \newcommand{\bB}{\mathbb{B}}
+% \newcommand{\bC}{\mathbb{C}}
+% \newcommand{\bD}{\mathbb{D}}
+% %\newcommand{\bE}{\mathbb{E}}
+% \newcommand{\bF}{\mathbb{F}}
+% \newcommand{\bG}{\mathbb{G}}
+% \newcommand{\bH}{\mathbb{H}}
+% \newcommand{\bI}{\mathbb{I}}
+% \newcommand{\bJ}{\mathbb{J}}
+% \newcommand{\bK}{\mathbb{K}}
+% \newcommand{\bL}{\mathbb{L}}
+% \newcommand{\bM}{\mathbb{M}}
+% \newcommand{\bN}{\mathbb{N}}
+% \newcommand{\bO}{\mathbb{O}}
+% \newcommand{\bP}{\mathbb{P}}
+% \newcommand{\bQ}{\mathbb{Q}}
+% \newcommand{\bR}{\mathbb{R}}
+% \newcommand{\bS}{\mathbb{S}}
+% \newcommand{\bT}{\mathbb{T}}
+% \newcommand{\bU}{\mathbb{U}}
+% \newcommand{\bV}{\mathbb{V}}
+% \newcommand{\bW}{\mathbb{W}}
+% \newcommand{\bX}{\mathbb{X}}
+% \newcommand{\bY}{\mathbb{Y}}
+% \newcommand{\bZ}{\mathbb{Z}}
+
+%--------------Commands------------------
+\newcommand{\spt}{\mathrm{spt}}
+\newcommand{\RR}{\mathbb R}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\C}{\mathbb C}
+\newcommand{\N}{\mathbb N}
+\newcommand{\T}{\mathbb T}
+\newcommand{\F}{\mathbb F}
+\newcommand{\FP}{\mathbb{FP}}
+\newcommand{\A}{\Tilde{A}_{4,d}}
+\newcommand{\Aq}{\Tilde{A}_{q,d}}
+\newcommand{\B}{\mathbb B}
+\renewcommand{\S}{\mathbb S}
+\newcommand{\w}{\omega}
+\newcommand{\W}{\mathbb{W}}
+\newcommand{\e}{\epsilon}
+\newcommand{\g}{\gamma}
+\newcommand{\p}{\varphi}
+\newcommand{\s}{\psi}
+\newcommand{\z}{\zeta}
+\renewcommand{\l}{\ell}
+\renewcommand{\a}{\alpha}
+\renewcommand{\b}{\beta}
+\renewcommand{\d}{\de}
+\renewcommand{\k}{\kappa}
+\newcommand{\m}{\textfrak{m}}
+\renewcommand{\P}{\mathbb{P}}
+\newcommand{\Tr}{\textup{Tr}}
+\newcommand{\Fav}{\textrm{Fav}}
+
+\newcommand{\op}[1]{\operatorname{{#1}}}
+\newcommand{\im}{\operatorname{Im}}
+\newcommand{\pd}[2]{\frac{\itemtial #1}{\itemtial #2}}
+\newcommand{\rd}[2]{\frac{d #1}{d #2}}
+\newcommand{\ip}[2]{\left \langle #1 , #2 \right \rangle}
+\renewcommand{\j}[1]{\left \langle #1 \right \rangle}
+\newcommand{\set}[1]{\left \{ #1 \right \}}
+\newcommand{\cl}{\operatorname{cl}}
+\newcommand{\into}{\hookrightarrow}
+\newcommand{\pa}{\mathrm{pa}}
+\newcommand{\nd}{\mathrm{nd}}
+
+\newcommand{\mc}{\mathcal}
+\newcommand{\mb}{\mathbb}
+\newcommand{\f}{\mathfrak}
+\renewcommand{\Re}{\text{Re}}
+\renewcommand{\Im}{\text{Im}}
+\newcommand{\Fq}{\mathbb{F}_q}
+
+\def\bff{\mathbf f}
+\def\bE{\mathbf E}
+\def\bx{\mathbf x}
+\def\boldR{\mathbf R}
+\def\by{\mathbf y}
+\def\bz{\mathbf z}
+\def\rationals{\mathbb Q}
+\newcommand{\norm}[1]{ \|  #1 \|}
+\def\scriptl{{\mathcal L}}
+\def\scripti{{\mathcal I}}
+\def\scriptr{{\mathcal R}}
+
+\def\bEdagger{{\mathbf E}^\dagger}
+%\def\set4{\{1,2,3,4\}}
+%\def\set4{\overline{4}}
+%set4 changed to setf
+\def\setf{\mathcal I}
+%tup14 changed to tupd
+\def\tupf{(1,2,3,4)}
+\def\bk{\mathbf k}
+\def\sl{\operatorname{Sl}}
+\def\gl{\operatorname{Gl}}
+\def\eps{\varepsilon}
+\def\one{{\mathbf 1}}
+\def\bEstar{{\mathbf E}^\star}
+\def\be{{\mathbf e}}
+\def\bv{{\mathbf v}}
+\def\bw{{\mathbf w}}
+\def\br{{\mathbf r}}
+
+
+\newcommand{\hatf}{\hat{f}}
+\newcommand{\hatg}{\hat{g}}
+\newcommand{\hath}{\hat{h}}
+\newcommand{\cchi}{\Check{\chi}}
+\newcommand{\cpsi}{\Check{\psi}}
+\newcommand{\hchi}{\hat{\chi}}
+\newcommand{\lesim}{\lesssim}
+\newcommand{\RapDec}{\mathrm{RapDec}}
+\newcommand{\bT}{\mathbf{T}}
+\newcommand{\del}{\partial}
+
+\theoremstyle{definition}
+\newtheorem*{comm*}{Comment}
+\newtheorem*{lemma*}{Lemma}
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{ex}[thm]{Example}
+\newtheorem{conj}[thm]{Conjecture}
+\newtheorem{cor}[thm]{Corollary}
+\newcommand{\pp}{\mathbin{\!/\mkern-5mu/\!}}
+\newcommand{\supp}{\mathrm{supp}}
+
+
+\newtheorem{prop}[theorem]{Proposition}
+
+%\DeclareMathOperator{\Hopf}{Hopf}
+\DeclareMathOperator{\codim}{codim}
+
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\FF}{\mathbb{F}}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\D}{\mathbb D}
+\newcommand{\de}{\delta} %%%%%\delta
+\newcommand{\De}{\Delta} %%%%%\delta
+\newcommand{\ga}{\gamma}
+\newcommand{\Ga}{\Gamma}
+\newcommand{\ZS}{\mathbb S}
+
+\newcommand{\wh}{\widehat}
+\newcommand{\wt}{\widetilde}
+\newcommand{\si}{\sigma}
+\newcommand{\Si}{\Sigma}
+\newcommand{\Tau}{\mathcal T}
+\newcommand{\poly}{\textup{Poly}}
+\newcommand{\thmc}{\textup{Thm}\Ga^n}
+\newcommand{\thmC}{\textup{Thm}\Ga^{n+1}}
+\newcommand{\thmm}{\textup{Thm}\mathcal M^n}
+\newcommand{\gn}{\Gamma_\circ}
+\newcommand{\mn}{\mathcal M_\circ}
+\newcommand{\en}{\epsilon_{\circ}}
+\newcommand{\I}{\mathbb I}
+\newcommand{\dist}{\textup{dist}}
+%\newcommand{\eps}{\epsilon}
+\newcommand{\Gn}{\Ga_{\circ}}
+\newcommand{\Id}{\boldsymbol 1}
+\newcommand{\Fp}{\mathbb{F}_p}
+\newcommand{\bdA}{\mathbf{A}}
+\newcommand{\bdE}{\mathbf{E}}
+%\newcommand{\bv}{\bold{v}}
+\newcommand{\ob}{\mathrm{ob}}
+\newcommand{\id}{\mathrm{id}}
+\newcommand{\Mor}{\mathrm{Mor}}
+\newcommand{\Sin}{\mathrm{Sin}}
+\renewcommand{\hom}{\mathrm{Hom}}
+\newcommand{\coker}{\mathrm{coker}}
+\usepackage{tikz} 
+\usetikzlibrary{positioning}
+\newcommand{\ind}{\perp\!\!\!\!\!\perp} 
+
+\usepackage[
+backend=biber,
+style=alphabetic,
+sorting=nyt
+]{biblatex}
+\addbibresource{references.bib}
+
+\usepackage{tikz-cd}
+\usetikzlibrary{shapes}
+\usetikzlibrary{calc}
+\begin{document}
+\title{Topology Reading Group Week 4}
+\maketitle
+Last week, we spent our time studying quotient spaces. This week, we will finish off some essential topics in point set topology before moving on fully to working with homology. In the process, we shall calculate the homology of some spaces.
+\section{Homotopy}
+We will now define one of the most important notions in topology. From now on, we shall assume all maps are continuous unless otherwise stated.
+\begin{definition}
+Let $f,g:X\rightarrow Y$ be continuous. A homotopy between $f,g$ is a continuous function $h:X\times I\rightarrow X$ such that $h(x,0)=f(x)$ and $h(x,1)=g(x)$ for all $x \in X$. Here, $I$ is the unit interval. Homotopic maps are denoted $f\simeq g$.
+\end{definition}
+\begin{proposition}
+    Homotopic maps form an equivalence class. Composition of homotopic maps are homotopic.
+\end{proposition}
+Hence, this gives rise to a new category.
+\begin{definition}
+    The homotopy category denoted $\mathrm{h}\mathbf{Top}$ is the category whose objects are topological spaces and morphisms are homotopic maps.
+\end{definition}
+\begin{definition}
+    Two spaces $X,Y$ are homotopy equivalent if they are isomorphic in the category $\mathrm{h}\mathbf{Top}$. That is, there exists maps $f:X\rightarrow Y,g:Y \rightarrow X$ such that $fg \simeq \id_Y$ and $gf \simeq \id_X$. Homotopy equivalent spaces are denoted $X\simeq Y$ whereas homeomorphic spaces are denoted $X\cong Y$.
+\end{definition}
+Clearly, if $X$ and $Y$ are homeomorphic, then they are also homotopy equivalent.
+\begin{example}
+    Consider $\R^n$ with the Euclidean topology. All maps from a closed interval to $\R^n$ are homotopic to one another.
+\end{example}
+\begin{definition}
+    A map is called null-homotopic if it is homotopic to a constant map.
+\end{definition}
+\begin{example}
+    Consider $\R^n$ once again. The identity map on $\R^n$ is homotopic to a constant map. Let $c_x: \R^n \rightarrow x$ be the constant map to $\set x$. Let $\iota : \set{x}\rightarrow \R^n$ be the map that sends $x$ to the origin, and notice $\iota c_x : \R^n \rightarrow \R^n$ is a constant map. Let $h$ be the map $t\iota c_x+(1-t)\id_{\R^n}$. This is a homotopy between the two maps. Thus, the identity map is homotopic to a constant map and the two spaces $\R^n$ and $\set x$ are homotopy equivalent.
+\end{example}
+We call such spaces contractible.
+\begin{definition}
+    A space $X$ is called contractible if the map $X \rightarrow *$ is a homotopy equivalence. Here, $*$ denotes a single point space.
+\end{definition}
+Note that this is equivalent to the identity map being homotopic to a constant map.
+\begin{example}
+    The cone space $CX = (X\times I)/(X\times \set{0})$ is always contractible, and in particular, it contracts to the equivalence class corresponding to $X\times \set{0}$.
+    \begin{proof}
+    Let $x_0$ denote the point in $CX$ corresponding to $X\times \set{0}$. The map $h:(X\times I)\times I \rightarrow X \times I$ given by $h((x,y),t) = (x,(1-t)y)$ is a homotopy between $\id_{X\times I}$ and the map $\pi$ which projects all of $X\times I$ onto $X\times \set{0}$. Let $q:X\times I \rightarrow CX$ be the quotient map. Then, since $I$ is strongly locally compact (stay tuned for Friday), $q\times \id:(X\times I) \times I \rightarrow CX\times I$ is also a quotient. Notice the map $qh :X \times I \rightarrow CX$ is continuous, so the universal property gives a (continuous) induced map $\bar h$ such that the following diagram commutes:
+        \begin{center}
+            \begin{tikzcd}
+(X\times I)\times I \arrow[d, "q\times \id"'] \arrow[r, "qh"] & CX \\
+CX \times I \arrow[ru, "\bar h"', dashed]                        &   
+\end{tikzcd}
+        \end{center}
+    Now, we have
+    \begin{align*}
+        \bar h (q(x,y),t)=\bar h q\times \id((x,y),t)  = qh((x,y),t)
+    \end{align*}
+    and therefore $\bar h (q(x,y),0) = q\id_X$ and $\bar h (q(x,y),1) = q \pi $. By surjectivity of $q$, we must have that every $a$ can be written as some $x,y \in X\times I$. Thus, we have that $\bar h(a,0) = q(x,y)=a$ and $\bar h (a,1) = q\pi = q(x,0) = x_0$ and hence the identity map is homotopic to a constant map.
+    \end{proof}
+\end{example}
+Let us look at another example of a contractible space.
+\begin{definition}
+    A subset $X\subseteq \R^n$ is said to be star shaped with respect to $b \in X$ if for all $x \in X$, for all $t \in [0,1]$, $tb+(1-t)x \in X$. 
+\end{definition}
+Here, the map $h:X\times I\rightarrow X$ given by $h(x,t)=tb+(1-x)$ is a homotopy between the identity on $X$ and the constant map that sends everything to $b$.
+
+Let us connect these concepts to homology. We will finally do some computations. Firstly for $\varnothing$, $S_n(\varnothing)=0$ for all $n$ so then $H_n(\varnothing) = 0$ for all $n$. Next,
+\begin{theorem}
+    Let $*$ be the one point space. Then, $H_0 (*)\cong \Z$ and $H_i(*) = 0$ otherwise.
+\end{theorem}
+\begin{proof}
+    For any $n \in \Z_{\geq 0}$, $\Sin_n(*) = \set{c_*^n} $ where $c_*^n:\Delta^n \rightarrow *$ is the unique constant map. Thus, $S_n(*) $ is the free abelian group generated by $c_*^n$ and hence we have the chain complex
+    $$\cdots \rightarrow \Z \rightarrow \Z \rightarrow \Z \rightarrow 0 \rightarrow 0 \rightarrow \cdots$$
+    where the first 0 appears at $n = -1$. For any $0 \leq i < n$, $c_*^n\circ d^i$ is a continuous map $\Delta^{n-1}\rightarrow *$ and must therefore be the unique map $c_*^{n-1} \in \Sin_{n-1}(*)$.
+    Therefore we have
+    $$d_n(c_*^n) = \sum_{i=0}^n(-1)^i c_*^n\circ d^i = \begin{cases}
+        0 & \text{if } n > 0\text{ odd } \\
+        -c_*^{n-1} & \text{if }n > 0 \text{ even}
+    \end{cases}$$
+    And one can check that $H_n(*) = 0$ for all $n \neq 0$ as well as $H_0(*) \cong \Z$.
+\end{proof}
+Notice $\Sin_0(X)$ just consists of maps that send $*\mapsto x$ for $x \in X$. Thus, $S_n(X)$ just consists of linear combinations $\sum_{i=1}^r a_ix_i$ where $x_i \in X$. We can then define $\varepsilon: S_0(X)\rightarrow \Z$ by sending $\sum_{i=1}^r a_ix_i$ to $\sum_{i=1}^r a_i$. 
+\begin{definition}
+    The map $\varepsilon: S_0(X) \rightarrow \Z$ defined above is called the augmentation map.
+\end{definition}
+\begin{definition}
+    The augmented chain complex $\tilde S_*(X)$ is defined as $\tilde S_n(X) = S_n(X)$ for $n \neq -1$, $\tilde S_{-1}(X) = \Z$, and instead of $d$ being the map $\tilde S_0(X)\rightarrow \tilde S_{-1}(X)$, we use $\varepsilon$ instead. The augmented homology $\tilde H_*(X)$ is the homology of the augmented chain complex.
+\end{definition}
+\begin{proposition}
+    If $X$ is non-empty, $ H_0(X) \cong \tilde H_0(X)\oplus \Z$ and $H_n(X) \cong \tilde H_n(X)$ for all other $n$. Also, $\tilde H_n(\varnothing) = 0$ if $n \neq -1$ and $\tilde H_n(\varnothing) = \Z$ if $n= -1$.
+\end{proposition}
+\begin{remark}
+    Note that the convention for $\tilde H_n(\varnothing)$ is not universally accepted. We will just ignore this fact.
+\end{remark}
+We will prove the case when $X$ is non-empty.
+\begin{proof}
+    Let $X$ be non-empty. We immediately have $H_n(X) = \tilde H_n(X)$ for all $n \neq 0$. For $n = 0$, note that we have an embedding $\iota: \tilde H_0(X) \rightarrow H_0(X)$ where $\tilde H_0(X) = \ker \varepsilon /\Im d_1$. Also, since the augmentation map is defined on $\varepsilon :S_0(X) \rightarrow \Z$, it descends down to a map $\bar \varepsilon: H_0(X) \rightarrow \Z$. This map is surjective since $\varepsilon$ is surjective and $X$ is non-empty so that $H_0(X)$ is naturally isomorphic to $\Z \pi_0 $ (see one of the exercises when we discuss connectedness next time). Also, we clearly must also have $\tilde H_0(X) = \ker \bar \varepsilon$. Thus, we have an exact sequence
+    $$0 \rightarrow \tilde H_0(X) \xrightarrow{\iota} H_0(X) \xrightarrow{\bar \varepsilon } \Z \rightarrow 0$$
+    However, letting $x \in X$, the map $\eta:\Z \rightarrow  H_0(X)$ given by $1 \mapsto c^0_x$ is a $\Z-$linear map such that $\varepsilon\eta = \id_\Z$, so the sequence splits and $H_0(X) \cong \tilde H_0(X) \oplus \Z$.
+\end{proof}
+\begin{definition}
+    Given a short exact sequence of $R-$modules
+    $$0 \rightarrow M \xrightarrow{f} N \xrightarrow{g} L \rightarrow 0 $$
+    We say the short exact sequence splits if $N$ is the internal direct sum $\Im f \oplus N/\Im f$. 
+\end{definition}
+\begin{remark}
+    Note that $\Im f \cong M$ by injectivity of $f$, and $N/\Im f$ by surjectivity of $g$ and $\Im f = \ker g$. 
+\end{remark}
+
+It would be really nice if homology plays nicely with homotopy. It turns out that it does indeed. First, we need some tools.
+\begin{definition}
+    Let $(C_*,d),(D_*,d')$ be chain complexes, and $f,g:C_*\rightarrow D_*$ be chain maps. A chain homotopy $h$ between $f$ and $g$ is a sequence of $R-$linear maps $h_i:C_i \rightarrow D_{i+1}$ such that $d'h+hd = f-g$. Chain homotopic maps are denoted $f\simeq g$. A chain homotopy equivalence is a chain map $f$ such that there exists $g$ with $fg $ and $gf$ being chain homotopic to the identity maps on $C$ and $D$.
+\end{definition}
+We will see when we prove homotopy invariance of homology that homotopic maps have chain homotopic induced maps.
+\begin{proposition}
+    If $f,g$ are chain homotopic, then $f=g$ on the homology.
+\end{proposition}
+\begin{proof}
+    For any $c \in Z_n(C)$, we have $$(f-g)c = (d'h+hd)c = d'hc + hdc = d'hc$$
+    and thus $(f-g)c$ is a boundary, which vanishes in the homology. It follows that $f$ and $g$ are indistinguishable in the homology.
+\end{proof}
+\begin{theorem}
+    The homology of a star shaped region is the same as the homology of a one point space, i.e. $H_n(X) = 0$ if $n \neq 0$ and $H_0(X) \cong \Z$.
+\end{theorem}
+The details of the proof are found in \cite{miller}, and I do not have anything to elaborate on this so I will just ask you to read it. It involves the use of chain homotopy and the augmentation map.
+
+Lastly, we have the notion of retractions and deformation retracts.
+\begin{definition}
+    Let $X$ be a topological space and $A\subseteq X$. A retraction of $X$ onto $A$ is a continuous map $r:X\rightarrow A$ such that $r|_A = \id_A$. A deformation retract is a homotopy between $\id_X$ and a retraction.
+\end{definition}
+\begin{proposition}
+    $X$ and $Y$ are homotopy equivalent if and only if there exists $Z$ such that $X,Y$ embed into $Z$ and $Z$ deformation retracts onto each of the embeddings.
+\end{proposition}
+Last time, we briefly mentioned the notion of a good pair of spaces. We finally have enough terminology to define it!
+\begin{definition}
+    The pair of spaces $(X,A)$ is called a good pair if $A$ is closed and there exists an open neighborhood $A \subseteq B \subseteq X$ such that $B$ deformation retracts onto $A$.
+\end{definition}
+
+We will do more with this when we get to excision in homology.
+\begin{exercise}
+    Look up the definition of the wedge of two circles $\S^1\vee \S^1$ and the pair of pants space. Prove that they are homotopy equivalent.
+\end{exercise}
+\begin{exercise}
+    Prove that $GL_n(\R)$ deformation retracts onto $O(n)$.
+\end{exercise}
+\section{Connectedness}
+\begin{definition}
+    A topological space is connected if it cannot be written as a union of two non-empty disjoint open sets.
+\end{definition}
+\begin{prop}
+    The following are equivalent:
+    \begin{itemize}
+        \item $X$ is connected
+        \item The only clopen sets are $X$ and $\varnothing$
+        \item Every continuous function $X\rightarrow \set{0,1}$ is constant if $\set{0,1}$ has the discrete topology
+    \end{itemize}
+\end{prop}
+\begin{example}
+    Given any Hausdorff space and a finite subset, the subspace is connected if and only if it has one element.
+\end{example}
+\begin{example}
+    Let $U\subseteq \R^n$ be open and connected, $f$ have all partial derivatives equal to 0 on $U$. Then, $f$ is a constant function since if $f(x) = c$ for $x\in U$, the set of all points in $U$ with $f(x) \neq c$ forms a clopen set, which must be empty. To show the previous assertion, one can use the mean value theorem to conclude that for all $x$ such that $f(x)=c$, there exists a neighborhood of $x$ that satisfies $f(u)=c$ for all $u$ in the neighborhood.
+\end{example}
+\begin{definition}
+    A connected component of $X$ is a non-empty open connected set $U \subseteq X$ such that there exists a disjoint (possibly empty) open $V\subseteq X$ such that $U\cup V = X$.
+\end{definition}
+\begin{example}
+    For any set $X$ given the discrete topology, every singleton set is a connected component of $X$.
+\end{example}
+\begin{definition}
+    A path is a continuous function $f:I\rightarrow X$ where $I$ is the unit interval.
+\end{definition}
+\begin{definition}
+    A topological space is path connected if for any two points $x,y$, there is a path such that $f(0)=x $ and $f(1)=y$.
+\end{definition}
+One can define an equivalence relation by setting $x\sim y$ if and only if there is a path connecting $x$ and $y$. For transitivity, given paths $f,g$, one can concatenate it by setting 
+$$g*f = \begin{cases}
+    f(2t) & 0\leq t \leq \frac 1 2 \\
+    g(2t-1) & \frac 1 2 < t \leq 1
+\end{cases}$$
+\begin{definition}
+    The equivalence classes of $\sim$ are called path components of $X$.
+\end{definition}
+\begin{prop}
+    If $f$ is continuous and $X$ is (path) connected, so is $f(X)$.
+\end{prop}
+\begin{proof}
+    If not, $f(X) = U\cup V$ that are both open, non-empty, and disjoint, and thus so must their preimages by continuity of $f$. But the preimage is all of $X$, so $X$ is not connected.
+
+    For path connectedness, let $x,y \in f(X)$ and $u \in f^{-1}(x),v \in f^{-1}(y)$. Let $g:I\rightarrow X$ be a path connecting $u$ and $v$. The composition $f\circ g$ then gives a path connecting $x$ and $y$.
+\end{proof}
+\begin{corollary}
+    Every quotient of a (path) connected space is (path) connected.
+\end{corollary}
+This follows from a quotient map being continuous and also a surjection.
+
+Note that given a path component $A \subseteq X$ and a continuous function $f:X\rightarrow Y$, $f(A)$ is path connected and hence contained in a unique path component of $Y$. Hence, the function $\pi_0f$ that maps a path component $A\subseteq X$ to the path component that $f(A)$ is contained in is a well defined function. Thus, we obtain a functor $\pi_0:\mathbf{Top}\rightarrow\mathbf{Set}$ sending $X$ to the set of path components of $X$ denoted $\pi_0X$ and $f$ to $\pi_0f$.
+\begin{prop}
+    Let $X = \bigcup_{i \in J}X_i$ and for each $i \in J$, $X_i$ is (path) connected. If $\bigcap_{i \in J}X_i \neq \varnothing$, then $X$ is (path) connected.
+\end{prop}
+\begin{theorem}
+    Path connectedness implies connectedness.
+\end{theorem}
+\begin{proof}
+    Let $f:X\rightarrow \set {0,1}$ be continuous and $x,y \in X$. Let $g:[0,1]\rightarrow X$ be a path such that $g(0)=x,g(1)=y$. Then, $fg$ is continuous, and $fg$ must be constant. Hence, $f$ must be so, and $X$ is connected.
+\end{proof}
+\begin{prop}
+    (Path) connectedness is a homotopy invariant.
+\end{prop}
+\begin{proof}
+    Let $f:X\rightarrow Y$, $g:Y\rightarrow X$ be continuous, and $h:Y\times I \rightarrow X$ be a homotopy taking $fg$ to $\id_Y$.
+    
+    Let $X$ be connected, $k:Y\rightarrow \set{0,1}$ be continuous, and $y,y' \in Y$. Now, $kf$ is constant since $X$ is connected. Thus, $kfgy = kfgy'$. Then, $h(y,-)$ and $h(y',-)$ are paths satisfying $h(y,0)=fgy,h(y,1)=y$ and $h(y',0)=fgy',h(y',1)=y'$. Hence, $kfgy=ky,kfgy'=ky'$ so that $ky=ky'$ and $k$ is constant.
+
+    Let $X$ be path connected. Given any $y \in Y$, $h(y,-):I\rightarrow Y$ is a path connecting $fgy \in f(X)$ to $y$, but $f(X)$ is path connected since $X$ is. Hence, $Y$ is path connected.
+\end{proof}
+\begin{prop}
+    Products of (path) connected spaces are (path) connected.
+\end{prop}
+\begin{definition}
+    A space is locally (path) connected if every point has a (path) connected neighborhood.
+\end{definition}
+\begin{prop}
+    Products of locally (path) connected spaces are locally (path) connected.
+\end{prop}
+\begin{proof}
+    Around each point $\prod_{i \in J} x_i \in \prod_{i \in J}X_i$, choose a neighborhood $\prod_{i \in J} U_i$ where each $U_i$ is (path) connected. The previous proposition implies this neighborhood is (path) connected.
+\end{proof}
+\begin{prop}
+    If a space is locally connected, the connected components are the same as the path components.
+\end{prop}
+\begin{example}
+    In the topologist's sine curve, the graph of $\sin(1/x)$ is a path component and the unit interval on the $y-$axis is another. This space is locally connected (and connected) space that is not path connected.
+\end{example}
+\begin{corollary}
+    A locally path connected space is connected if and only if it is path connected
+\end{corollary}
+We will now also consider the connectedness of adjunction spaces.
+\begin{prop}
+    If $X$ and $B$ are (path) connected, then so is $B\cup_f X$.
+\end{prop}
+Of course, we shall assume $A\subseteq X$ is non-empty. 
+\begin{proof}
+For path connectedness, without loss of generality, let $x \in X \backslash A$ and $b \in B$. Pick $a \in A$ since we assume $A$ is non-empty. Take a path connecting $x$ to $a$, another path connecting $f(a)$ to $b$, and then concatenate them.
+
+For connectedness, let $p: B\cup_fX\rightarrow \set {0,1}$ be continuous. Then, $p\bar \iota_X, p\bar \iota_B$ are also continuous mapping from a connected space, and so they must be constant. Since $p\bar \iota_X(a) = p\bar \iota_X(f(a))$, $p\bar \iota_X$ and $p\bar \iota_B$ evaluate to the same constant, which proves $p$ is constant.
+\end{proof}
+\begin{prop}
+    If $B\cup_f X$ and $A$ are connected, then so is $B$.
+\end{prop}
+\begin{proof}
+    Assume not, and let $g:B\rightarrow \set{0,1} $ be continuous and onto. If $A$ is not connected, we are done. If not, by connectedness of $A$, we must have that $gf$ is constant. Let $c:X\rightarrow \set{0,1}$ be the map that sends everything to that constant. By the universal property of adjunction spaces, we then have the following pushout diagram:
+    \begin{center}
+        \begin{tikzcd}
+A \arrow[r, "f"] \arrow[d, "\iota"']                      & B \arrow[rdd, "g", bend left] \arrow[d, "\bar \iota_B"] &             \\
+X \arrow[rrd, "c"', bend right] \arrow[r, "\bar \iota_X"] & B\cup_f X \arrow[rd, "\bar g", dashed]                  &             \\
+                                                          &                                                         & {\set{0,1}}
+\end{tikzcd}
+    \end{center}
+    Since the diagram commutes and $g$ is surjective, so must $\bar g$ be as well. Thus, $B\cup_f X$ is not connected.
+\end{proof}
+
+Finally, let us compute some homology using (path) connected components.
+\begin{prop}
+    If $\set{X_i}_{i \in J}$ are the (path) components of $X$, then
+    $$H_n(X) \cong \bigoplus_{i\in J }H_n(X_i)$$
+\end{prop}
+\begin{proof}
+    Note that $\Delta^n$ is path-connected and $\sigma:\Delta^n\rightarrow X$ is continuous. Thus, the image of $\sigma$ is path-connected and contained inside a unique $X_i$ for some $i \in J$. Hence, $S_n(X)\cong \bigoplus_{i \in J} S_n(X_i)$ and I will leave the reader to check that the isomorphism interacts well with a map $d$ that can be defined on $\bigoplus_{i\in J }H_n(X_i)$ and so on.
+\end{proof}
+\begin{exercise}
+    Let $\Z\pi_0(X)$ be the free $\Z-$module generated by $\pi_0(X)$. There is a natural isomorphism $\Z\pi_0(X)\rightarrow H_0(X)$. Construct this isomorphism, explain what it means for it to be natural, and make sure that it is.
+\end{exercise}
+\begin{exercise}
+    Prove that $SL_n(\R)$ is path-connected. \textit{Hint: Modify the proof for showing that $GL_n(\R)$ deformation retracts onto $O(n)$.}
+\end{exercise}
+\section{Compactness}
+Compactness is one of the most important notions in topology. It plays together well with Hausdorffness. It is also a good excuse to chug a bunch of point set topology.
+\begin{definition}
+    A space is called compact if every open cover of the space has a finite subcover.
+\end{definition}
+\begin{prop}
+    If $X$ is compact and $f:X\rightarrow Y$ is continuous, then $f(X)$ is compact.
+\end{prop}
+\begin{corollary}
+    If $X$ is compact, so is any quotient of $X$.
+\end{corollary}
+We can also characterize compact sets in terms of closed sets.
+\begin{definition}
+    A collection of sets has the finite intersection property (FIP for short) if given any finite subcollection, their intersection is non-empty.
+\end{definition}
+\begin{prop}
+    A space is compact if and only if for any collection of closed sets $X$ with the finite intersection property, their intersection is non-empty.
+\end{prop}
+\begin{corollary}
+If $X$ is compact, then so are all of its closed subsets.
+\end{corollary}
+\begin{lemma}[Tube lemma]
+    For any open $U\subseteq X\times Y$ and $K\times \set{y} \subseteq U$ with $K\subseteq X$ compact, there exists open sets $V\subseteq X$ and $W\subseteq Y$ such that $K\times \set{y} \subseteq V\times W \subseteq U$
+\end{lemma}
+In other words, in any open set in the product, if we fix one ``slice'' of a compact subset of $K$ inside the open set, we can wrap this slice in an open neighborhood squeezed inside of $U$ that is of the form $V\times W$ (note not every open set in $X\times Y$ is of the form $V\times W$).
+\begin{proof}
+    For each $(x,y) \in K\times \set{y}$, there exists $V_x \subseteq X, W_x \subseteq y$ such that $V_x\times W_x \subseteq U$. Take the union $\bigcup_{x \in K} V_x$ which forms an open cover of $K$. It has a finite subcover $V_1,\cdots V_n$ with corresponding $W_1,\cdots,W_n$. Take $V = \bigcup_{i=1}^n V_i$ and $W = \bigcap_{i=1}^n W_i$.
+\end{proof}
+This can be used to prove that finite products of compact spaces is compact. 
+\begin{prop}\label{kuratowski}
+    If $X$ is compact, then the canonical projection of $\pi_Y:X\times Y\rightarrow Y$ is a closed map.
+\end{prop}
+\begin{proof}
+    Let $\pi_Y$ be the canonical projection onto $Y$. Let $F\subseteq X\times Y$ be closed. Then, $X\times Y \backslash F$ is open. For any $y \notin \pi_Y(F)$, $X\times \set y \subseteq X\times Y \backslash F$ and $X$ is compact. Thus, there exists open $W \subseteq Y$ such that $X\times \set y \subseteq X\times W \subseteq X\times Y \backslash F$. Using the natural projection, we see that $y \in W \subseteq X\backslash \pi(F)$. Since $y \notin \pi_Y(F)$ was arbitrary, the complement of $\pi_Y(F)$ is open and $\pi_Y(F)$ is hence closed.
+\end{proof}
+One way you can think about the application of the tube lemma in this is that you are looking at the fibers of the projection map $\pi_Y$. We are separating a space into its fibers, and determining some global property through local properties (properties on these fibers). This is also illustrated in the following proof:
+\begin{prop}
+    Finite products of compact spaces is compact.
+\end{prop}
+\begin{proof}
+    It suffices to prove for $X\times Y$ and one can proceed by induction afterwards. Let $X,Y$ be compact. Let $\set{U_i}_{i \in J}$ be an open cover for $X\times Y$. Let $y \in Y$. Then, notice the space $X \times \set y$ is compact since it is homeomorphic to $X$, so that there are finitely many $U_i$ that cover $X \times \set {y}$, say $U_{1,y},\cdots, U_{n_y,y}$. Applying the tube lemma gives that there is an open $V_y \subseteq Y$ such that $X\times V_y \subseteq \bigcup_{i=1}^{n_y} U_{i,y}$. Then, the collection $\bigcup_{y \in Y} V_y$ is an open cover for $Y$ and there are only finitely many of them, say $V_1 \cdots V_m$. Thus, $\bigcup_{i=1}^mX\times V_{i} = X\times Y$, but each $X\times V_{i}$ is only covered by finitely many $U_i$.
+\end{proof}
+
+There is a stronger statement than the above (assuming the Axiom of Choice):
+\begin{theorem}[Tychonoff's theorem]
+    An arbitrary product of compact spaces is compact.
+\end{theorem}
+The proof is not at all insightful beyond the fact that given a collection of sets with the finite intersection property, there is a maximal one with that property (i.e. not contained by any other set with a finite intersection property). See \cite{munkres} for reference.
+
+Let us see how compactness interacts with Hausdorffness.
+\begin{prop}
+    In a Hausdorff space, compact spaces are closed.
+\end{prop}
+\begin{prop}
+    If $X$ is compact and $Y $ is Hausdorff, then every continuous function $f:X\rightarrow Y$ is a closed map. 
+    \begin{itemize}
+        \item If $f$ is injective, it is an embedding
+        \item If $f$ is surjective, it is a quotient.
+        \item If $f$ is bijective, it is a homeomorphism.
+    \end{itemize}
+\end{prop}
+The following are some additional point set properties to do with compact and Hausdorff spaces which will require more definitions.
+\begin{definition}
+    A space is called regular if for every closed set $U$ and $x \notin U$, there exists disjoint neighborhoods $V$ containing $U$ and $W$ containing $x$.
+\end{definition}
+\begin{definition}
+    A space is called normal if for every pair of disjoint closed sets $U_1,U_2$, there exists disjoint neighborhoods $V_1$ containing $U_1$ and $V_2$ containing $U_2$.
+\end{definition}
+Note that every metric space is normal and Hausdorff.
+\begin{prop}
+    Normal Hausdorff spaces are regular.
+\end{prop}
+This follows from singleton sets being closed in Hausdorff spaces. Note that normal spaces are not in general regular.
+\begin{example}
+    The Sorgenfrey plane which is $\R^2$ given a topology whose basis consists of open rectangles $[a_1,b_1)\times [a_2,b_2)$ is an example of a Hausdorff space that is regular but not normal. We will prove that it is not normal with the help of Tietze's extension theorem.
+\end{example}
+\begin{lemma}\label{lemma}
+    Disjoint compact sets in a Hausdorff space have disjoint open neighborhoods. 
+\end{lemma}
+\begin{proof}
+    Suppose $K_1,K_2 \subseteq X$ are compact and $X$ is Hausdorff. Let $x \in K_1$ and manifest for each $y \in K_2$ a pair of open neighborhoods $U_y^x,V_y^x$ such that $x \in U_y^x,y \in V_y^x$ where $U_y^x \cap V_y^x = \varnothing$. $\bigcup_{y\in K_2} V_y^x$ is an open cover for $K_2$ so it has a finite subcover $V_{y_{1}^x}^x,V_{y_{2}^x}^x,\cdots,V_{y_{{n_x}}^x}^x$ where ${n_x}$ is some index depending on $x$. Taking $\bigcap_{i=1}^{n_x}U_{y_{i}^x}^x$ gives an open neighborhood of $x$ disjoint from $\bigcup_{i=1}^{n_x} V_{y_{i}^x}^x$. Reiterate this over all $x \in K_1$ so that $\bigcup_{x \in K_1} U_y^{x}$ is an open cover for $K_1$. This has a finite subcover $U_y^{x_1},U_y^{x_2},\cdots ,U_y^{x_m}$. Take $\bigcap_{i=1}^m \left (\bigcup_{j=1}^{n_{x_i}} V_{y_{j}^{x_i}}^{x_i} \right ) $. Each $\bigcup_{j=1}^{n_{x_i}} V_{y_{j}^{x_i}}^{x_i} $ covers $K_2$ and is disjoint from $U_{y}^{x_i}$, and this is a finite intersection of open sets, so we obtain an open set $\bigcap_{i=1}^m \left (\bigcup_{j=1}^{n_{x_i}} V_{y_{j}^{x_i}}^{x_i} \right )=U_2$ containing $K_2$ and an open set $\bigcup_{i=1}^m U_y^{x_i} = U_1$ containing $K_1$ that are disjoint.
+\end{proof}
+\begin{corollary}
+    Locally compact Hausdorff spaces are regular. Compact Hausdorff spaces are normal.
+\end{corollary}
+This follows from singleton sets being closed in Hausdorff spaces.
+\begin{prop}
+    A space is regular if and only if for all $x \in X$ and open neighborhoods $U$ of $x$ there exists an open neighborhood $V$ of $x$ such that $\overline V \subseteq U$. 
+\end{prop}
+\begin{proof}
+     For one direction, if $X$ is regular, for $x \in X$ and any open neighborhood $U$, pick disjoint and open $A,B$ such that $x \in A$, $U^c \subseteq B$ since $\set x, U^c$ are closed. Then, $B^c \subseteq U$ and since $A, B$ are disjoint, $A \subseteq B^c$. Since $A$ is open, $A \subseteq (B^c)^o$ so that $(B^c)^o$ is an open neighborhood of $x$. We thus have $x \in (B^c)^o \subseteq ((((B^c)^o)^c)^o)^c = ((\overline B)^o)^c = (B^o)^c= B^c \subseteq U$ so $(B^c)^o$ is an open neighborhood whose closure is contained in $U$. For the other direction, if $x \in X$ and $F\subseteq X$ is closed, manifest some open $U \in \mathcal N(x)$ such that $\overline U \subseteq F^c$. Then, $F \subseteq \overline U^c$ and $U\subseteq \overline U$ so that $\overline U^c$ and $U$ are disjoint neighborhoods for $F$ and $x$.
+\end{proof}
+\begin{prop}
+    A space is normal if and only if for every closed subset $A$ and $U$, there exists an open $V$ such that $A \subseteq U\subseteq \overline V \subseteq U $.
+\end{prop}
+The proof is analogous to the previous.
+\begin{theorem}[Urysohn's lemma]
+    If $X$ is normal and $A,B$ are disjoint closed sets, there exists a continuous function $f:X\rightarrow [0,1]$ such that $f(a)=0$ and $f(b) = 1$ for all $a\in A,b\in B$
+\end{theorem}
+\begin{proof}
+    We will construct a sequence of open sets $(U_p)$ such that $f(x)=\inf \set{p : x \in U_p}$ is a continuous function $X \rightarrow [0,1]$ and for all $a \in A, b \in B,$ $f(a)=0,f(b)=1$. Assume $X$ is normal. Now, Let $U_0$ be an open neighborhood of $A$ disjoint from $B$ and $U_1 = X\backslash B$. Observe that $\overline U_0$ is closed and $\overline U_0 \subseteq U_1$ where $U_1$ is open, so we can construct some $U_{\frac 1 2}$ such that $U_0\subseteq \overline U_0 \subseteq U_{\frac 1 2} \subseteq \overline U_{\frac 1 2} \subseteq U_1$. Reiterate the process again with $\frac 1 4$ between $\overline U_0$ and $U_\frac 1 2$, and with $\frac 3 4$ for $\overline U_\frac 1 2$ and $U_1$ to get $$\overline U_0 \subseteq U_\frac 1 4 \subseteq \overline U_\frac 1 4 \subseteq U_\frac 1 2 \subseteq \overline U_\frac 12 \subseteq U_1$$
+    Reiterating this where for any $p < q $ in the indexing set $\overline U_p \subseteq U_q$, manifest $\overline U_p \subseteq U_{\frac{p+q}{2}} \subseteq \overline U_{\frac{p+q}{2}} \subseteq U_q$ and the index ranges across the entire dyadic rationals.
+    Extend the definition of $U_p$ to $U_p = \varnothing$ if $p < 0$ and $U_q = X$ if $q > 0$. It is obvious that $A \rightarrow \set{0}$ and $B \rightarrow \set{1}$. To show that $f(x)$ is continuous, if $(a,b)$ has an empty preimage, it trivially has an open preimage. Now let $(a,b)$ be a neighborhood of $f(x_0)$ for arbitrary $x_0 \in X$. Since the dyadic rationals are dense in $\mathbb R$, pick $p,q$ in the dyadic rationals such that $(p,q)$ contains $f(x_0)$. Notice $U_q \backslash \overline U_p$ is open. Notice if $p$ is in the indexing set (which contains the dyadic rationals) and $x \in \overline U_p$, $x \in U_q$ for all $q > p$ so that $f(x) \leq p$ by definition of the infimum. Also, if $x \notin U_p$, $x \notin U_q$ for all $q < p$ so that $p \leq f(x) $. By the conditions we just proved, we have $p \leq f(u)  \leq q$ for all $u \in U_q \backslash \overline U_p$, and $p < f(x_0) < q$ implies $x_0 \in U_q$ and $x_0 \notin \overline U_p$ so that $x_0$ is in the neighborhood we chose. Thus, $f$ is continuous since every open interval has an open preimage.
+\end{proof}
+There are many uses of Urysohn's lemma. One of which is Urysohn's metrization theorem which tells us that every second countable (a space with a countable basis) normal space is metrizable. Another is the following:
+\begin{corollary}[Tietze's extension theorem]
+    If $X$ is normal and $A \subseteq X$ is closed, any continuous map from $A$ to $[a,b]$ or $\R$ can be extended to all of $X$.
+\end{corollary}
+\begin{proof}
+    We first prove the case for $[a,b]$. Let $X$ be normal, $A\subseteq X$ be closed and without loss of generality, let $f:A\rightarrow [-1,1]$ be continuous. We divide this interval into 
+    $$I_1 = \left [-n,-\frac n 3 \right ] \quad I_2 = \left [-\frac n 3 ,\frac n 3 \right ] \quad I_3 = \left [ \frac n 3,n\right ]$$
+    Let $J_1 = f^{-1}(I_1),J_2=f^{-1}(I_2)$, which are both closed subsets of $\A$. By continuity of $f$, $J_1,J_2$ are disjoint and closed in $X$. Applying Urysohn's lemma gives a continuous function $g_n:X\rightarrow \left [-\frac n 3,\frac n 3 \right ]$ that maps $J_1$ to $-\frac 1 3$ and $J_2$ to $\frac 1 3$. For each $a \in A$, we have $|f(a)-g_n(a)|<\frac {2n} 3$, and for each $x \in X$, we have $|g_n(a)| < \frac n 3$. Reiterate this process by letting $f_0 = f$, $f_i=f_{i-1}-g_i$ so that $f_i = f-\sum_{j=1}^i g_i$. By our construction, we have $|f_i(a)| \leq \left (\frac 2 3 \right )^i$ and $|g_i(a)| \leq \left (\frac 2 3 \right )^i$. Let $g(x) = \sum_{i=1}^\infty g_i(x)$. This series converges uniformly by the Weierestrass $M-$test so it is a continuous function. A verification shows that $f(a)=g(a)$ for all $a \in A$, $f(b)=g(b) $ for all $b \in B$, and that this series maps $X$ to $[-1,1]$.
+
+    We showed that the map can be extended to $[-1,1]$. Let now $f:A\rightarrow \R$, take the same $g$ above and now apply the map 
+    $$r(y) = y \quad \text{if } y \leq 1 ,\quad r(y) = \frac{y}{|y|} \quad \text{if } y > 1$$
+    so that $r\circ g$ gives an extension of $f$ to all of $f$. Let $p = r\circ g$. Let $B  = p^{-1}(\set{-1,1})$. This is closed by continuity of $p$, and disjoint from $A$ since $p(A)=f(A)$ which is contained in $(-1,1)$. By Urysohn's lemma, we can find $h:X\rightarrow [0,1]$ such that $h(B) = 0$ and $h(A) = 1$. The function $h\circ p$ then gives an extension of $f$ to $(-1,1)$ which is homeomorphic to $\R$.
+\end{proof}
+The proof of Urysohn's lemma and Tietze's extension theorem with the complete details can be found in its own dedicated chapter in \cite{munkres}.
+\begin{prop}
+    The Sorgenfrey plane is not normal.
+\end{prop}
+\begin{proof}
+    Note that $\mathbb Q \times \mathbb Q$ is dense since for every $[a,a+\varepsilon)\times [b,b+\varepsilon') \subseteq X$, there exists $p \in \mathbb Q \cap [a,a+\varepsilon)$ and $q \in \mathbb Q \cap [b,b+\varepsilon') $ so that $([a,a+\varepsilon)\times [b,b+\varepsilon'))\cap (\mathbb Q \times \mathbb Q) \neq \varnothing$. Thus, every map from the Sorgenfrey plane into the reals is determined by continuous maps from $\mathbb Q \times \mathbb Q$ to $\R$, of which the set has at most cardinality $\R$. However, the anti-diagonal has the discrete topology as its subspace topology, so that every function from the anti-diagonal into $\R$ is continuous. This means that there are $\aleph_2$ many continuous functions from the anti-diagonal into $\R$. This is a closed subspace which by Tietze's extension theorem, any continuous function from it to $\R$ would be able to extend to a continuous function on the whole Sorgenfrey plane if it were normal. 
+\end{proof}
+
+Let us see some more consequences of compact Hausdorff spaces being normal (in this case, really, regularity is more important, but compactness is needed for the following proposition)
+\begin{prop}
+     Let $K_1 \supseteq K_2 \supseteq \cdots$ be a sequence of non-empty closed sets where $K_1$ is compact. Then, $\bigcap_{i=1}^\infty K_i \neq \varnothing$.
+\end{prop}
+We will present two solutions - one using the definition of compactness and another using the finite intersection property characterization for compactness. 
+\begin{proof}
+    Assume for contradiction that the intersection is empty. For each $i\geq 2$, define $U_i = K_1 \backslash K_i$ so that $\bigcup_{i=1}^\infty U_k = K_1 \backslash \bigcap_{i=1}^\infty   K_i = K_1$ since $\bigcap_{i=1}^\infty   K_i = \varnothing$ by assumption. Then, each $U_k$ is open in the subspace topology of $K_1$ since $K_k \subseteq K_1$ is closed and $U_k \cap K_1$ is the complement of $K_k$. Thus, $\set{U_k : k \in \mathbb N}$ is an open cover of $K_1$ which has a finite subcover since $K_1$ is compact. Then, $K_1 = \bigcup_{j=1}^m (U_{k_j}\cap K_1)$ but the sets $K_1 \supseteq K_2 \supseteq \cdots$ are nested so that $U_{k_1} \subseteq U_{k_2}\subseteq U_{k_3} \cdots$ so that $K_1 = U_{k_m} \cap K_1$. However, $\varnothing = K_1 \backslash U_{k_m} = K_1 \backslash (K_1 \backslash K_{k_m} ) = K_{k_m}$ which is a contradiction.
+\end{proof}
+\begin{proof}
+    For any finite subcollection, in $\set{K_i: i \in \N}$, simply take the largest $i$. Then, the intersection of these $K_{i_k}$ is equal to that $K_i$. Thus, $\set{K_i: i \in \N}$ satisfies the FIP. Each $K_i$ is closed, so $\set{K_i: i \in \N}$ is a subcollection of closed sets satisfying FIP in a compact set $K_1$. Therefore, its intersection must be non-empty.
+\end{proof}
+It is certainly true that all $K_i$ must be compact in the descending chain. In the case where $K_1$ is Hausdorff, assuming all $K_i$ are compact would be equivalent to assuming all $K_i$ to be closed, but note that if $K_1$ is not Hausdorff, it is possible for a compact subset to \textit{not} be closed. 
+\begin{theorem}[Baire category theorem]
+    Suppose $X$ is compact and Hausdorff, and let $(A_n)$ be a sequence of closed sets such that $(A_n)^\circ = \emptyset$. Then, $(\bigcup_{n=1}^\infty A_n)^\circ = \emptyset$. 
+\end{theorem}
+\begin{proof}
+    Let $U_1 \subseteq X$ be open and non-empty. Then, there exists $x_1 \in U_1$ such that $x_1 \notin A_1$. $X$ is regular, so there exists some open neighborhood $U_2$ such that $\overline U_2 \cap A_1 = \varnothing$ and $\overline U_2 \subseteq U_1$ and keep reiterating this where for each $n \in \mathbb N$, take $x_n \in U_n \backslash A_n$ and come up with an open neighborhood $U_{n+1}$ with $\overline U_{n+1}\cap A_n = \varnothing$ and $\overline U_{n+1}\subseteq U_n$. Since $X$ is compact, each $\overline U_i$ is compact and non-empty. $\bigcap_{i=2}^\infty \overline U_i$ is non-empty by part a. Let $x \in \bigcap_{i=2}^\infty \overline U_i$. Clearly, $x \in \overline U_2 \subseteq  U_1$ but $x \notin A_n$ for all $n \in \mathbb N$ so $U_1$ cannot be an interior of $\bigcup_{n=1}^\infty A_n$. Thus, $(\bigcup_{n=1}^\infty A_n)^\circ = \varnothing$.
+\end{proof}
+
+Finally, let us look at local compactness. 
+\begin{definition}
+\begin{itemize}
+    \item A space is weakly locally compact if every point has an open neighborhood contained in a compact set.
+    \item 
+    A space is strongly locally compact if every point has an open neighborhood whose closure is compact.
+    \item A space is very strongly locally compact if every point has a neighborhood system of compact sets.
+\end{itemize}
+\end{definition}
+It is clear that the definition of strongly locally compact is equivalent to every point having a neighborhood basis of open sets whose closures are compact.
+
+Note that people can take any of the definition to be the definition of locally compact. In the case of when the space is Hausdorff, all definitions above agree and a space can simply be called as locally compact. Also, neither strong local compactness nor very strong local compactness imply each other, but both strong local compactness and very strong local compactness imply weak local compactness. 
+\begin{prop}
+    Products of weakly/strongly/very strongly locally compact spaces are also weakly/strongly/very strongly locally compact.
+\end{prop}
+\begin{prop}\label{prop1}
+    Every locally compact Hausdorff space $X$ is regular. 
+\end{prop}
+This is particularly useful in the following case:
+\begin{prop}
+    Let $f:X\rightarrow B$ be a quotient and $Y$ be very strongly locally compact. Then, the map $f\times \id : X\times Y\rightarrow B\times Y$ is also a quotient.
+\end{prop}
+\begin{proof}
+     Let $U \subseteq X\times Y$ be open and saturated with respect to $f\times \id_Y$. Let $(f(x_0),y_0) \in f \times \id_Y(U)$. Since $U$ is open, there is some neighborhood $Y_0$ of $y_0$ such that $\set{x_0} \times Y_0 \subseteq Y$. By strong local compactness of $Y$, there is an open neighborhood $Y_1$ of $y_0$ such that $\bar Y_1\subseteq Y_0$ and $\bar Y_1$ is compact. Define now $U_0 = \set{x \in X|\set{x} \times Y_1 \subseteq U}$. Since for any $x \in U_0$, $\set{x}\times Y_1 \subseteq U_0\times Y_1 \subseteq U$, we have that $(f(x_0),y_0) \subseteq f(U_0) \times Y_1 \subseteq (f\times \id_Y)(U)$. Notice, $U_0$ is open in $X$. By compactness of $\bar Y_1$ and openness of $U$, the tube lemma implies that for every $x \in U_0$, there is some open $U_x \subseteq X$ such that $x \in U_x$ and $U_x \times \bar Y_1 \subseteq U$. However, we must have $U_x \subseteq U_0$ by definition of $U_0$, so that $U_0$ is open. Notice now for $U_0$, $$f^{-1}f(U_0) \times Y_1 = (f\times \id_Y)^{-1}f\times \id_Y(U_0 \times Y_1) \subseteq (f\times \id_Y)^{-1}(f\times \id_Y)(U) = U$$
+    since $U$ is saturated. By the definition of $U_0$, we then must have $f^{-1}f(U_0) \subseteq U_0$. Therefore, $U_0$ is saturated and open. Since $f$ is a quotient, $f(U_0)$ is open. However, $f(U_0)\times Y_1$ is then an open neighborhood of $(f(x_0),y_0)$ contained in $(f\times \id_Y)(U)$, so $(f\times \id_Y)(U)$ is open. Therefore, $f\times \id_Y$ is a quotient map.
+\end{proof}
+A lot of times, we will consider the proposition above in the context of homotopies $h:X\times I \rightarrow Y$ since $I$ is compact and Hausdorff.
+\begin{corollary}\label{corollary}
+    Let $Y$ be very strongly locally compact. Suppose the following square is a pushout:
+    \begin{center}
+        \begin{tikzcd}
+A \arrow[r, "f"] \arrow[d, "\iota"', hook] & B \arrow[d, "\bar \iota_B", hook] \\
+X \arrow[r, "\bar \iota_X"]                & P                                
+\end{tikzcd}
+    \end{center}
+    (That is, $P$ is an adjunction space) Then, the following square is a pushout:
+    \begin{center}
+        \begin{tikzcd}
+A\times Y \arrow[r, "f \times \id_Y"] \arrow[d, "\iota \times \id_Y"', hook] & B \times Y \arrow[d, "\bar \iota_B \times \id_Y", hook] \\
+X \times Y \arrow[r, "\bar \iota_X \times \id_Y"]                & P \times Y                                
+\end{tikzcd}
+    \end{center}
+\end{corollary}
+I have a proof ready, but I was too tired to write more details, so instead I will assign it as an exercise.
+\begin{remark}
+Warning: The homotopy category does not actually have pushouts!
+\end{remark}
+\begin{corollary}
+    Suppose $(X,A)$ is a good pair, $\iota:A\rightarrow X$ is the natural inclusion, and the following square is a pushout:
+    \begin{center}
+        \begin{tikzcd}
+A \arrow[r, "f"] \arrow[d, "\iota"', hook] & B \arrow[d, "\bar \iota_B", hook] \\
+X \arrow[r, "\bar \iota_X"]                & P                                
+\end{tikzcd}
+    \end{center}
+    (That is, $P$ is an adjunction space) Then, $(Y,B)$ is also a good pair.
+\end{corollary}
+\begin{proof}
+    Let $U\subseteq X$ be an open neighborhood of $A$ that $A$ deformation retracts onto. Specifically, let $r:U\rightarrow A$ be a retraction and $h :U\times I\rightarrow I$ be a homotopy taking $\iota r$ to $\id_U$. Consider the following diagram:
+        \begin{center}
+        \begin{tikzcd}
+A \arrow[r, "\id_A"] \arrow[d, "\iota"', hook] & A \arrow[r, "f"] \arrow[d, "\iota"', hook] & B \arrow[d, "\bar \iota_B", hook] \\
+U \arrow[r, "\iota_U"] & X \arrow[r, "\bar \iota_X"]                & P                                
+\end{tikzcd}
+    \end{center}
+    Then, we have a pushout as follows:
+    \begin{center}
+        \begin{tikzcd}
+A \arrow[r, "f"] \arrow[d, "\iota"', hook] & B \arrow[d, "\bar \iota_B", hook] \\
+U \arrow[r, "\bar \iota_X\iota_U"]                & P'                                
+\end{tikzcd}
+    \end{center}
+    where $P' \cong U \cup_f B$. Let $h$ be the homotopy taking $\iota r$ to $\id_U$. Let $k$ be the map that sends $B\times I$ to $B$ canonically and then embeds $B$ into $P'$. By (very strong) local compactness of $I$, the quotient $q: B\sqcup U \rightarrow P'$ induces a quotient $q\times \id : (B\sqcup U) \times I \rightarrow P'\times I$ and hence the square above with $\times I$ added onto each space (and the obvious maps) is also a pushout, and we have a unique map $\bar f$ such that the following diagram commutes:
+    \begin{center}
+        \begin{tikzcd}
+A\times I \arrow[r, "f \times \id"] \arrow[d, "\iota \times \id"', hook]    & B \times I \arrow[d, "\bar \iota_B \times \id", hook] \arrow[rdd, "k", bend left] &   \\
+U\times I \arrow[r, "\bar \iota_X\iota_U \times \id"] \arrow[rrd, "h", bend right] & P'\times I \arrow[rd, "\bar f", dashed]                                            &   \\
+                                                                            &                                                                                   & P'
+\end{tikzcd}
+    \end{center}
+Note that $\bar f$, $\bar f (x,1) = x$ for all $x \in P'$, and $r'(x)=\bar f(x,0)$ is a retraction of $P'$ onto $B$ induced by $r$. Moreover, for all $b \in B, t \in I$, we have $\bar f(b,t) = b$ so that $\bar f$ is a homotopy between $\iota_B r'$ and $\id _P'$. Observe $P'$ embeds into $P$ as an open subspace since $U$ is open, and $B$ embeds into $P'$ as a closed subspace since $\bar \iota_B$ is a closed embedding, so $P'$ is an open neighborhood that deformation retracts onto $B$. Hence, $(Y,B)$ is a good pair as desired.
+\end{proof}
+\begin{exercise}
+    Prove Corollary \ref{corollary}.
+\end{exercise}
+\printbibliography
+\end{document}
