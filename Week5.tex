@@ -1,0 +1,615 @@
+\documentclass[12pt,reqno]{amsart}
+\usepackage[margin=1in]{geometry}                % See geometry.pdf to learn the layout options. There are lots.
+\geometry{letterpaper}                   % ... or a4paper or a5paper or ... 
+%\geometry{landscape}                % Activate for for rotated page geometry
+%\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}
+\usepackage{comment}
+\usepackage{changepage}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{enumerate}
+\usepackage{float}
+\usepackage{hyperref}
+\usepackage{MnSymbol}%
+\usepackage{wasysym}%
+
+\usepackage{xcolor}
+
+\usepackage{mathtools}
+
+\usepackage{subcaption}
+\usepackage{thmtools, thm-restate}
+\usepackage{array}
+
+
+%\usepackage{fancyhdr}
+%\usepackage{hyperref}
+%\usepackage{wasysym}
+
+% \usepackage[style=alphabetic]{biblatex}
+%\addbibresource{ref.bib}
+
+ %space between paragraphs
+%
+%
+%
+%
+%
+
+
+%\newtheorem{theorem}{Theorem}[section]
+%\newtheorem{proposition}[theorem]{Proposition}
+%\newtheorem{lemma}[theorem]{Lemma}
+%\newtheorem{corollary}[theorem]{Corollary}
+%\newtheorem{conjecture}[theorem]{Conjecture}
+%%\theoremstyle{definition}
+%\newtheorem{definition}[theorem]{Definition}
+%\newtheorem{example}[theorem]{Example}
+%\newtheorem{remark}[theorem]{Remark}
+%\newtheorem{notation}[theorem]{Notation}
+%\newtheorem{question}[theorem]{Question}
+%
+
+
+
+\declaretheorem{theorem}
+\numberwithin{theorem}{section}
+
+\declaretheorem[sibling=theorem]{corollary, lemma, proposition, conjecture}
+\theoremstyle{definition}
+\declaretheorem[sibling=theorem]{definition,notation}
+\theoremstyle{remark}
+\declaretheorem[sibling=theorem]{example, remark, question, exercise}
+
+
+
+
+
+
+
+
+\numberwithin{equation}{section}
+
+
+
+\newcommand{\pb}[1]{\marginpar{PB: #1}}
+\newcommand{\diam}{\textrm{diam}}
+
+%\input{dfmacros}
+%%% Mathcal
+\newcommand{\cA}{\mathcal{A}}
+\newcommand{\Bor}{\mathrm{Bor}}
+\newcommand{\cB}{\mathcal{B}}
+\newcommand{\cC}{\mathcal{C}}
+\newcommand{\cD}{\mathcal{D}}
+\newcommand{\cE}{\mathcal{E}}
+%\newcommand{\cF}{\mathcal{F}}
+\newcommand{\cG}{\mathcal{G}}
+\newcommand{\cH}{\mathcal{H}}
+\newcommand{\cI}{\mathcal{I}}
+\newcommand{\cJ}{\mathcal{J}}
+\newcommand{\cK}{\mathcal{K}}
+\newcommand{\cL}{\mathcal{L}}
+\newcommand{\cM}{\mathcal{M}}
+\newcommand{\cN}{\mathcal{N}}
+\newcommand{\cO}{\mathcal{O}}
+%\newcommand{\cP}{\mathcal{P}}
+%\newcommand{\cQ}{\mathcal{Q}}
+%\newcommand{\cR}{\mathcal{R}}
+\newcommand{\cS}{\mathcal{S}}
+\newcommand{\cT}{\mathcal{T}}
+\newcommand{\cU}{\mathcal{U}}
+\newcommand{\cV}{\mathcal{V}}
+\newcommand{\cW}{\mathcal{W}}
+\newcommand{\cX}{\mathcal{X}}
+\newcommand{\cY}{\mathcal{Y}}
+\newcommand{\cZ}{\mathcal{Z}}
+\newcommand{\proj}{\textrm{proj}}
+%%% Mathbb
+% \newcommand{\bA}{\mathbb{A}}
+% \newcommand{\bB}{\mathbb{B}}
+% \newcommand{\bC}{\mathbb{C}}
+% \newcommand{\bD}{\mathbb{D}}
+% %\newcommand{\bE}{\mathbb{E}}
+% \newcommand{\bF}{\mathbb{F}}
+% \newcommand{\bG}{\mathbb{G}}
+% \newcommand{\bH}{\mathbb{H}}
+% \newcommand{\bI}{\mathbb{I}}
+% \newcommand{\bJ}{\mathbb{J}}
+% \newcommand{\bK}{\mathbb{K}}
+% \newcommand{\bL}{\mathbb{L}}
+% \newcommand{\bM}{\mathbb{M}}
+% \newcommand{\bN}{\mathbb{N}}
+% \newcommand{\bO}{\mathbb{O}}
+% \newcommand{\bP}{\mathbb{P}}
+% \newcommand{\bQ}{\mathbb{Q}}
+% \newcommand{\bR}{\mathbb{R}}
+% \newcommand{\bS}{\mathbb{S}}
+% \newcommand{\bT}{\mathbb{T}}
+% \newcommand{\bU}{\mathbb{U}}
+% \newcommand{\bV}{\mathbb{V}}
+% \newcommand{\bW}{\mathbb{W}}
+% \newcommand{\bX}{\mathbb{X}}
+% \newcommand{\bY}{\mathbb{Y}}
+% \newcommand{\bZ}{\mathbb{Z}}
+
+%--------------Commands------------------
+\newcommand{\spt}{\mathrm{spt}}
+\newcommand{\RR}{\mathbb R}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\C}{\mathbb C}
+\newcommand{\N}{\mathbb N}
+\newcommand{\T}{\mathbb T}
+\newcommand{\F}{\mathbb F}
+\newcommand{\FP}{\mathbb{FP}}
+\newcommand{\A}{\Tilde{A}_{4,d}}
+\newcommand{\Aq}{\Tilde{A}_{q,d}}
+\newcommand{\B}{\mathbb B}
+\renewcommand{\S}{\mathbb S}
+\newcommand{\w}{\omega}
+\newcommand{\W}{\mathbb{W}}
+\newcommand{\e}{\epsilon}
+\newcommand{\g}{\gamma}
+\newcommand{\p}{\varphi}
+\newcommand{\s}{\psi}
+\newcommand{\z}{\zeta}
+\renewcommand{\l}{\ell}
+\renewcommand{\a}{\alpha}
+\renewcommand{\b}{\beta}
+\renewcommand{\d}{\de}
+\renewcommand{\k}{\kappa}
+\newcommand{\m}{\textfrak{m}}
+\renewcommand{\P}{\mathbb{P}}
+\newcommand{\Tr}{\textup{Tr}}
+\newcommand{\Fav}{\textrm{Fav}}
+
+\newcommand{\op}[1]{\operatorname{{#1}}}
+\newcommand{\im}{\operatorname{Im}}
+\newcommand{\pd}[2]{\frac{\itemtial #1}{\itemtial #2}}
+\newcommand{\rd}[2]{\frac{d #1}{d #2}}
+\newcommand{\ip}[2]{\left \langle #1 , #2 \right \rangle}
+\renewcommand{\j}[1]{\left \langle #1 \right \rangle}
+\newcommand{\set}[1]{\left \{ #1 \right \}}
+\newcommand{\cl}{\operatorname{cl}}
+\newcommand{\into}{\hookrightarrow}
+\newcommand{\pa}{\mathrm{pa}}
+\newcommand{\nd}{\mathrm{nd}}
+
+\newcommand{\mc}{\mathcal}
+\newcommand{\mb}{\mathbb}
+\newcommand{\f}{\mathfrak}
+\renewcommand{\Re}{\text{Re}}
+\renewcommand{\Im}{\text{Im}}
+\newcommand{\Fq}{\mathbb{F}_q}
+
+\def\bff{\mathbf f}
+\def\bE{\mathbf E}
+\def\bx{\mathbf x}
+\def\boldR{\mathbf R}
+\def\by{\mathbf y}
+\def\bz{\mathbf z}
+\def\rationals{\mathbb Q}
+\newcommand{\norm}[1]{ \|  #1 \|}
+\def\scriptl{{\mathcal L}}
+\def\scripti{{\mathcal I}}
+\def\scriptr{{\mathcal R}}
+
+\def\bEdagger{{\mathbf E}^\dagger}
+%\def\set4{\{1,2,3,4\}}
+%\def\set4{\overline{4}}
+%set4 changed to setf
+\def\setf{\mathcal I}
+%tup14 changed to tupd
+\def\tupf{(1,2,3,4)}
+\def\bk{\mathbf k}
+\def\sl{\operatorname{Sl}}
+\def\gl{\operatorname{Gl}}
+\def\eps{\varepsilon}
+\def\one{{\mathbf 1}}
+\def\bEstar{{\mathbf E}^\star}
+\def\be{{\mathbf e}}
+\def\bv{{\mathbf v}}
+\def\bw{{\mathbf w}}
+\def\br{{\mathbf r}}
+
+
+\newcommand{\hatf}{\hat{f}}
+\newcommand{\hatg}{\hat{g}}
+\newcommand{\hath}{\hat{h}}
+\newcommand{\cchi}{\Check{\chi}}
+\newcommand{\cpsi}{\Check{\psi}}
+\newcommand{\hchi}{\hat{\chi}}
+\newcommand{\lesim}{\lesssim}
+\newcommand{\RapDec}{\mathrm{RapDec}}
+\newcommand{\bT}{\mathbf{T}}
+\newcommand{\del}{\partial}
+
+\theoremstyle{definition}
+\newtheorem*{comm*}{Comment}
+\newtheorem*{lemma*}{Lemma}
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{ex}[thm]{Example}
+\newtheorem{conj}[thm]{Conjecture}
+\newtheorem{cor}[thm]{Corollary}
+\newcommand{\pp}{\mathbin{\!/\mkern-5mu/\!}}
+\newcommand{\supp}{\mathrm{supp}}
+
+
+\newtheorem{prop}[theorem]{Proposition}
+
+%\DeclareMathOperator{\Hopf}{Hopf}
+\DeclareMathOperator{\codim}{codim}
+
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\FF}{\mathbb{F}}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\D}{\mathbb D}
+\newcommand{\de}{\delta} %%%%%\delta
+\newcommand{\De}{\Delta} %%%%%\delta
+\newcommand{\ga}{\gamma}
+\newcommand{\Ga}{\Gamma}
+\newcommand{\ZS}{\mathbb S}
+
+\newcommand{\wh}{\widehat}
+\newcommand{\wt}{\widetilde}
+\newcommand{\si}{\sigma}
+\newcommand{\Si}{\Sigma}
+\newcommand{\Tau}{\mathcal T}
+\newcommand{\poly}{\textup{Poly}}
+\newcommand{\thmc}{\textup{Thm}\Ga^n}
+\newcommand{\thmC}{\textup{Thm}\Ga^{n+1}}
+\newcommand{\thmm}{\textup{Thm}\mathcal M^n}
+\newcommand{\gn}{\Gamma_\circ}
+\newcommand{\mn}{\mathcal M_\circ}
+\newcommand{\en}{\epsilon_{\circ}}
+\newcommand{\I}{\mathbb I}
+\newcommand{\dist}{\textup{dist}}
+%\newcommand{\eps}{\epsilon}
+\newcommand{\Gn}{\Ga_{\circ}}
+\newcommand{\Id}{\boldsymbol 1}
+\newcommand{\Fp}{\mathbb{F}_p}
+\newcommand{\bdA}{\mathbf{A}}
+\newcommand{\bdE}{\mathbf{E}}
+%\newcommand{\bv}{\bold{v}}
+\newcommand{\ob}{\mathrm{ob}}
+\newcommand{\id}{\mathrm{id}}
+\newcommand{\Mor}{\mathrm{Mor}}
+\newcommand{\Sin}{\mathrm{Sin}}
+\renewcommand{\hom}{\mathrm{Hom}}
+\newcommand{\coker}{\mathrm{coker}}
+\usepackage{tikz} 
+\usetikzlibrary{positioning}
+\newcommand{\ind}{\perp\!\!\!\!\!\perp} 
+
+\usepackage[
+backend=biber,
+style=alphabetic,
+sorting=nyt
+]{biblatex}
+\addbibresource{references.bib}
+
+\usepackage{tikz-cd}
+\usetikzlibrary{shapes}
+\usetikzlibrary{calc}
+\begin{document}
+\title{Topology Reading Group Week 5}
+\maketitle
+Last week, we finished our discussion with connectedness and compactness. We also proved a result about good pairs. The concept of good pairs comes into use when we can do excision, which will be one of the concepts within this week. We will be proving more properties of singular homology.
+\section{Homotopy invariance}
+We proved last week that chain homotopic maps are indistinguishable in the homology. Today, we will prove that homotopic maps induce natural chain homotopic maps. The key ingredient we need is a cross product of singular chain complexes.
+
+Let $X,Y$ be topological spaces. We shall denote $a \in S_p(X),b \in S_q(Y)$. Moreover, for $x \in X, y \in Y$, we define $j_x:Y \rightarrow X\times Y$ and $i_y : X\rightarrow X \times Y$ to be the maps $y \mapsto (x,y)$ and $x \mapsto (x,y)$ respectively. Finally, if $x \in X$, we let $c_x^n$ denote the constant map in $\Sin_n(X)\subseteq S_n(X)$ that sends everything in $\Delta^n$ to $x$. 
+\begin{definition}
+A cross product is a map $\boxtimes : S_p(X) \times S_q(Y) \rightarrow S_{p+q}(X\times Y)$ defined on all $p,q \in \Z_{\geq 0}$ such that for all $a \in S_p(X),b \in S_q(Y)$, $\times$ is 
+\begin{itemize}
+    \item Natural in the sense that if $f:X\rightarrow X', g:Y\rightarrow Y' $ are continuous, then $f_*(a)\boxtimes g_*(b) = (f\times g)_*(a\boxtimes b)$
+    \item Bilinear (in the obvious sense)
+    \item Satisfies the Leibniz rule: $d(a\boxtimes b)= da\boxtimes b +(-1)^pa\boxtimes db$
+    \item Normalized in the sense that for all $x \in X, y \in Y$, for all $a \in S_p(X),b \in S_q(Y)$, $c_x^0 \boxtimes b = {j_x}_*(b) \in S_q(X\times Y)$ and $a \boxtimes c_y^0 = {i_y}_*(a) \in S_p(X\times Y)$ 
+\end{itemize}
+\end{definition}
+This tool is enough to prove homotopy invariance for homology. In fact, this can be generalized to work with homology with arbitrary coefficients as we will do so later on. 
+\begin{proof}
+If one of $p$ or $q$ is equal to $0$, our construction in normalization axiom will give $\times$ as desired. In particular, we define $\boxtimes : \Sin_{p}(X)\times \Sin_q(Y) \rightarrow S_{p+q}(X\times Y)$ by $(c_x^0,b) \mapsto {j_x}_*(b)$ if $p = 0$, and $(a,c_y^0) \mapsto {i_y}_*(a) $ if $q = 0$, and then extend it $\Z-$bilinearly. For the Leibniz rule, assume $q = 0$. Then, we have 
+\begin{align*}
+    d(a\boxtimes c_y^0) &=  d({j_y}_*( a)) \\
+    &={j_y}_* (da) & \text{by commutativity of }d \text{ and induced maps} \\
+    &= da \boxtimes c_y^0 + (-1)^p a \boxtimes dc_y^0 & \text{since }dc_y^0=0
+\end{align*}
+This extends $\Z-$bilinearly, and the other properties follow as well. A similar argument can be made for $p=0$. Thus, this proves that such a product exists if one of $p$ or $q$ is equal to $0$. Assume now neither is equal to zero. We induct on $p+q$ and assume that the result holds for $p+q-1 > 0$, which we can assume since we already proved the case where  one of $p$ or $q$ is equal to $0$. Let $a \in S_p(X),b \in S_q(X)$. Then, $da\in S_{p-1}(X)$ and $db \in S_{q-1}(Y)$, so the induction assumption gives that $(da)\boxtimes b +(-1)^pa\boxtimes db \in S_{p+q-1}(X\times Y)$.
+Observe that 
+\begin{align*}
+    &d((da)\boxtimes b +(-1)^pa\boxtimes db) \\=& (d^2a)\boxtimes b +(-1)^{p-1}(da\boxtimes db) + (-1)^p(da \boxtimes db)+ a \boxtimes (d^2b) =0
+\end{align*}
+so that every expression of the form $(da)\boxtimes b +(-1)^pa\boxtimes db \in S_{p+q-1}(X\times Y)$ is a cycle. 
+
+We have a universal example of a simplex - the identity map $\id_p : \Delta^p \rightarrow \Delta^p$. Notice, every $\sigma \in \Sin_p(X)$ can be written as $\sigma \circ \id_p =\sigma_*(\id_p)$, so if we can define $\id_p\boxtimes \id_q$, then we can define $a \boxtimes b$ for arbitrary $a \in S_p(X),b \in S_q(Y)$, and to achieve naturality, we must define $\boxtimes$ using such universal examples.
+
+We make the observation that $\Delta^p\times \Delta^q$ is star-shaped since it is convex (and non-empty), so that $H_{p+q-1}(\Delta^p\times \Delta^q) = 0$ since $p+q-1 > 0$. Thus, we must have that $Z_n (\Delta^p\times \Delta^q)=\sigma \in B_{n+1}(\Delta^p\times \Delta^q)$. In particular, this means that for every expression of the form $(da)\boxtimes b +(-1)^pa\boxtimes db \in S_{p+q-1}(X\times Y)$ where $a \in S_p(\Delta^p),b \in S_q(\Delta^q)$, there exists $\tau \in S_{p+q}(\Delta^p \times \Delta^q)$ such that
+$$d (\tau) = (da)\boxtimes b +(-1)^pa\boxtimes db \in S_{p+q-1}(X\times Y)$$
+Now define $\id_p \boxtimes \id_q = \tau$ where $\tau$ is chosen such that $$d(\tau) = (d\id_p)\boxtimes \id_q +(-1)^p\id_p\boxtimes d\id_q$$
+Then, define for arbitrary topologicaly spaces $X,Y$ and $\sigma_p \in \Sin_p(X),\sigma_q \in \Sin_q(Y)$,
+$$\sigma_p \boxtimes \sigma_q =(\sigma_p \times \sigma_q)_*(\sigma)$$
+which interacts well since the above expression is equal to ${\sigma_p}_*\id_p \boxtimes {\sigma_q}_*\id_q$. Extend now $\boxtimes$ bilinearly to obtain $\boxtimes : S_p(X)\times S_q(Y) \rightarrow S_{p+q}(X\times Y)$. The cross product then automatically satisfies bilinearity and the Leibniz rule. Now, we also immediately have normality since normality is exactly the cases when one of $p$ or $q$ is equal to 0. For naturality, let $f:X\rightarrow X',g:Y\rightarrow Y'$ be continuous, and without loss of generality, let $\sigma_p \in \Sin_p(X),\sigma_q \in \Sin_q(Y)$. We then have that 
+\begin{align*}
+   (f\times g)_*(\sigma_p\boxtimes \sigma_q) &= (f\times g)_*((\sigma_p\times \sigma_q)_* (\id_p\boxtimes \id_q)) \\
+   &= ((f\times g)\circ (\sigma_p\times \sigma_q))_*(\id_p\boxtimes \id_q) \\
+   &= (f\sigma_p\times g\sigma_q)_* (\id_p\boxtimes \id_q) \\
+   &= f\sigma_p \boxtimes g\sigma_q \\
+   &= f_*(\sigma_p)\boxtimes g_*(\sigma_q)
+\end{align*}
+and since $\boxtimes$ extends $\Z-$bilinearly, we have naturality as desired.
+\end{proof}
+We are now ready to prove the homotopy invariance of homology.
+\begin{theorem}
+    Let $f,g:X\rightarrow Y$ be homotopic maps where $h$ is a homotopy between them. Then, $h$ induces a natural chain homotopy between $f$ and $g$.
+\end{theorem}
+\begin{proof}
+    Suppose $h(x,0) = f(x), h(x,1)=g(x)$. Let $\iota_0,\iota_1:X\rightarrow X\times I$ be the inclusion of $X$ into the top and bottom of the cylinder of $X$. Let $r:\Delta^1\rightarrow I$ be continuous and satisfy $d^0r = c_1^0,d^1r = c_0^0$ (which exists, since $\Delta^1 = I$ and the map $t \mapsto (1-t)$ does the job). For any $\sigma \in S_n(X)$, define $h_X: S_*(X) \rightarrow S_{*+1}(X\times I)$ by $h_X(\sigma) = (-1)^n\sigma \boxtimes r$. We show that $h_X$ is a chain homotopy between $\iota_0$ and $\iota_1$. Notice,
+    \begin{align*}
+        dh_X(\sigma) &= (-1)^nd(\sigma \boxtimes r) \\
+                    &= (-1)^nd\sigma \boxtimes r + \sigma \boxtimes dr & \text{by Leibniz}\\
+                    &= -((-1)^{n-1}d\sigma \boxtimes r) + \sigma \boxtimes(c_1^0 -c_0^0) \\
+                    &= -h_Xd\sigma + \sigma \boxtimes c_1^0-\sigma \boxtimes c_0^0 \\
+         (dh_X+h_Xd) (\sigma)          &= ({\iota_1}_*-{\iota_0}_*)(\sigma) & \text{by normality}
+    \end{align*}
+    Hence, $h_X$ is a chain homotopy between the induced maps from the inclusions. Let $h_*$ be the induced map on $S_*(X\times I)\rightarrow S_*(Y)$ via $h$. Compose now $h_* h_X$ to get a ($\Z-$linear) map $h_X: S_*(X) \rightarrow S_{*+1}(Y)$. Then, $h\iota_1=g$ and $h\iota_0=f$ are chain homotopic via the chain homotopy $h_* h_X$.
+\end{proof}
+In the above, we used naturality in the construction of the cross product, and also when we used the fact that composing a chain homotopy with an induced map results in another chain homotopy.
+\begin{corollary}
+    Homotopic maps induce the same map in the homology.
+\end{corollary}
+\begin{proof}
+    Chain homotopic maps induce the same map in the homology.
+\end{proof}
+
+In Week 2, we introduced the product space $X\times Y$, and yet we have mentioned nothing about its homology. It turns out that the cross product above gives rise to the following:
+\begin{prop}
+    The cross product induces a natural, bilinear, and normalized map $$\boxtimes : H_p(X)\times H_q(Y) \rightarrow H_{p+q}(X\times Y)$$
+\end{prop}
+We shall prove the following lemma from which the previous proposition immediately follows:
+\begin{lemma}
+    Let $A_*,B_*,C_*$ be chain complexes and $\boxtimes:A_p \times B_q \rightarrow C_{p+q}$ be a bilinear map that satisfies the Leibniz rule. Then, it induces a bilinear map $\boxtimes :H_p(A)\times H_q(B) \rightarrow H_{p+q}(C)$.
+\end{lemma}
+\begin{proof}
+    We show that the obvious map $[a] \boxtimes [b] \rightarrow [a\boxtimes b]$ works. Note that the Leibniz formula then gives
+    $$d(a\boxtimes b)= da \boxtimes b +(-1)^pa\boxtimes db = 0$$
+    since $a,b$ are cycles. Now, consider $a',b'$ and $a+da', b+db'$. Consider now the difference between $(a+da')\boxtimes (b+db')$ and $a \boxtimes b$. Since $da=0,db=0,d^2a' = 0$, we have 
+    \begin{align*}
+        d(a'\boxtimes b + (-1)^p((a+da')\boxtimes b')) &= da'\boxtimes b + (-1)^pd((a+da')\boxtimes b') \\
+        &= da'\boxtimes b +a\boxtimes db' + da'\boxtimes db' \\
+        &= (a+da')\boxtimes (b+db') - a\boxtimes b
+    \end{align*}
+    so that $[a] \boxtimes [b] \rightarrow [a\boxtimes b]$ is well defined on the homology. Bilinearity is obvious and inherited from the bilinearity on the chain complexes.
+\end{proof}
+The reader may want to refer to \cite{miller} Chapter 6 and 7 for a more detailed discussion and the Eilenberg-Zilber product.
+
+We will introduce the excisive property of homology the next time, so let us recall some tools we will use. First, we shall recall the definition of a relative chain complex $S_*(X,A) = S_*(X)/S_*(A)$, and $H_*(X,A)=H_*(S_*(X,A))$ for pairs of spaces $A \subseteq X$. We also recall the augmented homology which we constructed in deducing the homology for a star shaped set. 
+\begin{prop}
+   If $X$ is non-empty and $x_0 \in X$, $H_n(X) \cong H_n(X,x_0)$ for all $n \neq 0$ and $H_0(X) \cong H_0(X,x_0)\oplus \Z$.
+\end{prop}
+\begin{proof}
+    We have the long homology exact sequence
+    $$\cdots \rightarrow H_{n+1}(X,x_0)\rightarrow H_n(x_0) \rightarrow H_n(X) \rightarrow H_n(X,x_0) \rightarrow \cdots$$
+    For all $n \neq 0,1$, we have $H_n(x_0) = 0$ so that induces isomorphisms $H_n(X) \cong H_n(X,x_0) $ for $n \neq 0$. At $n = 0,1$, we have
+    $$\cdots0 \rightarrow H_1(X)\xrightarrow{p^1}  H_1(X,x_0)\xrightarrow{\del} H_0(x_0)\xrightarrow{f}  H_0(X) \xrightarrow{p^0} H_0(X,x_0) \rightarrow   0\rightarrow \cdots$$
+    Note that $H_0(x_0)$ is cyclic and generated by the unique map that sends $\Delta^0$ to $x_0$. Hence, $f$ is injective, and $\del$ maps everything to zero. Thus, $p^1$ is surjective and also injective. This proves $H_1(X,x_0) \cong H_1(X)$. Now, we have an exact sequence of the form
+    $$\cdots \rightarrow H_0(x_0)\xrightarrow{f}  H_0(X) \xrightarrow{p^0} H_0(X,x_0) \rightarrow   \cdots$$
+    where importantly, $f$ is injective, and $p^0$ is surjective. Note that the augmentation map $\varepsilon:H_0(X) \rightarrow H_0(x_0)$ is a map such that $\varepsilon f$ is the identity on $H_0(x_0)$, so the sequence splits at $H_0(X)$ and we have 
+    $$H_0(X) \cong \Im f\oplus \coker f \cong H_0(x_0) \oplus H_0(X,x_0) \cong \Z \oplus H_0(X,x_0) $$  
+\end{proof}
+\begin{definition}
+If $X$ is non-empty, $H_n(X,x_0)$ is called the reduced homology for $X$ and is denoted as $\tilde H_n(X)$ (i.e., in the same way as augmented homology)
+\end{definition}
+The above shows that augmented homology and reduced homology being isomorphic. Nevertheless, it can be useful to make the distinction where reduced homology is a functor of pointed topological spaces whereas augmented homology is a functor of unpointed topological spaces. 
+\begin{prop}
+    There is a long exact sequence of the form 
+    $$\cdots \rightarrow H_{n+1}(X,A)\rightarrow \tilde H_n(A) \rightarrow \tilde H_n(X) \rightarrow H_n(X,A) \rightarrow \cdots$$
+\end{prop}
+\begin{corollary}
+    Given $B\subseteq A \subseteq X$, there is a long exact sequence of the form 
+    $$\cdots \rightarrow H_n(A,B) \rightarrow H_n(X,B) \rightarrow H_n(X,A) \rightarrow H_{n-1}(A,B) \rightarrow \cdots $$
+\end{corollary}
+\begin{proof}
+    Take the short exact sequence of chain complexes
+    $$0\rightarrow S_n(A,B) \rightarrow S_n(X,B) \rightarrow S_n(X,A) \rightarrow 0 $$
+\end{proof}
+\begin{remark}
+    One can also work with long exact sequences of reduced homology.
+\end{remark}
+I should mention that there is a notion of a homotopy equivalence of pairs. Recall that a pair of spaces is $(X,A)$ where $A\subseteq X$ is given the subspace topology.
+\begin{definition}
+    A (continuous) map between pairs $(X,A),(Y,B)$ is a continuous function $f:X\rightarrow Y$ such that $f|_A$ is a continuous function $A\rightarrow B$.
+\end{definition}
+\begin{definition}
+    A homotopy between a two continuous maps of pairs $f,g:(X,A)\rightarrow (Y,B)$ is a continuous map of pairs $H:(X\times [0,1],A\times [0,1]) \rightarrow (Y,B)$ such that $h(x,0)=f(x),h(x,1)=g(x)$ and $h_t(A) \subseteq B$ for all $t \in [0,1]$.
+\end{definition}
+\begin{definition}
+    Two pairs of spaces $(X,A),(Y,B)$ are homotopy equivalent if there are continuous maps of pairs of spaces $f:(X,A)\rightarrow (Y,B)$ and $g:(X,A)\rightarrow (Y,B)$ such that $fg \simeq \id_{(Y,B)}$ and $gf \simeq \id_{(X,A)}$.
+\end{definition}
+\begin{prop}\label{proph}
+    If $(X,A), (Y,B)$ are homotopy equivalent pairs of spaces, then $H_n(X,A) \cong H_n(Y,B)$.
+\end{prop}
+\begin{proof}
+    We are automatically given a map $f:(X,A)\rightarrow (Y,B)$ that has a homotopy inverse. Since $f$ is a homotopy of pairs, $f|_A$ is also a homotopy. Thus, we have the long exact sequences of homology,
+    \begin{center}
+        \begin{tikzcd}
+\cdots \quad H_n(A) \arrow[r] \arrow[d, "f|_A"] & H_n(X) \arrow[r] \arrow[d, "f"] & {H_n(X,A)} \arrow[r] \arrow[d] & H_{n-1}(A) \arrow[r] \arrow[d, "f|_A"] & H_{n-1}(X) \quad \cdots \arrow[d, "f"] \\
+\cdots \quad H_n(B) \arrow[r]                   & H_n(Y) \arrow[r]                & {H_n(Y,B)} \arrow[r]           & H_{n-1}(B) \arrow[r]                   & H_{n-1}(Y)\quad \cdots                
+\end{tikzcd}
+    \end{center}
+    where $f|_A$ and $f$ induce isomorphisms. The five lemma then implies $H_n(X,A) \cong H_n(Y,B)$.
+\end{proof}
+The following lemma will be useful in the next session:
+\begin{lemma}\label{lemma}
+    Let $X$ be a topological space, $A\subseteq  B \subseteq X$ and suppose $B$ deformation retracts onto $A$. Then, $H_*(X,A) \cong H_*(X,B)$.
+\end{lemma}
+\begin{proof}
+We have the following exact sequences of chain complexes
+    \begin{center}
+        \begin{tikzcd}
+0 \arrow[r] & S_*(A) \arrow[d, "i"] \arrow[r] & S_*(X) \arrow[d, "i"] \arrow[r] & {S_*(X,A)} \arrow[d, "i"] \arrow[r] & 0 \\
+0 \arrow[r] & S_*(B) \arrow[r]                & S_*(X) \arrow[r]                & {S_*(X,B)} \arrow[r]                & 0
+\end{tikzcd}
+    \end{center}
+    This then gives rise to the long exact sequences
+    \begin{center}
+        \begin{tikzcd}
+\cdots \arrow[r] & H_n(A) \arrow[d, "\cong"] \arrow[r] & H_n(X) \arrow[d, "\cong"] \arrow[r] & {H_n(X,A)} \arrow[d, "i"] \arrow[r] & H_{n-1}(A) \arrow[r] \arrow[d, "\cong"] & H_{n-1}(X) \arrow[d, "\cong"] \arrow[r] & \cdots \\
+\cdots \arrow[r] & H_n(B) \arrow[r]                    & H_n(X) \arrow[r]                    & {H_n(X,B)} \arrow[r]                & H_{n-1}(B) \arrow[r]                    & H_{n-1}(X) \arrow[r]                    & \cdots
+\end{tikzcd}
+    \end{center}
+    where the isomorphism $H_*(A)\rightarrow H_*(B)$ follows from $B$ deformation retracting onto $A$. Hence, the five lemma gives that $H_*(X,A) \cong H_*(X,B)$.
+\end{proof}
+\begin{corollary}\label{corollary116}
+    If $A\subseteq X$ is contractible, then $H_n(X,A) \cong \tilde H_n(X)$.
+\end{corollary}
+\begin{proof}
+    Lemma $\ref{lemma}$ implies that $H_n(X,A) \cong H_n(X,a) \cong \tilde H_n(X)$ where $A$ retracts to $a$. 
+\end{proof}
+This is a good place to stop. We will discuss excision next time.
+\begin{exercise}
+    Prove that $H_0(X,A) = 0$ if and only if $A$ meets every path component of $X$.
+\end{exercise}
+\begin{exercise}
+    Let $D^n$ be the unit disk. Prove that despite $D^n\simeq \R^n$ and $\S^{n-1}\simeq \R^n-*$, $(D^n,\S^{n-1})$ and $(\R^n,\R^n-*) $ are not homotopic pairs. (Nevertheless, the two pairs have the same relative homology as we will see next time)
+\end{exercise}
+\section{Excision}
+Excision is the tool that will allow us to calculate the homology of some very common spaces that we work with. Namely, that of $S^n$ for instance. This is also where we will start seeing the correlation between $H_n(X/A)$ and $H_n(X,A)$. 
+\begin{definition}
+    Let $X,A, U$ be topological spaces with $U\subseteq A \subseteq X$. The triple $(X,A,U)$ is called excisive if $\bar U \subseteq A^\circ$. Then, $(X-U,A-U)$ is called an excision of $(X,A)$.
+\end{definition}
+\begin{theorem}
+    Let $(X,A,U)$ be excisive. Then, the inclusion $(X-U,A-U) \hookrightarrow (X,A)$ induces an isomorphism $H_*(X-U,A-U)\cong H_*(X,A)$. Equivalently, if $A,B\subseteq X$ and $X = A^\circ \cup B^o$, the inclusion $(B,A\cap B) \hookrightarrow (X,A)$ induces isomorphisms $H_*(B,A\cap B) \cong H_*(X,A)$.
+\end{theorem}
+We will not actually prove the excision theorem, let us just see some consequences. Recall that $(X,A)$ is called a good pair if $A$ is closed and $A$ has a neighborhood $B$ that deformation retracts onto $A$. Note that we then also have $(X,B,A)$ is excisive.
+\begin{theorem}
+    If $(X,A)$ is a good pair and $a$ is the equivalence class corresponding to $A$ in $X/A$, then,
+    $$H_n(X,A) \cong H_n(X/A,a)$$
+\end{theorem}
+\begin{proof}
+    Consider the following diagram which commutes:
+    \begin{center}
+        \begin{tikzcd}
+{(X,A)} \arrow[d] \arrow[r, "i"] & {(X,B)} \arrow[d] &  & {(X-A,B-A)} \arrow[d, "\cong"] \arrow[ll, "j"'] \\
+{(X/A,a)} \arrow[r, "\bar i"]    & {(X/A,B/A)}       &  & {(X/A-a,B/A-a)} \arrow[ll, "\bar j"']          
+\end{tikzcd}
+    \end{center}
+    The homeomorphism of the pair of spaces on the right is valid since $A$ is closed. Note that $j$ is an excision by assumption. Thus, we have an isomorphism $H_*(X,B) \cong H_*(X-A,B-A)$. Moreover, $i$ induces isomorphisms $H_*(X,A)\cong H_*(X,B)$ by Lemma \ref{lemma}. Since $q:B \rightarrow B/A$ is a quotient, so is $q\times \id:B\times I \rightarrow (B/A) \times I$ as $I$ is (locally) compact and Hausdorff. Let $h:B\times I\rightarrow B$ be a homotopy between $\iota r$ and $\id_B$ where $r:B \rightarrow A$ is a retraction and $\iota$ is the inclusion of $A$ into $B$. Then, $\bar h: B/A\times I\rightarrow B/A$ is a homotopy between $\bar \iota \bar r$ and $\id_{B/A}$ where now $\bar r:B/A\rightarrow a$. Thus, $B/A$ deformation retracts to $a$. Hence, $\bar i$ is also an isomorphism between $H_*(X/A,a)$ and $H_*(X/A,B/A)$ by the same argument for $i$. Lastly, the quotient map $q:B\rightarrow B/A$ has that $q^{-1}q(A) = A$ so that $A$ is saturated, and $A$ being closed therefore implies $a$ is closed. Now, $\bar a  \subseteq (B/A)^o$ so that the triple $(X/A,a,B/A)$ is excisive and $\bar j$ induces an isomorphism on the homology by excision. All in all, we have
+    \begin{align*}
+        H_*(X,A) &\cong H_*(X,B) \\
+        &\cong H_*(X-A,B-A)\\ &\cong H_*(X/A-a,B/A-a) \\&\cong H_*(X/A,B/A)\\&\cong H_*(X/A,a)
+    \end{align*}
+\end{proof}
+\begin{corollary}
+    If $(X,A)$ is a good pair, $H_n(X,A) \cong \tilde H_n(X/A)$
+\end{corollary}
+\begin{definition}
+    Let $X$ be a topological space. The suspension of $X$, denoted $\Sigma X$ (or $SX$), is the space $X\times I$ but $X\times \set{0}$ is identified as one point and $X\times \set{1}$ is identified as another. In other words, it is the quotient $((X\times I)/(X\times \set 0))/(X\times \set 1)$.
+\end{definition}
+\begin{example}
+    Let $n \in \Z_{\geq 0}$. If $X = \S^n$, then $\Sigma X \cong \S^{n+1}$. Note that $\S^0$ is a two point space given the discrete topology.
+\end{example}
+\begin{theorem}\label{suspension}
+    Let $X$ be a topological space. Then, 
+    $$\tilde H_*(X) \cong \tilde H_{*+1}(\Sigma X)$$ 
+\end{theorem}
+\begin{proof}
+    Take the quotient $q:X\times I \rightarrow \Sigma X$. Let $x_0,x_1$ be the respective equivalence classes of $X\times \set 0,X\times \set 1$, and $\Sigma_0X = q(X\times [0,\frac 2 3]) $, $\Sigma_1X = q(X \times [\frac 1 3,1])$. Since $\Sigma_0 X,\Sigma_1X$ (which are homeomorphic to $CX$, even though they do not look like a cylinder in the figure later on) are contractible (and contract to $x_0 , x_1$ respectively), we have that $\tilde H_n(\Sigma_0 X) = \tilde H_n(\Sigma_1 X)=0$.
+    Let $X' = X\times \set{\frac 1 3}$ which is homeomorphic to $X$.
+    Now, we see that $\overline{\Sigma X - \Sigma_0 X}\subseteq (\Sigma X_1 - X')^\circ$, so by excision, we obtain
+    $$H_n(\Sigma_0 X,X') \cong H_n(\Sigma X,\Sigma X - \Sigma_1 X)$$
+    Let $Y = \Sigma X-\Sigma_0X$. Then, $Y$ contracts to the point $x_1$ as illustrated in the following figure: 
+    \begin{center}
+\begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\linewidth]{sigma1.jpg}
+    \end{figure}
+    \end{center}
+    Hence, Corollary \ref{corollary116} implies that $\tilde H_n(\Sigma X) \cong H_n(\Sigma X,Y) \cong H_n(\Sigma_0 X,X')$. Therefore, we have the long exact sequence
+    \begin{center}
+        \begin{tikzcd}
+\cdots \arrow[r] & {\tilde H_{n+1}(\Sigma_0X,X')} \arrow[r] & 0 \arrow[r] & \tilde H_{n}(X') \arrow[r] & {\tilde H_n(\Sigma_0 X,X')} \arrow[r] & \cdots
+\end{tikzcd}
+    \end{center}
+    so that $\tilde H_n(X)\cong \tilde H_{n}(X') \cong \tilde H_n(\Sigma_0 X,X') \cong \tilde H_n(\Sigma X)$ as $X$ and $X'$ are isomorphic.
+\end{proof}
+\begin{corollary}
+    Let $m \in \mathbb Z_{\geq 0}$. Then,
+    $$H_n(\S^m) = \begin{cases}
+    \Z \oplus \Z& \text{if } m=n = 0, \\
+        \Z & \text{if } m\geq 1,n = 0,n=m \\
+        0 & \text{otherwise}
+    \end{cases}$$
+    $$H_n(D^m,\S^{m-1}) =\tilde H_n(\S^m)= \begin{cases}
+        \Z & \text{if } n = m\\
+        0 & \text{otherwise}
+    \end{cases}$$
+\end{corollary}
+\begin{proof}
+    Theorem \ref{suspension} tells us that $\tilde H_n(\S^0) \cong \tilde H_{n+1}(\Sigma \S^0) \cong \tilde H_{n+1}(\S^1)$. Since $\S^m$ is path connected for $n > 1$, it has only one component. Exercise 2.23 in the Week 4 Summary therefore tells us that $H_0(\S^m) \cong \Z\pi_0(\S^m) \cong \Z$ for $n > 1$, and that $H_0(\S^0) \cong \Z\oplus \Z$ so that $\tilde H_0(\S^0) \cong \Z$. Inducting on $n$, we obtain that $\tilde H_m(\S^m) \cong \Z$  for all $m \in \N$ and 0 otherwise. This gives the first result. For the second result, note that taking an arbitrary $x \in (D^m)^\circ$, we see that $\S^{m-1}\subseteq D^m-x$ is closed in $D^m$, and the open neighborhood $D^m-x$ deformation retracts onto $\S^{m-1}$. Thus, $(D^m,\S^{m-1})$ is a good pair and $D^m/\S^{m-1} \cong \S^m$ gives $$H_n(D^m,\S^{m-1}) \cong \tilde H_n(D^m/\S^{m-1}) \cong \tilde H_n(\S^m)$$
+\end{proof}
+Note that the above also tells us that $\S^m \not \cong \S^n$ if $m \neq n$ since their homology is different.
+\begin{corollary}
+    $H_n(D^m,\S^{m-1})  \cong H_n(\R^m,\R^m-*)$ for $* \in \R^m$.
+\end{corollary}
+\begin{proof}
+    This is obvious if $m= 0$. If $m\neq 0$, let $* \in \R^m$. Then, $\R^m$ is homeomorphic to the interior of $D^m$ so let $f:\R^m \rightarrow D^m$ be such an embedding. Then, $D^m-f(*)$ is an open set containing the boundary $D^m-f(\R^m)$ (note that the fact that it is exactly $\S^{m-1}$ is irrelevant here) which is closed. Thus, excision gives us $$H_n(D^m,D^m-f(*)) \cong H_n(f(\R^m),f(\R^m)-f(*)) \cong H_n(\R^m,\R^m-*)$$
+    Since $D^m-f(*)$ deformation retracts onto the boundary $\S^{m-1}$, we have
+    $$H_i(D^m,\S^{m-1}) \cong H_i(D^m,D^m-f(*)) \cong H_i(\R^n,\R^n-*)$$
+\end{proof}
+This then implies the following:
+\begin{theorem}
+     Let $U\subseteq \R^m, V\subseteq \R^n$ be non-empty homeomorphic open subsets. Then, $m=n$.
+\end{theorem}
+\begin{proof}
+    If $m$ or $n$ is equal to zero, then we have a clopen set in $\R^m,\R^n$, but $\R^m,\R^n$ are connected so that its only clopen sets are $\varnothing$ and the entire set. It follows that $m=n=0$. For $m,n \in \Z_{\geq 0}$, let $h:U\rightarrow V$ be a homeomorphism, and $x \in U, y =h(x)$. Then, $h': U-x\rightarrow V-y$ is a homeomorphism. Now, $\R^m-U$ is a closed subset of $\R^m-x$ which is open, and similarly, $\R^n-V$ is a closed subset of $\R^n-y$ which is open. By excision, we have for all $i$,
+    \begin{align*}
+        H_i(U,U-x) &\cong H_i(\R^m,\R^m-x) \\
+        H_i(V,V-y) &\cong H_i(\R^n,\R^n-y)
+    \end{align*}
+    Observe that $h$ and $h'$ then induces isomorphisms in the homology long exact sequence as follows
+\begin{center}
+    \begin{tikzcd}
+\cdots \quad H_i(U-x) \arrow[r] \arrow[d, "\cong"] & H_i(U) \arrow[r] \arrow[d, "\cong"] & {H_i(U,U-x)} \arrow[r] \arrow[d] & H_{i-1}(U-x) \arrow[r] \arrow[d, "\cong"] & H_{i-1}(U)\quad \cdots \arrow[d, "\cong"] \\
+\cdots \quad H_i(V-y) \arrow[r]                    & H_i(V) \arrow[r]                    & {H_i(V,V-y)} \arrow[r]           & H_{i-1}(V-y) \arrow[r]                    & H_{i-1}(V)\quad \cdots                   
+\end{tikzcd}
+\end{center}
+    so the five lemma implies that $H_i(U,U-x) \cong H_i(V,V-y)$ for all $i$. Therefore, we have that $H_i(\R^{m},\R^{m}-x) \cong H_i(\R^{n},\R^n-y)$ holding for all $i$, which can only be possible when $m=n$.
+\end{proof}
+In the proof above, we see that excision makes homology a sort of local property where something similar to the homology of the space at a point $H_i(X,X-x)$ is determined entirely by a neighborhood of $x$. 
+\begin{definition}
+    Let $x \in X$. Then, the local homology groups at $x$ are the homology groups $H_n(X,X-x)$.
+\end{definition}
+This is the most useful when $X$ is Hausdorff so that the singleton set of $x$ is a closed subset of $X$. Finding an open neighborhood $U$ of $x$ then allows excision, and by the same calculation as in the proof, we obtain that $H_n(X,X-x) \cong H_n(U,U-x)$. 
+
+There is also a stronger statement than the above which is true, called Brouwer's invariance of domain. This is a corollary of Brouwer's fixed point theorem, but we will instead wait until we arrive at cohomology to (maybe) prove this theorem, and we will in fact prove a more general version for topological manifolds.
+
+We shall nevertheless give a proof for Brouwer's fixed point theorem.
+\begin{theorem}[Brouwer's fixed point]
+    Any continuous map $f:D^n \rightarrow D^n$ has a fixed point.
+\end{theorem}
+\begin{proof}
+    Note that there cannot be a retraction $r:D^n \rightarrow \S^{n-1}$ since otherwise $r\iota$ would be homotopic to the identity $\id_{\S^{n-1}}$, and thus the induced map $\iota_*$ would induce an injection in the homology 
+    $$\tilde H_*(\S^{n-1})\rightarrow \tilde H_*(D^n) = 0$$
+    which is impossible since $\tilde H_{n-1}(\S^{n-1}) \neq 0$. Thus, it suffices to show that if $f$ has no fixed point, then there exists a retraction $r:D^n \rightarrow \S^{n-1}$ and hence a contradiction. For each $x, f(x) \neq x$, so then there exists a ray originating at $f(x)$, passing through $x$, and ending on a point $r(x)$ on the boundary $\S^{n-1}$. Simply map $x$ to such $r(x)$. Then, $r$ is continuous and every $x \in \S^{n-1}$ maps to themself, and we have a retraction $r:D^n \rightarrow \S^{n-1}$.
+\end{proof}
+\begin{exercise}
+    Let $(X_i,x_i)_{i \in J}$ be a family of good pairs of spaces. Form now the wedge sum $X=\bigvee_{i \in J}X_i$ by identifying all $x_i$ as one point. Prove that the inclusions $\iota_i:X_i\rightarrow X$ induce an isomorphism
+    $$\bigoplus_{i \in J} \tilde H_*(X_i) \cong \tilde H_*(X)$$
+    \textit{Hint: Let $*$ be the one point space and $\varepsilon_i:*\rightarrow X_i$ be the map $* \mapsto x_i$. The wedge sum is the quotient $q:\coprod_{i \in J}X_i \rightarrow \bigvee_{i \in J} X_i$ where $q$ identifies all $x_i$ as one point. Observe that direct sums are the coproducts in the category of abelian groups}.
+\end{exercise}
+\begin{exercise}
+    Let $n \geq 2$ and $S$ be a finite set of $p$ points. Calculate $H_*(\R^n-S)$. 
+\end{exercise}
+\printbibliography
+\end{document}
