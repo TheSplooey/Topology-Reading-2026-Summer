@@ -1,0 +1,1 @@
+Stuff from the Topology Reading group I did with my friends in the Summer of 2026. There are some errors in the notes (which have been fixed but not updated on github) and I will correct them and reupload everything once the reading group is over.
