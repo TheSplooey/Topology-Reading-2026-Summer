@@ -1,0 +1,548 @@
+\documentclass[12pt,reqno]{amsart}
+\usepackage[margin=1in]{geometry}                % See geometry.pdf to learn the layout options. There are lots.
+\geometry{letterpaper}                   % ... or a4paper or a5paper or ... 
+%\geometry{landscape}                % Activate for for rotated page geometry
+%\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}
+\usepackage{comment}
+\usepackage{changepage}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{enumerate}
+\usepackage{float}
+\usepackage{hyperref}
+\usepackage{MnSymbol}%
+\usepackage{wasysym}%
+
+\usepackage{xcolor}
+
+\usepackage{mathtools}
+
+\usepackage{subcaption}
+\usepackage{thmtools, thm-restate}
+\usepackage{array}
+
+
+%\usepackage{fancyhdr}
+%\usepackage{hyperref}
+%\usepackage{wasysym}
+
+% \usepackage[style=alphabetic]{biblatex}
+%\addbibresource{ref.bib}
+
+ %space between paragraphs
+%
+%
+%
+%
+%
+
+
+%\newtheorem{theorem}{Theorem}[section]
+%\newtheorem{proposition}[theorem]{Proposition}
+%\newtheorem{lemma}[theorem]{Lemma}
+%\newtheorem{corollary}[theorem]{Corollary}
+%\newtheorem{conjecture}[theorem]{Conjecture}
+%%\theoremstyle{definition}
+%\newtheorem{definition}[theorem]{Definition}
+%\newtheorem{example}[theorem]{Example}
+%\newtheorem{remark}[theorem]{Remark}
+%\newtheorem{notation}[theorem]{Notation}
+%\newtheorem{question}[theorem]{Question}
+%
+
+
+
+\declaretheorem{theorem}
+\numberwithin{theorem}{section}
+
+\declaretheorem[sibling=theorem]{corollary, lemma, proposition, conjecture}
+\theoremstyle{definition}
+\declaretheorem[sibling=theorem]{definition,notation}
+\theoremstyle{remark}
+\declaretheorem[sibling=theorem]{example, remark, question, exercise}
+
+
+
+
+
+
+
+
+\numberwithin{equation}{section}
+
+
+
+\newcommand{\pb}[1]{\marginpar{PB: #1}}
+\newcommand{\diam}{\textrm{diam}}
+
+%\input{dfmacros}
+%%% Mathcal
+\newcommand{\cA}{\mathcal{A}}
+\newcommand{\Bor}{\mathrm{Bor}}
+\newcommand{\cB}{\mathcal{B}}
+\newcommand{\cC}{\mathcal{C}}
+\newcommand{\cD}{\mathcal{D}}
+\newcommand{\cE}{\mathcal{E}}
+%\newcommand{\cF}{\mathcal{F}}
+\newcommand{\cG}{\mathcal{G}}
+\newcommand{\cH}{\mathcal{H}}
+\newcommand{\cI}{\mathcal{I}}
+\newcommand{\cJ}{\mathcal{J}}
+\newcommand{\cK}{\mathcal{K}}
+\newcommand{\cL}{\mathcal{L}}
+\newcommand{\cM}{\mathcal{M}}
+\newcommand{\cN}{\mathcal{N}}
+\newcommand{\cO}{\mathcal{O}}
+%\newcommand{\cP}{\mathcal{P}}
+%\newcommand{\cQ}{\mathcal{Q}}
+%\newcommand{\cR}{\mathcal{R}}
+\newcommand{\cS}{\mathcal{S}}
+\newcommand{\cT}{\mathcal{T}}
+\newcommand{\cU}{\mathcal{U}}
+\newcommand{\cV}{\mathcal{V}}
+\newcommand{\cW}{\mathcal{W}}
+\newcommand{\cX}{\mathcal{X}}
+\newcommand{\cY}{\mathcal{Y}}
+\newcommand{\cZ}{\mathcal{Z}}
+\newcommand{\proj}{\textrm{proj}}
+%%% Mathbb
+% \newcommand{\bA}{\mathbb{A}}
+% \newcommand{\bB}{\mathbb{B}}
+% \newcommand{\bC}{\mathbb{C}}
+% \newcommand{\bD}{\mathbb{D}}
+% %\newcommand{\bE}{\mathbb{E}}
+% \newcommand{\bF}{\mathbb{F}}
+% \newcommand{\bG}{\mathbb{G}}
+% \newcommand{\bH}{\mathbb{H}}
+% \newcommand{\bI}{\mathbb{I}}
+% \newcommand{\bJ}{\mathbb{J}}
+% \newcommand{\bK}{\mathbb{K}}
+% \newcommand{\bL}{\mathbb{L}}
+% \newcommand{\bM}{\mathbb{M}}
+% \newcommand{\bN}{\mathbb{N}}
+% \newcommand{\bO}{\mathbb{O}}
+% \newcommand{\bP}{\mathbb{P}}
+% \newcommand{\bQ}{\mathbb{Q}}
+% \newcommand{\bR}{\mathbb{R}}
+% \newcommand{\bS}{\mathbb{S}}
+% \newcommand{\bT}{\mathbb{T}}
+% \newcommand{\bU}{\mathbb{U}}
+% \newcommand{\bV}{\mathbb{V}}
+% \newcommand{\bW}{\mathbb{W}}
+% \newcommand{\bX}{\mathbb{X}}
+% \newcommand{\bY}{\mathbb{Y}}
+% \newcommand{\bZ}{\mathbb{Z}}
+
+%--------------Commands------------------
+\newcommand{\spt}{\mathrm{spt}}
+\newcommand{\RR}{\mathbb R}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\C}{\mathbb C}
+\newcommand{\N}{\mathbb N}
+\newcommand{\T}{\mathbb T}
+\newcommand{\F}{\mathbb F}
+\newcommand{\FP}{\mathbb{FP}}
+\newcommand{\A}{\Tilde{A}_{4,d}}
+\newcommand{\Aq}{\Tilde{A}_{q,d}}
+\newcommand{\B}{\mathbb B}
+\renewcommand{\S}{\mathbb S}
+\newcommand{\w}{\omega}
+\newcommand{\W}{\mathbb{W}}
+\newcommand{\e}{\epsilon}
+\newcommand{\g}{\gamma}
+\newcommand{\p}{\varphi}
+\newcommand{\s}{\psi}
+\newcommand{\z}{\zeta}
+\renewcommand{\l}{\ell}
+\renewcommand{\a}{\alpha}
+\renewcommand{\b}{\beta}
+\renewcommand{\d}{\de}
+\renewcommand{\k}{\kappa}
+\newcommand{\m}{\textfrak{m}}
+\renewcommand{\P}{\mathbb{P}}
+\newcommand{\Tr}{\textup{Tr}}
+\newcommand{\Fav}{\textrm{Fav}}
+
+\newcommand{\op}[1]{\operatorname{{#1}}}
+\newcommand{\im}{\operatorname{Im}}
+\newcommand{\pd}[2]{\frac{\itemtial #1}{\itemtial #2}}
+\newcommand{\rd}[2]{\frac{d #1}{d #2}}
+\newcommand{\ip}[2]{\left \langle #1 , #2 \right \rangle}
+\renewcommand{\j}[1]{\left \langle #1 \right \rangle}
+\newcommand{\set}[1]{\left \{ #1 \right \}}
+\newcommand{\cl}{\operatorname{cl}}
+\newcommand{\into}{\hookrightarrow}
+\newcommand{\pa}{\mathrm{pa}}
+\newcommand{\nd}{\mathrm{nd}}
+
+\newcommand{\mc}{\mathcal}
+\newcommand{\mb}{\mathbb}
+\newcommand{\f}{\mathfrak}
+\renewcommand{\Re}{\text{Re}}
+\renewcommand{\Im}{\text{Im}}
+\newcommand{\Fq}{\mathbb{F}_q}
+
+\def\bff{\mathbf f}
+\def\bE{\mathbf E}
+\def\bx{\mathbf x}
+\def\boldR{\mathbf R}
+\def\by{\mathbf y}
+\def\bz{\mathbf z}
+\def\rationals{\mathbb Q}
+\newcommand{\norm}[1]{ \|  #1 \|}
+\def\scriptl{{\mathcal L}}
+\def\scripti{{\mathcal I}}
+\def\scriptr{{\mathcal R}}
+
+\def\bEdagger{{\mathbf E}^\dagger}
+%\def\set4{\{1,2,3,4\}}
+%\def\set4{\overline{4}}
+%set4 changed to setf
+\def\setf{\mathcal I}
+%tup14 changed to tupd
+\def\tupf{(1,2,3,4)}
+\def\bk{\mathbf k}
+\def\sl{\operatorname{Sl}}
+\def\gl{\operatorname{Gl}}
+\def\eps{\varepsilon}
+\def\one{{\mathbf 1}}
+\def\bEstar{{\mathbf E}^\star}
+\def\be{{\mathbf e}}
+\def\bv{{\mathbf v}}
+\def\bw{{\mathbf w}}
+\def\br{{\mathbf r}}
+
+
+\newcommand{\hatf}{\hat{f}}
+\newcommand{\hatg}{\hat{g}}
+\newcommand{\hath}{\hat{h}}
+\newcommand{\cchi}{\Check{\chi}}
+\newcommand{\cpsi}{\Check{\psi}}
+\newcommand{\hchi}{\hat{\chi}}
+\newcommand{\lesim}{\lesssim}
+\newcommand{\RapDec}{\mathrm{RapDec}}
+\newcommand{\bT}{\mathbf{T}}
+\newcommand{\del}{\partial}
+
+\theoremstyle{definition}
+\newtheorem*{comm*}{Comment}
+\newtheorem*{lemma*}{Lemma}
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{ex}[thm]{Example}
+\newtheorem{conj}[thm]{Conjecture}
+\newtheorem{cor}[thm]{Corollary}
+\newcommand{\pp}{\mathbin{\!/\mkern-5mu/\!}}
+\newcommand{\supp}{\mathrm{supp}}
+
+
+\newtheorem{prop}[theorem]{Proposition}
+
+%\DeclareMathOperator{\Hopf}{Hopf}
+\DeclareMathOperator{\codim}{codim}
+
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\FF}{\mathbb{F}}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\D}{\mathbb D}
+\newcommand{\de}{\delta} %%%%%\delta
+\newcommand{\De}{\Delta} %%%%%\delta
+\newcommand{\ga}{\gamma}
+\newcommand{\Ga}{\Gamma}
+\newcommand{\ZS}{\mathbb S}
+
+\newcommand{\wh}{\widehat}
+\newcommand{\wt}{\widetilde}
+\newcommand{\si}{\sigma}
+\newcommand{\Si}{\Sigma}
+\newcommand{\Tau}{\mathcal T}
+\newcommand{\poly}{\textup{Poly}}
+\newcommand{\thmc}{\textup{Thm}\Ga^n}
+\newcommand{\thmC}{\textup{Thm}\Ga^{n+1}}
+\newcommand{\thmm}{\textup{Thm}\mathcal M^n}
+\newcommand{\gn}{\Gamma_\circ}
+\newcommand{\mn}{\mathcal M_\circ}
+\newcommand{\en}{\epsilon_{\circ}}
+\newcommand{\I}{\mathbb I}
+\newcommand{\dist}{\textup{dist}}
+%\newcommand{\eps}{\epsilon}
+\newcommand{\Gn}{\Ga_{\circ}}
+\newcommand{\Id}{\boldsymbol 1}
+\newcommand{\Fp}{\mathbb{F}_p}
+\newcommand{\bdA}{\mathbf{A}}
+\newcommand{\bdE}{\mathbf{E}}
+%\newcommand{\bv}{\bold{v}}
+\newcommand{\ob}{\mathrm{ob}}
+\newcommand{\id}{\mathrm{id}}
+\newcommand{\Mor}{\mathrm{Mor}}
+\newcommand{\Sin}{\mathrm{Sin}}
+\renewcommand{\hom}{\mathrm{Hom}}
+\newcommand{\coker}{\mathrm{coker}}
+\newcommand{\Sk}{\mathrm{Sk}}
+\usepackage{tikz} 
+\usetikzlibrary{positioning}
+\newcommand{\ind}{\perp\!\!\!\!\!\perp} 
+
+\newcommand{\Tor}{\mathrm{Tor}}
+\newcommand{\Ext}{\mathrm{Ext}}
+\newcommand{\MyTo}[1]{\mathbin{\,\tikz[baseline] \draw[-stealth,line width=.4pt] (0ex,0.4ex) -- (#1,0.4ex);}}
+\newcommand{\ToMy}[1]{\mathbin{\,\tikz[baseline] \draw[-stealth,line width=.4pt] (#1,0.4ex) -- (0ex,0.4ex);}}
+\newcommand{\Dlim}{%
+    \mathchoice
+      {\lim_{\MyTo{3.0ex}}}% \displaystyle
+      {\lim_{\MyTo{2.5ex}}}% \textstyle
+      {\lim_{\MyTo{2.0ex}}}% \scriptstyle
+      {\lim_{\MyTo{2.0ex}}}% \scriptscriptstyle
+}
+\newcommand{\Ilim}{%
+    \mathchoice
+      {\lim_{\ToMy{3.0ex}}}% \displaystyle
+      {\lim_{\ToMy{2.5ex}}}% \textstyle
+      {\lim_{\ToMy{2.0ex}}}% \scriptstyle
+      {\lim_{\ToMy{2.0ex}}}% \scriptscriptstyle
+}
+
+\usepackage[
+backend=biber,
+style=alphabetic,
+sorting=nyt
+]{biblatex}
+\addbibresource{references.bib}
+
+\usepackage{tikz-cd}
+\usetikzlibrary{shapes}
+\usetikzlibrary{calc}
+\begin{document}
+\title{Topology Reading Group Week 6}
+\maketitle
+Last week, we witnessed the power of excision and examples of homology of spaces that we were able to compute. This week, we will 
+develop another important tool that comes as a consequence of excision - the Mayer-Vietoris sequence. 
+\section{The Mayer-Vietoris sequence}
+Let us prove the following lemma first:
+\begin{lemma}\label{exact}
+    Suppose we have two exact sequences and maps $h,f,k,r,s$ such that the following diagram commutes:
+    \begin{center}
+        \begin{tikzcd}
+\cdots \arrow[r] & C_{n} \arrow[r, "k"] \arrow[d, "h"] & A_n \arrow[r, "r"] \arrow[d, "f"] & B_n \arrow[r, "s"] \arrow[d, "p^{-1}"] & C_{n-1} \arrow[d, "h"] \arrow[r] & \cdots \\
+\cdots \arrow[r] & C_{n}' \arrow[r, "k"]               & A_{n}' \arrow[r, "r"]           & B_{n}' \arrow[r, "s"]               & C_{n-1}' \arrow[r]               & \cdots
+\end{tikzcd}
+    \end{center}
+    where $p^{-1}$ is an isomorphism with the inverse $p:B_{n}\rightarrow B_n'$. The natural map $\del :A_n' \rightarrow C_{n-1}$ be defined as $\del = spr$ produces the following exact sequence:
+    \begin{center}
+        \begin{tikzcd}
+\cdots \arrow[r] & C_{n} \arrow[r, "\begin{pmatrix} h\\ -k\end{pmatrix}"] & C_{n}'\oplus A_n \arrow[r, "(k \ f)"] & A_n' \arrow[r, "\del"] & C_{n-1} \arrow[r] & \cdots
+\end{tikzcd}
+    \end{center}
+\end{lemma}
+\begin{proof}
+Let $m_1 = \begin{pmatrix} h\\ -k\end{pmatrix},m_2 = (k \ f)$. For each $n$, let $c \in C_{n}$. Then, $khc = fkc$ by commutativity of the diagram, so that $m_2m_1c = khc - fkc = 0$. Suppose $kc'+fa = 0$ where $c' \in C'_{n}, a \in A_n$. Then, by commutativity of the diagram, we have that $pra = rfa$. Now, $kc' = -fa$ so that $rkc' = -p^{-1}ra = -rfa$. However, $rkc' = 0$ since the bottom row is exact, so that $$0 = r(kc'-fa) = rkc'-rfa = -p^{-1}ra$$. Since $p^{-1}$ is injective, $ra = 0$ so by exactness of the top row, there exists $c$ such that $kc = a$. Now, we have $$k(c' + hc) = kc' +khc = kc' +fkc =  kc'+fa = 0$$
+By exactness of the bottom row, there exists $b'$ such that $sb' = c'+hc$. Let $b = p^{-1}(b')$ and pick $sb-c \in C_{n}$. Then, $h(sb-c) = spb +hc= sb' +hc= c'+hc -hc = c'$. Meanwhile, $-k(sb-c) = -ksb + kc = -ksb+a = a$ since $b \in B_{n+1}$ so that it becomes zero after composing with $ks$. Hence, $-k(sb -c)= a $ and $m_1(sb-c)=(c',a)$. This proves that $\im m_1 = \ker m_2$. 
+
+Now, let $c' \in C'_{n}, a \in A_n$. Then, $\del (kc'+fa) = spr(kc'+fa) = sprfa $. Now, the diagram commutes, so then $ra = prfa$ and therefore $sprfa = sra = 0$. Now, suppose $\del a' = 0$. Exactness of the top row gives $a$ such that $ra = pra'$. Notice that $ra' = p^{-1}ra = rfa$ by commutativity of the diagram so that $r(a'-fa) = 0$. By exactness of the bottom row, there exists $c' \in C_{n}'$ such that $kc' = a'-fa$ and hence $a' = kc' + fa$. Thus, $m_2(c',a)=a'$. This proves that $\im m_2=\ker \del $.
+
+Finally, let $a' \in A'_n$. Then, $hspra'-kspra' = sp^{-1}pra'-0=sra'=0$ and hence $m_1\del(a')=0$. Suppose now $hc= 0$ and $-kc = 0$ where $c \in C_{n-1}$. By exactness of the first row, there exists $b$ such that $sb =c$. Then, by commutativity of the diagram, $0=hc=hsb=sp^{-1}b $ so that by exactness of the bottom row, there is $a'$ such that $ra'=p^{-1}b$. Then, $spra' = spp^{-1}b = c$. This proves $\im \del =\ker m_1$. Thus, the sequence above is exact.
+\end{proof}
+The lemma allows us to construct the Mayer-Vietoris sequence.
+\begin{definition}
+    A family $\cA \subseteq \mathcal P (X)$ is called a cover of $X$ if $X=\bigcup_{A\in \cA} A^\circ$.
+\end{definition}
+\begin{theorem}[Mayer-Vietoris]
+    If $\set{A,B}$ is a cover of $X$, then there are natural maps $\del : H_n(X) \rightarrow H_{n-1}(A\cap B)$ such that the following sequence is exact:
+    \begin{center}
+        \begin{tikzcd}
+                              & \cdots \arrow[r]                     & H_{n+1}(X) \arrow[lld, "\del"'] \\
+H_n(A\cap B) \arrow[r, "\alpha"] & H_n(A)\oplus H_n(B) \arrow[r, "\beta"] & H_n(X) \arrow[lld, "\del"']     \\
+H_{n-1}(A\cap B) \arrow[r]    & \cdots                               &                                
+\end{tikzcd}
+    \end{center}
+    Here, $\alpha = \begin{pmatrix}
+        j_1 \\
+        -j_2
+    \end{pmatrix}$ and $\beta = \begin{pmatrix}
+        i_1 & i_2
+    \end{pmatrix}$ where $j_1,j_2$ are the maps induced by the inclusions $A\cap B\rightarrow A,B$ respectively and $i_1,i_2$ are the maps induced by the inclusions $A,B\rightarrow X$ respectively.
+\end{theorem}
+We may use $S^c$ to denote the complement of a set if convenient.
+\begin{proof}
+Since $X = A^\circ \cup B^\circ$, we must have that $X = A\cup B$ as well. Consider $X - B\subseteq A$. Note that the closure of $X-B$ is by definition $(((X-B)^c)^\circ)^c = (B^\circ)^c =X-B^\circ $. Moreover, $X = A^\circ \cup B^\circ$ implies $X-B^\circ  \subseteq A^\circ $. Hence, $(X,A,B^c)$ is excisive. Thus, excision induces the following maps in the long exact sequences of homology:
+\begin{center}
+    \begin{tikzcd}
+\cdots \arrow[r] & H_n(A\cap B) \arrow[r, "j_2"] \arrow[d, "j_1"] & H_n(B) \arrow[r] \arrow[d, "i_2"] & {H_n(B,A\cap B)} \arrow[r] \arrow[d, "\cong"] & H_{n-1}(A\cap B) \arrow[r] \arrow[d] & \cdots \\
+\cdots \arrow[r] & H_n(A) \arrow[r, "i_1"]                        & H_n(X) \arrow[r]                  & {H_n(X,A)} \arrow[r]                          & H_{n-1}(A) \arrow[r]                 & \cdots
+\end{tikzcd}
+\end{center}
+Applying Lemma \ref{exact} to this gives a natural map $\del$ that produces the desired result.
+\end{proof}
+\begin{remark}
+    Applying this to the reduced homology exact sequences gives Mayer-Vietoris for reduced homology.
+\end{remark}
+\begin{example}
+    Let us compute the homology of the torus and the Klein bottle. For the torus, it can be decomposed as the union of two rectangles overlapping each other. Each of these strips as well are homotopy equivalent to $\S^1$, and their intersection is homotopy equivalent to $\S^1 \sqcup \S^1$. Similarly, for the Klein bottle, it can be decomposed as the union of two Mobius bands overlapping each other. Each Mobius band is homotopy equivalent to $\S^1$ and their intersection is homotopy equivalent to $\S^1 \sqcup \S^1$. Thus, applying the Mayer-Vietoris sequence gives for $n \neq 1,2$,
+    $$\cdots \rightarrow 0\rightarrow \tilde H_n(X) \rightarrow 0 \rightarrow 0 \rightarrow \tilde H_{n-1}(X) \rightarrow 0 \rightarrow \cdots$$
+    and also
+    $$\cdots \rightarrow 0 \rightarrow \tilde H_2(X) \rightarrow \tilde H_1(A\cap B)\rightarrow \tilde H_1(A)\oplus \tilde H_1(B) \rightarrow \tilde H_1(X) \rightarrow \tilde H_0(A\cap B) \rightarrow 0\rightarrow \cdots$$
+    where in the case for the torus, $A,B$ represent the strips and for the Klein bottle, $A,B$ represent the Mobius bands. As for $H_0(X)$, both spaces are obtained as a quotient of the unit square which is path connected, and quotients of path connected spaces are path connected. Thus, it has one component, and $H_0(X) \cong \Z$. This shows that for the torus and the Klein bottle, their homologies are the same everywhere except possibly at $n=1,2$. We will use our intuition to give a handwavy explanation as to how to proceed in computation (we will need the concept of a degree, which we will introduce later). 
+    
+    Let us focus first on the Klein Bottle, and let $A,B$ be Mobius bands that form a cover for $K$. We examine the exact sequence
+    $$\cdots \rightarrow 0 \rightarrow \tilde H_2(K) \xrightarrow{\del} \tilde H_1(A\cap B)\xrightarrow{\alpha} \tilde H_1(A)\oplus \tilde H_1(B) \rightarrow \tilde H_1(K)  \rightarrow \tilde H_0(A\cap B) \rightarrow 0\rightarrow \cdots$$
+    There exists $\gamma$ and $\varepsilon$ corresponding to generators for the two components of $\Z \oplus \Z \cong H_1(A\cap B)$, and $a, b$ corresponding to generators for $H_1(A) \cong \Z$ and $H_1(B) \cong \Z$ respectively. Letting $j_1,j_2$ be the induced maps of the inclusions $A\cap B$ to $A$ and $B$ respectively, we must have
+    \begin{align*}
+        j_1 (\gamma ) = a, j_1(\varepsilon) = a \\
+        j_2(\varepsilon) = b, j_2(\varepsilon ) = -b
+    \end{align*}
+    To see why these equations follow, let us consider the pictures of $A, B, A\cap B$ as follows:
+    \begin{center}
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.5\linewidth]{kleinbottle1.jpg}
+        \end{figure}
+    \end{center}
+    The equalities in the equations can be interpreted as the loops represented by each side of the equality sign are homotopic in an orientation preserving manner. The negative sign of $j_2(\varepsilon)=-b$ comes from the fact that when gluing the two black edges of $B$ together, we must introduce a twist which flips the orientation of one of the ends of $B$ (either the one containing $\gamma$ or $\varepsilon$). Thus, we have that
+    $$\alpha=\begin{pmatrix}
+        j_2 \\
+        -j_2
+    \end{pmatrix} = \begin{pmatrix}
+        1 & 1 \\
+        -1 & 1
+    \end{pmatrix}$$
+    The matrix above has trivial kernel, and therefore this map is injective. Exactness of the sequence therefore tells us that $H_2(K) = 0$. Now, consider instead the exact sequence
+    $$0 \rightarrow \coker \alpha \cong \Z^2/\alpha\Z^2 \xrightarrow{\begin{pmatrix}
+        i_1 & i_2
+    \end{pmatrix}} \tilde H_1(K)\xrightarrow{\del} \tilde H_0(A\cap B ) \rightarrow 0 = \tilde H_0(A)\oplus \tilde H_0(B) $$
+    Note that in here, by $\begin{pmatrix}
+        i_1 & i_2
+    \end{pmatrix}$ we really mean the map defined on the quotient $\coker \alpha$. We then have the Smith normal form
+    $$ \alpha \sim \begin{pmatrix}
+        2 & 0 \\
+        0 & 1
+    \end{pmatrix}$$
+    so that $\Z^2/\alpha\Z^2 \cong \Z/2\Z$. The map $\del$ is surjective by exactness, but also, we have a map $k:H_0(A\cap B ) \rightarrow H_1(K)$ such that $\del k = \id_{H_0(A\cap B )}$ so that the sequence splits as
+    $$0 \rightarrow \coker \alpha \cong\Z/2\Z \rightarrow \tilde H_1(K) \cong\Z \oplus \Z/2\Z \rightarrow 
+    \tilde H_0(A\cap B )\cong \Z \rightarrow 0$$
+    and therefore $H_1(K) \cong \Z \oplus \Z/2\Z$.
+
+    On the other hand, for the torus $T$, let $A, B$ be strips that form a cover for $T$. We have the following pictures for $A,B,$ and $A\cap B$:
+    \begin{center}
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.5\linewidth]{torus.jpg}
+        \end{figure}
+    \end{center}
+    Consider once again the sequence 
+    $$\cdots \rightarrow 0 \rightarrow \tilde H_2(T) \xrightarrow{\del} \tilde H_1(A\cap B)\xrightarrow{\alpha} \tilde H_1(A)\oplus \tilde H_1(B) \rightarrow \tilde H_1(T) \rightarrow \tilde H_0(A\cap B ) \rightarrow 0 \rightarrow \cdots$$
+    Here, the picture gives us the equations
+    $$\alpha=\begin{pmatrix}
+        j_2 \\
+        -j_2
+    \end{pmatrix} = \begin{pmatrix}
+        1 & 1 \\
+        -1 & -1
+    \end{pmatrix}$$
+    which has a kernel spanned $\Z-$linearly by the vector $(1,-1)$. The Smith normal form of the matrix corresponding to the equations above is  
+$$\alpha = \begin{pmatrix}
+    1 & 1 \\
+    -1 & -1
+\end{pmatrix} \sim \begin{pmatrix}
+    1 & 0 \\
+    0 & 0
+\end{pmatrix}$$
+    Thus, we have that $\coker \alpha \cong \Z$. Now, exactness of the sequence gives that $\del$ is surjective so that $H_2(T) \cong \tilde H_2(T) \cong \Im \del = \ker \alpha \cong \Z$. At the same time, we have the exact sequence
+     $$0 \rightarrow \coker \alpha \cong \Z\xrightarrow{\begin{pmatrix}
+        i_1 & i_2
+    \end{pmatrix}} \tilde H_1(T)\xrightarrow{\del} \tilde H_0(A\cap B ) \rightarrow 0 = \tilde H_0(A)\oplus \tilde H_0(B) $$
+    The sequence once again splits and therefore we have that $\tilde H_1(T) \cong \Z \oplus \Z$.
+    
+    In summary, the homology of the Klein bottle $K$ and the torus $T$ are the following respectively:
+    $$H_n(K) = \begin{cases}
+        0 & \text{if }n \geq 2\\
+        \Z \oplus \Z/2\Z & \text{if } n = 1 \\
+        \Z & \text{if } n = 0
+    \end{cases}  \quad H_n(T) = \begin{cases}
+        0 & \text{if }n \geq 3\\
+        
+        \Z \oplus \Z & \text{if } n = 1 \\
+        \Z & \text{if } n = 0,2
+    \end{cases}$$
+\end{example}
+\begin{remark}
+    There is a standard trick that we used here. We understood the following exact sequence of $R-$modules
+    $$0 \rightarrow M \rightarrow N \xrightarrow{\phi} L \xrightarrow{\eta} P \rightarrow 0$$
+    by analyzing the following two exact sequences:
+    \begin{align*}
+        0 \rightarrow M \rightarrow N &\xrightarrow{\phi} \Im \phi \rightarrow 0 \\
+        0 \rightarrow \coker \phi \xrightarrow{\bar \eta} L &\rightarrow P \rightarrow 0
+    \end{align*}
+    where $\bar \eta$ is injective since $\ker \eta = \im \phi$.
+\end{remark}
+I shall make a mention of the locality principle which implies excision, but we will omit the proof in our reading group.
+\begin{definition}
+    If $\cA$ is a cover of $X$, an $n-$singular simplex $\sigma$ is called $\cA-$small if there is $A \in \cA$ such that all of the image of $\sigma$ lies in $A$.
+\end{definition}
+Note that $d_i\sigma$ is $\cA-$small if $\sigma$ is. Let $\Sin_n^{\cA}(X)$ denote the set of $\cA-$small $n-$singular simplices, and $S_n^\cA(X)$ denote the free abelian group generated by $\Sin_n^\cA(X)$.
+\begin{theorem}[Locality principle]
+    The inclusion $S_n^\cA(X) \rightarrow S_n(X)$ induces an isomorphism in the homology.
+\end{theorem}
+
+We will finish our discussion today by introducing the Eilenberg-Steenrod axioms for a homology theory.
+\begin{definition}
+    A homology theory on $\mathbf{Top}$ is a sequence of functors $H_n:\mathbf{Top_2}\rightarrow \mathbf{Ab}$ for all $n \in \Z$ and a sequence of natural transformations $\del : H_n(X,A)\rightarrow H_{n-1}(A,\varnothing)$ (where we write  $H_{n}(U,\varnothing) = H_n(U)$) satisfying
+    \begin{enumerate}
+        \item (Homotopy invariance) If $f_0,f_1:(X,A)\rightarrow (Y,B)$ are homotopic, then the induced maps are the same on the homology.
+        \item (Excision) Excisions induce isomorphisms
+        \item (Long exact sequence) For any pair, the following sequence is exact:
+        $$\cdots \rightarrow H_n(A)\rightarrow H_n(X)\rightarrow H_n(X,A)\xrightarrow{\del} H_{n-1}(A)\rightarrow  \cdots $$
+        \item (Dimension axiom) $H_n(*) = 0$ when $n\neq 0$. 
+    \end{enumerate}
+\end{definition}
+\begin{definition}
+    Any homology theory satisfying all the axioms except possibly the dimension axiom is called a generalized homology theory. If the generalized homology theory does not satisfy the dimension axiom, it is called an extraordinary homology theory. 
+\end{definition}
+A homology theory can be called an ordinary homology theory if one wants to make it very explicit that the theory satisfies the dimension axiom.
+\begin{definition}
+    A generalized homology theory is compactly supported if for any pair $(X,A)$ and any $\sigma \in H_i(X,A)$, there is a compact pair $(Y,B)\subseteq (X,A)$ such that the induced map by the inclusion sends some $\tau \in H_i(Y,B)$ to $\sigma$.
+\end{definition}
+\begin{definition}
+    Given a generalized homology theory, the group $H_0(*)$ is called the coefficient group for the theory.
+\end{definition}
+Coefficient groups are what will soon give rise to homology with arbitrary coefficients as we will see in the weeks to follow.
+
+Given the axioms above, one can refer to \cite{weintraub} for consequences of the axioms. Many of them are theorems we have already proven, and I invite the reader to think through them.
+
+Lastly, we will also introduce the Milnor axiom. This is the convention taken in \cite{miller} and also in the Wikipedia page for the Eilenberg-Steenrod axioms.
+\begin{definition}[Milnor Axiom]
+    Given $(X_i)_{i \in J}$ for some indexing set $J$, let $X=\coprod_{i \in J} X_i$. The inclusions $\iota_i:X_i \rightarrow X$ induce an isomorphism
+    $$\bigoplus_{i \in J}H_n(X_i)\cong H_n(X)$$
+\end{definition}
+In category theory, we often speak of duals. That is, one can form an opposite category where all arrows are reversed, and many statements proven in one category will thus also hold true for the opposite category, i.e., flipping the arrows give analogous statements. This conveniently then allows us to define the axioms of a cohomology theory:
+\begin{definition}
+    A cohomology theory on $\mathbf{Top}$ is a sequence of functors $H^n:\mathbf{Top_2}\rightarrow \mathbf{Ab}$ for all $n \in \Z$ and a sequence of natural transformations $\del : H^n(A,\varnothing)\rightarrow H^{n+1}(X,A)$ (where we write  $H^{n}(U,\varnothing) = H^n(U)$) satisfying
+    \begin{enumerate}
+        \item (Homotopy invariance) If $f_0,f_1:(X,A)\rightarrow (Y,B)$ are homotopic, then the induced maps are the same on the homology.
+        \item (Excision) Excisions induce isomorphisms (note that the arrows are reversed, so the induced maps go $H^n(X,A)\rightarrow H^n(X-U,A-U)$)
+        \item (Long exact sequence) For any pair, the following sequence is exact:
+        $$\cdots \leftarrow H^n(A)\leftarrow H^n(X)\leftarrow H^n(X,A)\xleftarrow{\del} H^{n-1}(A)\leftarrow  \cdots $$
+        \item (Dimension axiom) $H_n(*) = 0$ when $n\neq 0$. 
+        \item (Milnor axiom*) Given $(X_i)_{i \in J}$ for some indexing set $J$, let $X=\coprod_{i \in J} X_i$. The inclusions $\iota_i:X_i \rightarrow X$ induce an isomorphism
+    $$ H^n(X)\cong \bigoplus_{i \in J}H^n(X_i)$$
+    \end{enumerate}
+    Any cohomology theory satisfying all the axioms except possibly the dimension axiom is called a generalized cohomology theory. If the generalized cohomology theory does not satisfy the dimension axiom, it is called an extraordinary cohomology theory. Also, given a generalized cohomology theory, the group $H^0(*)$ is called the coefficient group for the theory.
+\end{definition}
+Since we impose the Milnor axiom for a homology theory, it only makes sense to impose it for a cohomology theory. Note that we do not have a cohomology theory yet, stay tuned!
+\begin{exercise}
+     Prove that $H_n(\S^1\times \S^1) \cong H_n(\S^1 \vee \S^1 \vee \S^2)$, note $T\cong \S^1 \times \S^1$.
+\end{exercise}
+\begin{exercise}
+    Let $M$ be the Mobius band, $X = \S^1\times \S^1$. Parametrize the boundary of the Mobius band $M$ (which is homeomorphic to $\S^1$) by a function $g:I \rightarrow M$. Form the adjunction $X\cup_f M$ where $f:\del M \rightarrow \S^1\times \S^1$ sends $g(x)$ to $(e^{2\pi i x},1)$ (In other words, we glue the Mobius band onto any circle that cannot be shrunk in the torus). Calculate $H_n(X\cup_f M)$.
+\end{exercise}
+
+\printbibliography
+\end{document}
+
