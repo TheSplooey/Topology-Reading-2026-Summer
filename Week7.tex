@@ -1,0 +1,727 @@
+\documentclass[12pt,reqno]{amsart}
+\usepackage[margin=1in]{geometry}                % See geometry.pdf to learn the layout options. There are lots.
+\geometry{letterpaper}                   % ... or a4paper or a5paper or ... 
+%\geometry{landscape}                % Activate for for rotated page geometry
+%\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}
+\usepackage{comment}
+\usepackage{changepage}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{enumerate}
+\usepackage{float}
+\usepackage{hyperref}
+\usepackage{wasysym}%
+
+\usepackage{xcolor}
+
+\usepackage{subcaption}
+\usepackage{thmtools, thm-restate}
+\usepackage{array}
+
+
+%\usepackage{fancyhdr}
+%\usepackage{hyperref}
+%\usepackage{wasysym}
+
+% \usepackage[style=alphabetic]{biblatex}
+%\addbibresource{ref.bib}
+
+ %space between paragraphs
+%
+%
+%
+%
+%
+
+
+%\newtheorem{theorem}{Theorem}[section]
+%\newtheorem{proposition}[theorem]{Proposition}
+%\newtheorem{lemma}[theorem]{Lemma}
+%\newtheorem{corollary}[theorem]{Corollary}
+%\newtheorem{conjecture}[theorem]{Conjecture}
+%%\theoremstyle{definition}
+%\newtheorem{definition}[theorem]{Definition}
+%\newtheorem{example}[theorem]{Example}
+%\newtheorem{remark}[theorem]{Remark}
+%\newtheorem{notation}[theorem]{Notation}
+%\newtheorem{question}[theorem]{Question}
+%
+
+
+
+\declaretheorem{theorem}
+\numberwithin{theorem}{section}
+
+\declaretheorem[sibling=theorem]{corollary, lemma, proposition, conjecture}
+\theoremstyle{definition}
+\declaretheorem[sibling=theorem]{definition,notation}
+\theoremstyle{remark}
+\declaretheorem[sibling=theorem]{example, remark, question, exercise}
+
+
+
+
+
+
+
+
+\numberwithin{equation}{section}
+
+
+
+\newcommand{\pb}[1]{\marginpar{PB: #1}}
+\newcommand{\diam}{\textrm{diam}}
+
+%\input{dfmacros}
+%%% Mathcal
+\newcommand{\cA}{\mathcal{A}}
+\newcommand{\Bor}{\mathrm{Bor}}
+\newcommand{\cB}{\mathcal{B}}
+\newcommand{\cC}{\mathcal{C}}
+\newcommand{\cD}{\mathcal{D}}
+\newcommand{\cE}{\mathcal{E}}
+%\newcommand{\cF}{\mathcal{F}}
+\newcommand{\cG}{\mathcal{G}}
+\newcommand{\cH}{\mathcal{H}}
+\newcommand{\cI}{\mathcal{I}}
+\newcommand{\cJ}{\mathcal{J}}
+\newcommand{\cK}{\mathcal{K}}
+\newcommand{\cL}{\mathcal{L}}
+\newcommand{\cM}{\mathcal{M}}
+\newcommand{\cN}{\mathcal{N}}
+\newcommand{\cO}{\mathcal{O}}
+%\newcommand{\cP}{\mathcal{P}}
+%\newcommand{\cQ}{\mathcal{Q}}
+%\newcommand{\cR}{\mathcal{R}}
+\newcommand{\cS}{\mathcal{S}}
+\newcommand{\cT}{\mathcal{T}}
+\newcommand{\cU}{\mathcal{U}}
+\newcommand{\cV}{\mathcal{V}}
+\newcommand{\cW}{\mathcal{W}}
+\newcommand{\cX}{\mathcal{X}}
+\newcommand{\cY}{\mathcal{Y}}
+\newcommand{\cZ}{\mathcal{Z}}
+\newcommand{\proj}{\textrm{proj}}
+%%% Mathbb
+% \newcommand{\bA}{\mathbb{A}}
+% \newcommand{\bB}{\mathbb{B}}
+% \newcommand{\bC}{\mathbb{C}}
+% \newcommand{\bD}{\mathbb{D}}
+% %\newcommand{\bE}{\mathbb{E}}
+% \newcommand{\bF}{\mathbb{F}}
+% \newcommand{\bG}{\mathbb{G}}
+% \newcommand{\bH}{\mathbb{H}}
+% \newcommand{\bI}{\mathbb{I}}
+% \newcommand{\bJ}{\mathbb{J}}
+% \newcommand{\bK}{\mathbb{K}}
+% \newcommand{\bL}{\mathbb{L}}
+% \newcommand{\bM}{\mathbb{M}}
+% \newcommand{\bN}{\mathbb{N}}
+% \newcommand{\bO}{\mathbb{O}}
+% \newcommand{\bP}{\mathbb{P}}
+% \newcommand{\bQ}{\mathbb{Q}}
+% \newcommand{\bR}{\mathbb{R}}
+% \newcommand{\bS}{\mathbb{S}}
+% \newcommand{\bT}{\mathbb{T}}
+% \newcommand{\bU}{\mathbb{U}}
+% \newcommand{\bV}{\mathbb{V}}
+% \newcommand{\bW}{\mathbb{W}}
+% \newcommand{\bX}{\mathbb{X}}
+% \newcommand{\bY}{\mathbb{Y}}
+% \newcommand{\bZ}{\mathbb{Z}}
+
+%--------------Commands------------------
+\newcommand{\spt}{\mathrm{spt}}
+\newcommand{\RR}{\mathbb R}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\C}{\mathbb C}
+\newcommand{\N}{\mathbb N}
+\newcommand{\T}{\mathbb T}
+\newcommand{\F}{\mathbb F}
+\newcommand{\FP}{\mathbb{FP}}
+\newcommand{\A}{\Tilde{A}_{4,d}}
+\newcommand{\Aq}{\Tilde{A}_{q,d}}
+\newcommand{\B}{\mathbb B}
+\renewcommand{\S}{\mathbb S}
+\newcommand{\w}{\omega}
+\newcommand{\W}{\mathbb{W}}
+\newcommand{\e}{\epsilon}
+\newcommand{\g}{\gamma}
+\newcommand{\p}{\varphi}
+\newcommand{\s}{\psi}
+\newcommand{\z}{\zeta}
+\renewcommand{\l}{\ell}
+\renewcommand{\a}{\alpha}
+\renewcommand{\b}{\beta}
+\renewcommand{\d}{\de}
+\renewcommand{\k}{\kappa}
+\newcommand{\m}{\textfrak{m}}
+\renewcommand{\P}{\mathbb{P}}
+\newcommand{\Tr}{\textup{Tr}}
+\newcommand{\Fav}{\textrm{Fav}}
+
+\newcommand{\op}[1]{\operatorname{{#1}}}
+\newcommand{\im}{\operatorname{Im}}
+\newcommand{\pd}[2]{\frac{\itemtial #1}{\itemtial #2}}
+\newcommand{\rd}[2]{\frac{d #1}{d #2}}
+\newcommand{\ip}[2]{\left \langle #1 , #2 \right \rangle}
+\renewcommand{\j}[1]{\left \langle #1 \right \rangle}
+\newcommand{\set}[1]{\left \{ #1 \right \}}
+\newcommand{\cl}{\operatorname{cl}}
+\newcommand{\into}{\hookrightarrow}
+\newcommand{\pa}{\mathrm{pa}}
+\newcommand{\nd}{\mathrm{nd}}
+
+\newcommand{\mc}{\mathcal}
+\newcommand{\mb}{\mathbb}
+\newcommand{\f}{\mathfrak}
+\renewcommand{\Re}{\text{Re}}
+\renewcommand{\Im}{\text{Im}}
+\newcommand{\Fq}{\mathbb{F}_q}
+
+\def\bff{\mathbf f}
+\def\bE{\mathbf E}
+\def\bx{\mathbf x}
+\def\boldR{\mathbf R}
+\def\by{\mathbf y}
+\def\bz{\mathbf z}
+\def\rationals{\mathbb Q}
+\newcommand{\norm}[1]{ \|  #1 \|}
+\def\scriptl{{\mathcal L}}
+\def\scripti{{\mathcal I}}
+\def\scriptr{{\mathcal R}}
+
+\def\bEdagger{{\mathbf E}^\dagger}
+%\def\set4{\{1,2,3,4\}}
+%\def\set4{\overline{4}}
+%set4 changed to setf
+\def\setf{\mathcal I}
+%tup14 changed to tupd
+\def\tupf{(1,2,3,4)}
+\def\bk{\mathbf k}
+\def\sl{\operatorname{Sl}}
+\def\gl{\operatorname{Gl}}
+\def\eps{\varepsilon}
+\def\one{{\mathbf 1}}
+\def\bEstar{{\mathbf E}^\star}
+\def\be{{\mathbf e}}
+\def\bv{{\mathbf v}}
+\def\bw{{\mathbf w}}
+\def\br{{\mathbf r}}
+
+
+\newcommand{\hatf}{\hat{f}}
+\newcommand{\hatg}{\hat{g}}
+\newcommand{\hath}{\hat{h}}
+\newcommand{\cchi}{\Check{\chi}}
+\newcommand{\cpsi}{\Check{\psi}}
+\newcommand{\hchi}{\hat{\chi}}
+\newcommand{\lesim}{\lesssim}
+\newcommand{\RapDec}{\mathrm{RapDec}}
+\newcommand{\bT}{\mathbf{T}}
+\newcommand{\del}{\partial}
+
+\theoremstyle{definition}
+\newtheorem*{comm*}{Comment}
+\newtheorem*{lemma*}{Lemma}
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{ex}[thm]{Example}
+\newtheorem{conj}[thm]{Conjecture}
+\newtheorem{cor}[thm]{Corollary}
+\newcommand{\pp}{\mathbin{\!/\mkern-5mu/\!}}
+\newcommand{\supp}{\mathrm{supp}}
+
+
+\newtheorem{prop}[theorem]{Proposition}
+
+%\DeclareMathOperator{\Hopf}{Hopf}
+\DeclareMathOperator{\codim}{codim}
+
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\FF}{\mathbb{F}}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\D}{\mathbb D}
+\newcommand{\de}{\delta} %%%%%\delta
+\newcommand{\De}{\Delta} %%%%%\delta
+\newcommand{\ga}{\gamma}
+\newcommand{\Ga}{\Gamma}
+\newcommand{\ZS}{\mathbb S}
+
+\newcommand{\wh}{\widehat}
+\newcommand{\wt}{\widetilde}
+\newcommand{\si}{\sigma}
+\newcommand{\Si}{\Sigma}
+\newcommand{\Tau}{\mathcal T}
+\newcommand{\poly}{\textup{Poly}}
+\newcommand{\thmc}{\textup{Thm}\Ga^n}
+\newcommand{\thmC}{\textup{Thm}\Ga^{n+1}}
+\newcommand{\thmm}{\textup{Thm}\mathcal M^n}
+\newcommand{\gn}{\Gamma_\circ}
+\newcommand{\mn}{\mathcal M_\circ}
+\newcommand{\en}{\epsilon_{\circ}}
+\newcommand{\I}{\mathbb I}
+\newcommand{\dist}{\textup{dist}}
+%\newcommand{\eps}{\epsilon}
+\newcommand{\Gn}{\Ga_{\circ}}
+\newcommand{\Id}{\boldsymbol 1}
+\newcommand{\Fp}{\mathbb{F}_p}
+\newcommand{\bdA}{\mathbf{A}}
+\newcommand{\bdE}{\mathbf{E}}
+%\newcommand{\bv}{\bold{v}}
+\newcommand{\ob}{\mathrm{ob}}
+\newcommand{\id}{\mathrm{id}}
+\newcommand{\Mor}{\mathrm{Mor}}
+\newcommand{\Sin}{\mathrm{Sin}}
+\renewcommand{\hom}{\mathrm{Hom}}
+\newcommand{\coker}{\mathrm{coker}}
+\newcommand{\Sk}{\mathrm{Sk}}
+\usepackage{tikz} 
+\usetikzlibrary{positioning}
+\newcommand{\ind}{\perp\!\!\!\!\!\perp} 
+
+\newcommand{\Tor}{\mathrm{Tor}}
+\newcommand{\Ext}{\mathrm{Ext}}
+\newcommand{\MyTo}[1]{\mathbin{\,\tikz[baseline] \draw[-stealth,line width=.4pt] (0ex,0.4ex) -- (#1,0.4ex);}}
+\newcommand{\ToMy}[1]{\mathbin{\,\tikz[baseline] \draw[-stealth,line width=.4pt] (#1,0.4ex) -- (0ex,0.4ex);}}
+\newcommand{\Dlim}{%
+    \mathchoice
+      {\lim_{\MyTo{3.0ex}}}% \displaystyle
+      {\lim_{\MyTo{2.5ex}}}% \textstyle
+      {\lim_{\MyTo{2.0ex}}}% \scriptstyle
+      {\lim_{\MyTo{2.0ex}}}% \scriptscriptstyle
+}
+\newcommand{\Ilim}{%
+    \mathchoice
+      {\lim_{\ToMy{3.0ex}}}% \displaystyle
+      {\lim_{\ToMy{2.5ex}}}% \textstyle
+      {\lim_{\ToMy{2.0ex}}}% \scriptstyle
+      {\lim_{\ToMy{2.0ex}}}% \scriptscriptstyle
+}
+
+\usepackage[
+backend=biber,
+style=alphabetic,
+sorting=nyt
+]{biblatex}
+\addbibresource{references.bib}
+\usepackage{mathtools}
+
+\usepackage{tikz-cd}
+\usetikzlibrary{shapes}
+\usetikzlibrary{calc}
+
+\newcommand{\mono}{\hookrightarrow}
+\newcommand{\xmono}[1]{\xhookrightarrow{#1}}
+\newcommand{\epi}{\twoheadrightarrow}
+\newcommand{\xepi}[2][]{\xrightarrow[#1]{#2}\mathrel{\mkern-14mu}\rightarrow}
+\begin{document}
+\title{Topology Reading Group Week 7}
+\maketitle
+Last week, we finished with the Mayer-Vietoris sequence. This week, we will be introducing more computational methods. We will introduce CW-complexes and some homological algebra.
+\section{Degree and CW-complexes, homological algebra}
+\subsection{Degree}
+So far all we have computed are the homology of contractible spaces, $\S^n$, the torus and the Klein bottle. Let us introduce more computational tools that will make our life easier.
+\begin{definition}
+    Let $n \in \N$, and $f:\S^n \rightarrow \S^n$ be continuous. The degree of the continuous map is defined as
+    $$\deg f = f_*(1)$$
+    where $f_* : H_n(\S^n)\rightarrow  H_n(\S^n)$ is the induced map.
+\end{definition}
+\begin{remark}
+    Degree is also known as winding number, especially for $n = 1$.
+\end{remark}
+\begin{remark}
+    Sometimes people define it for $n=0$ as well using reduced homology. I would prefer not doing so.
+\end{remark}
+We are able to make this definition since we know that $\tilde H_n(\S^n) \cong \Z$ for $n \in \N$. By functoriality of $\tilde H_n$ from $\mathrm{h}\mathbf{Top}$ to $\mathbf{Ab}$, we immediately have the following properties:
+\begin{prop}
+For any $n \in \N$,
+    \begin{enumerate} 
+        \item $\deg (\id_{\S^n}) = 1$
+        \item Degree is multiplicative
+        \item Homotopic maps have the same degree
+    \end{enumerate}
+\end{prop}
+\begin{remark}
+    It is also true that if $\deg f = \deg g$, then $f \simeq g$. A proof of it is given in the appendix after assuming some heavy machinery. 
+\end{remark}
+Consider $\S^n$ from now on to be the unit hypersphere. We then have 
+\begin{corollary} For any $n \in \N$,
+    \begin{enumerate}
+        \item If $f$ is not surjective, its degree is zero.
+        \item If $f$ is a homotopy equivalence, its degree is $\pm 1$. 
+        \item If $r:\S^n \rightarrow \S^n$ is a reflection across an $n-$dimensional vector subspace of $\R^{n+1}$, $\deg r = -1$
+        \item The antipodal map $a_n : \S^n \rightarrow \S^n$ sending $x$ to $-x$ has degree $(-1)^{n+1}$
+        \item If $f:\S^n \rightarrow \S^n$ is continuous and has no fixed points, then it has degree $(-1)^{n+1}$
+    \end{enumerate}
+\end{corollary}
+\begin{proof}
+    For first assertion, there exists $y \notin \Im f$. Then, we have that $f = hg$ where $g:\S^n \rightarrow \S^n - y$ and $h:\S^n - y \rightarrow \S^n$ are continuous. Thus, $f_*=h_*g_*$, but $\S^n-y$ is homotopic to $\R^n$ which is contractible, so $h_*$ is the zero map and $f_*$ is also the zero map.
+
+    For the second assertion, this follows immediately from $f$ having a homotopy inverse $g$ and $\deg (g_*f_*) = \deg(\id) = 1$.
+
+    For the third assertion, let $V$ be the subspace reflecting $\S^n$. Then, $V$ divides $\S^n$ into two halves $V_+$ and $V_-$, and assume $V_+,V_-$ is also unioned with $\S^n \cap V$. Note that $\Delta^n$ is homeomorphic to $V_+$. Say $f_+$ is a homeomorphism to $V_+$. Now, $V$ is spanned by $n$ vectors $v_1,\cdots, v_n$ and has an orthogonal complement spanned by $v_{n+1}$. Then, $r:\S^n\rightarrow \S^n$ is determined by $r(v_1\cdots, v_n,v_{n+1}) = r(v_1,\cdots,v_n,-v_{n+1})$. Then, $rf_+ : \Delta^n \rightarrow \S^n$ provides a homeomorphism of $\Delta^n$ with $V_-$, call this map $f_-$. By the definition of $S_n(\S^n)$, we have that $f_+-f_- \in S_n(\S^n)$. Now, notice that $f_+$ and $f_-$ agree on any point that maps to $V$. However, since $f_+:\Delta^n \rightarrow V_+$ is a homeomorphism, any limit point in $\Delta^n$ must map to a limit point in $V_+$, so that any face of $\Delta^n$ must have an image lying in $V$. Thus, $f_+\circ d^i$ and $f_-\circ d^i$ describe identical maps, and we must therefore have that $d(f_+-f_-) = 0$ which guarantees $f_+-f_-$ is a cycle. Observe that by excision (with $\S^n - V_+ \subseteq V_- \subseteq \S^n$) and contractibility of $V_-$, we have isomorphisms 
+    $$\tilde H_n(\S^n) \cong H_n(\S^n,V_-) \cong H_n(V_+,\S^n \cap V) $$
+    where under these isomorphisms, the cycle $f_+ - f_-$ corresponds to the cycle $f_+$ in $H_n(\S^n,V_-)$ and also in $H_n(V_+,\S^n \cap V)$. Note that $(V_+,\S^n \cap V), (\Delta^n ,\del \Delta^n)$ is a homeomorphism of pairs induced by $f_+$ so then $H_n(V_+,\S^n \cap V) \cong H_n(\Delta^n ,\del \Delta^n) = \langle [\id_n]\rangle $ where $\id_n:\Delta^n \rightarrow \Delta^n$ is the identity (see for instance \cite{miller} Example 8.7 or \cite{hatcher} when computing the homology of $\S^n$), but the homeomorphism $f_+$ therefore tells us that $[f_+]$ generates $H_n(V_+,\S^n \cap V)$. Since $[f_+-f_-]$ corresponds to $[f_+]$ in $H_n(V_+,\S^n \cap V)$, it follows that $[f_+-f_-]$ generates $\tilde H_n(\S^n)$. Finally, $r_*(f_+-f_-) = f_- - f_+$ so that $\deg r = -1$. 
+
+    For the fourth assertion, the antipodal map is the composition of reflecting along each axis in $\R^{n+1}$, so that $\deg a_n = (-1)^{n+1}$.
+
+    Finally, for the last assertion, for any $t \in [0,1]$, $-tx + (1-t)f(x) \neq 0$. Therefore, $h(x,t)=\frac{-tx + (1-t)f(x)}{|-tx + (1-t)f(x)|}$ is a homotopy between the antipodal map and $f$ where the normalization done above guarantees that for each $t$, $h(x,t)$ is a continuous map $\S^n \rightarrow \S^n$.
+\end{proof}
+Recall the suspension of a space $X$ denoted $SX$ is the quotient of the cone of $X$ (with $X\times \set 0$ being identified as one point) given by $CX/X\times \set 1$. In other words, the top and bottom slices of the cylinder space $X \times I$ are identified.
+\begin{definition}
+    Given any continuous map $f:X\rightarrow Y$, the suspension of $f$ is the map $\Sigma f:SX\rightarrow SY$ given by $Sf([x,t])=[f(x),t]$
+\end{definition}
+The reader can verify that $Sf$ is well defined and continuous. Also, recall now $\Sigma \S^n \cong \S^{n+1}$. 
+\begin{prop}
+    Let $f:\S^n\rightarrow \S^n$ be continuous. Then, the suspension $\Sigma f:\S^{n+1}\rightarrow \S^{n+1}$ satisfies $\deg \Sigma f = \deg f$.
+\end{prop}
+This follows from $\tilde H_i (X) \cong \tilde H_{i+1}(\Sigma X)$, and I will leave it for the reader to check how the maps commute etc.
+
+We present a way to calculate degree in specific situations. Let $n \in \N$ from now on. Suppose that for $f:\S^n\rightarrow \S^n$, there exists $y $ such that $f^{-1}(y)$ is finite, say $f^{-1}(y)=\set{x_1,\cdots,x_m}$. Let $U_i$ be disjoint open neighborhoods of $x_i$ such that $f$ maps them to an open neighborhood of $y$. By excision and homology of long exact sequences, we have the following diagram which commutes, where the top isomorphisms are induced by excision and the bottom isomorphisms are induced by the homology of long exact sequences:
+\begin{center}
+    \begin{tikzcd}
+                      &  & {H_n(U_i,U_i-x_i)} \arrow[lld, "\cong"'] \arrow[rr, "f_*"] \arrow[d, "\iota"] &  & {H_n(f(U_i),f(U_i)-y)} \arrow[d, "\cong"] \\
+{H_n(\S^n,\S^n-x_i))} &  & {H_n(\S^n,\S^n-f{-1}(y))} \arrow[rr, "f_*"] \arrow[ll, "q"']                    &  & {H_n(\S^n,\S^n-y)}                        \\
+                      &  & H_n(\S^n) \arrow[llu, "\cong"] \arrow[u, "p"'] \arrow[rr, "f_*"]          &  & H_n(\S^n) \arrow[u, "\cong"]             
+\end{tikzcd}
+\end{center}
+\begin{definition}
+    The local degree of $f$ at $x_i$ denoted $f|_{x_i} $ is the value of $f_*(1)$ where $f_*$ is the induced map $H_n(U,U-x_i)\rightarrow H_n(f(U),f(U)-y)$ as in above.
+\end{definition}
+\begin{prop}
+    $$\deg f = \sum_{i=1}^m \deg f|_{x_i}$$
+\end{prop}
+\begin{proof}
+    Note that $H_n(\S^n,\S^n-f{-1}(y))$ is naturally the direct sum $\bigoplus_{i=1}^m H_n(\S^n,\S^n-x_i)$ and thus commutativity of the diagram for all $i$ implies that the map $q$ must be projection onto the $i-$th summand. It is clear that all the groups in the diagram except for the center term are all isomorphic to $\Z$. We see that $qp(1) = 1$ by commutativity of the lower triangle for any $i$, and therefore $p(1) = (1,1,\cdots,1)$. The commutativity of the squares on the right imply that $\sum_{i=1}^m\deg f|_{x_i} = \deg f$.
+\end{proof}
+\begin{remark}
+    Given a submersion $f:M \rightarrow N$ where $M$ and $N$ are differentiable manifolds, there is a way to calculate the local degree at regular values of $f$. We will not discuss this further.
+\end{remark}
+\begin{example}
+    We will compute the degree of the map $f:\S^1 \rightarrow \S^1$ given by $x \mapsto x^k$. 
+    \begin{enumerate}
+        \item If $k = 0$, $f$ is not surjective so it has degree 0.
+        \item If $k < 0$, we can compose with a reflection $(x,y) \mapsto (x,-y)$ which has degree -1. We get $f$ by composing $x \mapsto x^{-k}$ with the reflection, so $f$ has degree equal to negative of the degree of $x \mapsto x^{-k}$. Thus, we consider when $k$ is positive.
+        \item If $k > 0$, every $y$ has $k$ distinct roots $x_1,\cdots, x_k$. There is a neighborhood $V$ of $y$ such that each $x_i$ can be wrapped in some $U_i$ that is homeomorphic to $V$. However, this is the restriction of a rotation, so on each $U_i$, $x^k$ is homotopic to the identity on $U_i$.
+        Thus, the local degrees are 1 and $\deg f = 1$.
+    \end{enumerate}
+\end{example}
+\begin{exercise}
+    Prove an extension of the hairy ball theorem as follows: There is a continuous vector field of non-zero tangent vectors on $\S^{n}$ if and only if $n$ is odd. Here, this means a continuous $f:\S^n \rightarrow \R^{n+1}$ where for each $x \in \S^n$, $f(x)$ and $x$ are orthogonal (and $f(x) \neq 0$).
+\end{exercise}
+\subsection{CW-complexes}
+Let us now introduce CW-complexes.
+\begin{enumerate}
+    \item Start with a discrete space $\Sk_0 $
+    \item Build inductively where for each $n \in \N$, form $\Sk_n$ as the adjunction space $\Sk_n =\coprod_{i \in J_n}\cup_\alpha \Sk_{n-1}$ where $\alpha: \coprod_{i \in J_n} \S^{n-1} \rightarrow \Sk_{n-1}$ is continuous. 
+    \item Give $X=\bigcup_{n=0}^\infty \Sk_n$ the inductive topology, i.e. $A\subseteq X$ is closed (open) if and only if $A\cap \Sk_n$ is.
+\end{enumerate}
+In the setup above, we refer to $D^n$ (or its interior) as $n-$cells. 
+\begin{definition}
+    The components of $\alpha$ are called characteristic maps, and the components of the induced maps $\beta : \coprod_{} D^n \rightarrow \Sk_n$ are called attachment maps.
+\end{definition}
+
+CW-complexes satisfy the following:
+\begin{enumerate}
+    \item (Closure finiteness) The closure of every cell lies in a finite subcomplex
+    \item (Weak topology) $F\subseteq X$ is closed if and only if $F \cap \bar e_i$ is closed for all $i \in J$
+\end{enumerate}
+\begin{remark}
+    One can generalize the concept of CW-complexes to cell-complexes, which need not satisfy the conditions above. Refer to \cite{cadek} for instance. Some authors use both terms synonymously.
+\end{remark}
+Note that weak topology is equivalent to saying that a map $f:X \rightarrow Y$ is continuous where $X$ is a CW-complex if and only if $f$ is continuous for every restriction to a skeleton of $X$.
+\begin{example}
+    $\S^n$ is a CW-complex with a single $0-$cell and a single $n-$cell where the characteristic map $\S^{n-1} \rightarrow \Sk_{n-1}X$ is the map that sends all of $\S^{n-1}$ to the $0-$cell. The attachment map $D^n \rightarrow \Sk_n X$ then collapses the boundary into one point.
+\end{example}
+\begin{example}
+    Recall $\R\P^n$ is $\S^n/\sim$ where $\sim$ identifies antipodal points. This is homeomorphic to $D^n/\sim$ where $\sim$ identifies antipodal points on $\S^{n-1}$. We then have that $\R\P^n$ is formed by the characteristic map $\S^{n-1} \rightarrow \Sk_{n-1}$ being the identification with the antipodal points, which gives rise to an attachment $D^n \rightarrow \R\P^n$. Note that $\Sk_{n-1} = \R\P^{n-1}$. We therefore have that $\R\P^n$ is a CW-complex with one $k-$cell in every dimension $0 \leq k \leq n$.
+\end{example}
+\begin{example}
+    Given a directed graph $G=(V,E)$, it is a CW-complex whose 0-skeleton is just the vertices, and the 1-skeleton is given by the disjoint union of $\#E$ many 1-cells where each cells corresponds to an edge $v\rightarrow w$. Their attaching map is given by attaching the 0 end to $v$ and the 1 end to $w$. 
+\end{example}
+\begin{exercise}
+    Show that $\C\P^n$ has a CW-complex structure with one cell in every even dimension and no cells otherwise.
+\end{exercise}
+\subsection{Homological algebra and Universal Coefficients}
+We shall take a small detour towards homological algebra. To motivate why we want to define tensors, I will first give an example of a theorem we will prove eventually.
+\begin{theorem}
+For any orientable $2-$manifold $X,Y$, we have
+    $$H_n(X\times Y) \cong \bigoplus_{p+q=n} H_p(X) \otimes H_q(Y)$$
+\end{theorem}
+This is actually a very tiny corollary of a more general theorem we will prove.
+
+The second reason we would like to define tensors is that we will be able to work with (co)homology in different coefficients other than $\Z$.
+
+From now on, let $R$ be any commutative ring. 
+\begin{definition}
+    Let $M, N$ be modules over $R$. The tensor product of $M$ and $N $ is the module $M \otimes_RN$ and a surjective bilinear map $j:M\times N\rightarrow M\otimes_R N$ satisfying the universal property where for any $R-$module $L$ and bilinear map $f:M\times N \rightarrow L$, the bilinear map descends to a unique linear map $\bar f:M\otimes_RN \rightarrow L$ such that the following diagram commutes:
+    \begin{center}
+        \begin{tikzcd}
+M\times N \arrow[rd, "f"] \arrow[d, "j"'] &   \\
+M\otimes_R N \arrow[r, "\bar f", dashed]  & L
+\end{tikzcd}
+    \end{center}
+\end{definition}
+The construction of the tensor product was included in the Week 1 notes as well as the verification that the property defines the tensor uniquely up to isomorphism. 
+
+Elements of the form $m\otimes n$ are called elementary tensors, and they generate the module $M\otimes N$. Note that not every element in $M\otimes N$ can be written as an elementary tensor.
+
+The definition gives rise to the following natural isomorphisms which I will leave for the reader to check:
+\begin{prop}
+    There are natural isomorphisms
+    \begin{itemize}
+        \item $M\otimes_R N \cong N\otimes_R M$
+        \item If $M$ is an $R-$modules, $N$ is an $R,S-$bimodule, $L$ is an $S-$module,
+        $$(M\otimes_RN)\otimes_S L \cong M\otimes_R(N\otimes_S L)$$
+        as both $R-$modules and $S-$modules
+        \item $\bigoplus_{i \in I} M \otimes_R N_i \cong M \otimes_R (\bigoplus_{i \in I} N)$
+        \item $M \otimes_R R/I \cong M/IM $ where $I \subseteq R$ is an ideal
+    \end{itemize}
+\end{prop}
+\begin{example}
+    If we have coprime $m,n$ and look at the module $\Z/m\Z\otimes_\Z \Z/n\Z$, we see that for any arbitrary generator $e_1\otimes e_2$, Bézout's theorem tells us that there exists $a,b \in \Z$ such that $am+bn = 1$ and therefore
+    \begin{align*}
+       am(e_1\otimes e_2) &= e_1\otimes e_2 - bn(e_1\otimes e_2) \\
+       a(me_1\otimes e_2) &= e_1\otimes e_2 - b(e_1\otimes ne_2) \\
+       0 &= e_1\otimes e_2
+    \end{align*}
+    so $\Z/m\Z\otimes_\Z \Z/n\Z = 0$. Alternatively, apply the fact that $M\otimes_r R/I \cong M/IM$ to obtain $\Z/m\Z\otimes_\Z \Z/n\Z\cong (\Z/m\Z)/(n\Z/m\Z)$ but since $n$ is a unit in $\Z/m\Z$, $n\Z/m\Z = \Z/m\Z$ and so the tensor product is the zero module.
+\end{example}
+\begin{example}
+    Given any $R-$module $M$ and $S-$module $N$ such that $S$ is also an $R-$module, $M\otimes_R N$ also naturally has a $S-$module structure. Thus, given any finitely generated module $M$ of rank $n$ over a PID $R$, if $k$ is the field of fractions for $R$, $M\otimes_R k$ returns $k^n$!
+\end{example}
+\begin{example}\label{tensorexample}
+    Note that if $M, N$ are $R-$modules and $U\subseteq M$ is a submodule, $U\otimes_RN$ is not necessarily a submodule of $M\otimes_R N$! This is made precise by the sense where exact sequences of the form
+    $$0 \rightarrow U \hookrightarrow M \rightarrow M''$$
+    are not necessarily exact after taking tensors. The classic example is tensoring with $\Z/2\Z$ over $\Z$ for instance. Take the exact sequence
+    $$0 \rightarrow \Z \xrightarrow{\times 2} \Z \rightarrow \Z/2\Z \rightarrow 0$$
+    We have that the map $\times 2$ embeds $\Z$ into $\Z$ as the submodule $2\Z$. Tensoring with $\Z/2\Z$ gives the sequence
+    $$0 \rightarrow \Z \otimes \Z/2\Z\xrightarrow{\times 2\otimes \id} \Z \otimes \Z/2\Z \rightarrow \Z/2\Z \otimes \Z/2\Z \rightarrow 0$$
+    The natural isomorphisms give the sequence
+     $$0 \rightarrow  \Z/2\Z\xrightarrow{\times 2} \Z/2\Z \rightarrow \Z/2\Z \rightarrow 0$$
+     Which means that $\Z \otimes \Z/2\Z$ gets mapped to the 0 module under the map $\times 2 \otimes \id$! 
+\end{example}
+\begin{remark}
+    Some people might just write $2\Z \otimes \Z/2\Z = 0$, but I prefer not to write it this way since tensoring submodules do not make sense if the sequence as in above is not exact after tensoring. You now have the problem of two modules that are isomorphic tensoring with the same module ending up being different modules, which is absurd! The notation $2\Z \otimes \Z/2\Z$ is merely for intuition based convenience rather than describing an actual tensor product of two modules. Nevertheless, you can interpret the failure of the sequence to be exact as an ill-defined notion of $2\Z \otimes \Z/2\Z$ being a submodule of $\Z\otimes \Z/2\Z$.
+\end{remark}
+\begin{definition}
+     The tensoring functor $-\otimes_RN$ is the covariant functor sending $M \mapsto M\otimes_RN$ and $f:M\rightarrow M'$ to $f \otimes_R \id: M\otimes_R N \rightarrow M'\otimes_RN$.
+\end{definition}
+Recall the following definitions
+\begin{definition}
+    Let $F:R-\mathbf {mod}\rightarrow R-\mathbf {mod}$ be a functor. Then, 
+    \begin{itemize}
+        \item $F$ is called left exact if it maps exact sequences $0 \rightarrow M\rightarrow M'\rightarrow M''$ to exact sequences
+        \item $F$ is called right exact if it maps exact sequences $M\rightarrow M'\rightarrow M'' \rightarrow 0$ to exact sequences
+        \item $F$ is called exact if it is left and right exact
+    \end{itemize}
+\end{definition}
+We saw from Example \ref{tensorexample} that tensoring is not left exact. However, at least
+\begin{prop}
+    The tensoring functor is right exact.
+\end{prop}
+\begin{proof}
+    The following diagram commutes by the universal property:
+    \begin{center}
+        \begin{tikzcd}
+M'\times N \arrow[r, "f \times \id"] \arrow[d, "j'"]  & M\times N \arrow[r, "g \times \id"] \arrow[d, "j"]   & M''\times N \arrow[d, "j''"]              &   \\
+M'\otimes N \arrow[r, "f\otimes \id"] \arrow[rd, "0"] & M\otimes N \arrow[r, "g \otimes \id"] \arrow[d, "h"] & M''\otimes N \arrow[r] \arrow[ld, dashed] & 0 \\
+                                                      & L                                                    &                                           &  
+\end{tikzcd}
+    \end{center}
+    Thus the map on the right has unique factorization when considering lifting up to $M''\times N$, and hence the bottom sequence is exact.
+\end{proof}
+A big problem with homology with arbitrary coefficients is that since tensoring is not exact, we are not guaranteed that when tensoring
+$$0 \rightarrow S_*(A) \rightarrow S_*(X) \rightarrow \frac{S_*(X)}{S_*(A)}$$
+that we obtain an exact sequence
+$$0 \rightarrow S_*(A) \otimes G\rightarrow S_*(X)\otimes G \rightarrow \frac{S_*(X)}{S_*(A)} \otimes G$$
+This is because $-\otimes_R N$ is not left exact and $\hom(-,N)$ is not right exact. We will repair this by introducing a functor $\Tor_n^R: \mathbf{Ch}R-\mathbf{mod} \rightarrow R-\mathbf{mod}$. 
+
+Let us consider the simpler case where $R$ is a PID, so that every submodule of a free module is free. Pick a free module $M_0$ which maps onto $M$ surjectively. Let $M_1 \rightarrow M_0$ be the embedding of the kernel of the surjection. This gives an exact sequence $0 \rightarrow M_1 \rightarrow M_0 \rightarrow M \rightarrow 0$. We simply define $\Tor_1^R (M,N)$ to be the module such that
+$$0 \rightarrow \Tor_1^R(M,N) \rightarrow M_1 \otimes N \rightarrow M_0 \otimes N \rightarrow M\otimes N \rightarrow 0$$
+is exact. Note that the notation suggests $\Tor_1^R$ is independent of the choice of $M_0,M_1$ (which it is indeed, but we will need to prove it). The failure of exactness is measured by homology. This suggests the definition 
+$$\Tor_1^R(M,N) = H_1(M_1\otimes N)$$
+In general, $M_1$ need not be free. We will need to make a projective resolution of $M$. It is the same idea but we iterate it infinitely.
+\begin{definition}
+    Let $M$ be an $R-$module.
+    \begin{itemize}
+        \item A left resolution of $M$ is an exact sequence $(P_i,d)$ and a map $\varepsilon: P_0 \rightarrow M$ called an augmentation such that the following sequence is exact:
+        $$\cdots \rightarrow P_2 \xrightarrow{d_2}P_1\xrightarrow{d_1}P_0 \xrightarrow{\varepsilon} M$$
+        \item A right resolution of $M$ is an exact sequence $(P^i,d)$
+        and a map $\varepsilon: M\rightarrow P^0$ called an augmentation such that the following sequence is exact:
+        $$\cdots \leftarrow P^2 \xleftarrow{d^2}P^1\xleftarrow{d^1}P^0 \xleftarrow{\varepsilon} M$$
+    \end{itemize}
+\end{definition}
+We will need the concept of projective and injective modules.
+\begin{definition}
+    A module $N$ is called
+    \begin{itemize}
+        \item Projective if for any modules $E,M$, epimorphism $E \rightarrow M$ and $R-$linear map $f:N \rightarrow M$, there is a unique morphism $\bar f: N \rightarrow E$ such that the following diagram commutes:
+            \begin{center}
+                \begin{tikzcd}
+                                              & E \arrow[d, two heads] \\
+N \arrow[r, "f"] \arrow[ru, "\bar f", dashed] & M                     
+\end{tikzcd}
+            \end{center}
+        \item Injective if for any modules $E, M$, monomorphism $E \rightarrow M$ and $R-$linear map $f: E \rightarrow N$, there is a unique morphism $\bar f: M \rightarrow N$ such that the following diagram commutes:
+            \begin{center}
+                \begin{tikzcd}
+E \arrow[d, hook] \arrow[rd, "f"] &   \\
+M \arrow[r, "\bar f", dashed]                               & N
+\end{tikzcd}
+            \end{center}
+    \end{itemize}
+\end{definition}
+\begin{definition}
+    A left resolution is called a projective resolution if every $P_i$ is projective. A right resolution is called an injective resolution if every $P^i$ is injective. A resolution is called free if every $P_i$ is free.
+\end{definition}
+We will not talk much about injective resolutions. A more detailed discussion will be available in the extra notes.
+\begin{prop}
+    Every module has a projective resolution.
+\end{prop}
+\begin{proof}
+    Simply build the following sequence inductively where each $P_i$ is free:
+    \begin{center}
+        \begin{tikzcd}
+\cdots \arrow[r]  & P_2 \arrow[rr, "\iota_1\pi_2"] \arrow[rd, "\pi_2"] &                                  & P_1 \arrow[rd, "\pi_1"] \arrow[rr, "\iota_0\pi_1"] &                                        & P_0 \arrow[rd, "\varepsilon"] &             &   \\
+\cdots \arrow[ru] \arrow[rd] &                                                    & \ker \pi_1 \arrow[ru, "\iota_1"] \arrow[rd]&                                                    & \ker \varepsilon \arrow[ru, "\iota_0"] \arrow[rd]&                               & M \arrow[r] & 0 \\
+                  & 0 \arrow[ru]                                       &                                  & 0 \arrow[ru]                                       & 
+                  
+                  &     0 \arrow[ru]                          &             &  
+\end{tikzcd}
+    \end{center}
+    Every free module is projective (check!), which gives us the result.
+\end{proof}
+One can use duality to conclude that injective resolutions exist, I will release additional notes which give a more detailed discussion that avoids simply quoting duality.
+\begin{prop}[Fundamental theorem of homological algebra]
+    Let $f : M \rightarrow N$ be $R-$linear and suppose $(P_*,d_*)$ is a projective resolution for $M$ and $(Q_*,d_*)$ is a left resolution for $N$ respectively. Then, 
+    \begin{itemize}
+        \item $f$ induces a chain map
+        \begin{center}
+            \begin{tikzcd}
+\cdots \arrow[r] & P_2 \arrow[r, "d"] \arrow[d, "f_*"] & P_1 \arrow[r, "d"] \arrow[d, "f_*"] & P_0 \arrow[r, "\varepsilon"] \arrow[d, "f_*"] & M \arrow[d, "f"] \arrow[r] & 0 \\
+\cdots \arrow[r] & Q_2 \arrow[r, "d'"]                 & Q_1 \arrow[r, "d'"]                 & Q_1 \arrow[r, "\varepsilon'"]                 & N \arrow[r]                & 0
+\end{tikzcd}
+        \end{center}
+        \item For any two chain maps $f_*,g_*$ such that the diagram commutes:
+\begin{center}
+    \begin{tikzcd}
+\cdots \arrow[r] & P_2 \arrow[r, "d"] \arrow[d, "f_*"', shift right] \arrow[d, "g_*", shift left] & P_1 \arrow[r, "d"] \arrow[d, "f_*"', shift right] \arrow[d, "g_*", shift left] & P_0 \arrow[r, "\varepsilon"] \arrow[d, "f_*"', shift right] \arrow[d, "g_*", shift left] & M \arrow[d, "f"] \arrow[r] & 0 \\
+\cdots \arrow[r] & Q_2 \arrow[r, "d'"]                                                            & Q_1 \arrow[r, "d'"]                                                            & Q_1 \arrow[r, "\varepsilon'"]                                                            & N \arrow[r]                & 0
+\end{tikzcd}
+\end{center}
+        The chain maps are chain homotopic.
+    \end{itemize}
+\end{prop}
+That is, $f$ lifts to a chain map uniquely up to homotopy.
+\begin{proof}
+    Given $f$, $(Q*,d_*')$ being a left resolution gets us started. We have a surjection $\varepsilon': Q_0 \rightarrow N$ which is surjective. By projectivity of $P_0$, we have a unique $f_0:P_0 \rightarrow Q_0$ induced by $f\varepsilon$ such that the following diagram commutes:
+    \begin{center}
+        \begin{tikzcd}
+\cdots \arrow[r] & P_0 \arrow[r, "\varepsilon"] \arrow[d, "f_0"] & M \arrow[d, "f"] \arrow[r] & 0 \\
+\cdots \arrow[r] & Q_0 \arrow[r, "\varepsilon'"]                 & N \arrow[r]                & 0
+\end{tikzcd}
+    \end{center}
+    We can continue inductively. Assume we have constructed chain maps $f_0 ,\cdots,f_{n-1}$. We have the following commutativve diagram:
+    \begin{center}
+        \begin{tikzcd}
+\cdots \arrow[r] & P_n \arrow[r, "d"]  & P_{n-1} \arrow[d, "f_{n-1}"] \arrow[r, "d"] & P_{n-2} \arrow[d, "f_{n-2}"] \arrow[r] & \cdots \\
+\cdots \arrow[r] & Q_n \arrow[r, "d'"] & Q_{n-1} \arrow[r, "d'"]                     & Q_{n-2} \arrow[r]                      & \cdots
+\end{tikzcd}
+    \end{center}
+    This gives that $d'f_{n-1}d = f_{n-2}d^2 = 0$ (where specifically this $d'$ is $d'_{n-1}$). Thus, $\Im(f_{n-1}d) \subseteq \ker d'_{n-1} = \Im d'_{n}$ by exactness of the bottom sequence. Now, since $d'_n:Q_n\rightarrow \im d'$ is surjective, we obtain a map $f_n : P_n \rightarrow Q_n$ induced by $f_{n-1}d$ such that the following diagram commutes:
+    \begin{center}
+        \begin{tikzcd}
+\cdots \arrow[r] & P_n \arrow[r, "d"] \arrow[d, "f_n"] & P_{n-1} \arrow[d, "f_{n-1}"] \arrow[r] & \cdots \\
+\cdots \arrow[r] & Q_n \arrow[r, "d'"]                 & Q_{n-1} \arrow[r]                      & \cdots
+\end{tikzcd}
+    \end{center}
+    so we obtain a chain map by induction. For the second proposition, suppose we have the commutative diagram
+    \begin{center}
+    \begin{tikzcd}
+\cdots \arrow[r] & P_2 \arrow[r, "d"] \arrow[d, "f_*"', shift right] \arrow[d, "g_*", shift left] & P_1 \arrow[r, "d"] \arrow[d, "f_*"', shift right] \arrow[d, "g_*", shift left] & P_0 \arrow[r, "\varepsilon"] \arrow[d, "f_*"', shift right] \arrow[d, "g_*", shift left] & M \arrow[d, "f"] \arrow[r] & 0 \\
+\cdots \arrow[r] & Q_2 \arrow[r, "d'"]                                                            & Q_1 \arrow[r, "d'"]                                                            & Q_0 \arrow[r, "\varepsilon'"]                                                            & N \arrow[r]                & 0
+\end{tikzcd}
+\end{center}
+On the first square, commutativity yields $\varepsilon' (f_0-g_0)=f\varepsilon - f\varepsilon = 0$ and so exactness of the bottom row yields $\Im (f_0-g_0) \subseteq \ker \varepsilon' = \Im(d')$ and therefore $d':Q_1\rightarrow \Im (f_0-g_0)$ is surjective. Projectivity yields a map $h_0 : P_0 \rightarrow Q_1$ such that $d'h_0 = f_0-g_0$. Building $h_n$ inductively before gives a map $h:P_* \rightarrow Q_{*+1}$. There is no need to worry about the first term since you can just choose $h$ to be zero. To verify $d'h-hd = f_*-g_*$, we constructed $h$ so that $d'h = f_*-g_*$ and moreover $\Im (f_*-g_* )\subseteq \Im d'$ and therefore $hd = 0$.
+\end{proof}
+\begin{definition}
+    For any $R-$module $M$ and $N$, pick any projective resolution $(P_*,d_*)$ (with or without $P_0=M$, it does not really matter) and get a chain complex $(P_*\otimes_R N,d_*\otimes \id)$ by applying $-\otimes_R N$. Define 
+    $$\Tor^R_n(M,N) = H_n(P_*\otimes_R N)$$ 
+\end{definition}
+The fundamental theorem tells us that $\Tor$ is invariant regardless of the projective resolution chosen.
+\begin{prop}
+ $\Tor$ is balanced, in short, this means $\Tor^R_n(B,A)\cong \Tor_n^R(A,B)$ 
+\end{prop}
+We refer the reader to \cite{weibel} instead.
+\begin{theorem}[Universal coefficient theorem for homology]
+    Let $R$ be a PID, $(C_*,d_*)$ be a chain complex of free modules. Then, for any $R-$module $M$, there is a natural short exact sequence
+    $$0 \rightarrow H_*(C_*)\otimes M \rightarrow H_*(C_*\otimes M) \rightarrow \Tor_1^R(C_*,M)\rightarrow 0$$
+    that splits (but not naturally)
+\end{theorem}
+Note that free and projective are equivalent over a PID. For the sake of simplifying notation, let us just write the cycle and boundary chain complex of $C_*$ as $Z_*$ and $B_*$ respectively.
+\begin{proof}
+    We will make some preliminary observations. For one, we have the following short exact sequence
+    $$0 \rightarrow Z_n \xmono{\iota_n} C_n\xepi[]{d_n} B_{n-1} \rightarrow 0$$
+    Since $R$ is a PID, $B_{n-1}$ is free so the sequence is split exact, and tensoring will yield a (split) exact sequence. Now, we can just extend and obtain an exact sequence of chain complexes
+    $$0 \rightarrow Z_*\otimes M \xmono{\iota_n} C_*\otimes M \xepi[]{d_n} B_{*-1} \otimes M \rightarrow 0$$
+    where the vertical homomorphisms are tensorized versions of the differential, and on the outer two terms it just becomes zero.
+    We can immediately apply homology and get a natural map which yields a long exact sequence of homology, but for the moment let us go back to the proof for the existence of such an exact sequence (i.e. the proof for the snake lemma) and look at the following diagram at each $n$ which we are using to obtain our exact sequence:
+    \begin{center}
+        \begin{tikzcd}
+            & \ker \alpha \arrow[d]                                                     & \ker d \otimes \id \arrow[d]                                          & \ker \beta \arrow[d]                                             &   \\
+0 \arrow[r] & Z_{n+1}\otimes M \arrow[d, "\alpha = d|_{Z_{n+1}} \otimes \id"] \arrow[r] & C_{n+1}\otimes M \arrow[d, "d \otimes \id"] \arrow[r, "d\otimes \id"] & B_n\otimes M \arrow[d, "\beta = d|_{B_n} \otimes \id"] \arrow[r] & 0 \\
+0 \arrow[r] & Z_n\otimes M \arrow[r, "\iota \otimes \id"] \arrow[d]                     & C_{n}\otimes M \arrow[d] \arrow[r]                                    & B_{n-1}\otimes M \arrow[d] \arrow[r]                              & 0 \\
+            & \coker \alpha                                                             & \coker d \otimes \id                                                  & \coker \beta                                                     &  
+\end{tikzcd}
+    \end{center}
+    Now, the $d \otimes \id$ on the outer terms are actually the zero map since we are working with cycles and boundaries! Therefore, $\ker \beta = B_n \otimes M$ and $\coker \alpha = Z_n\otimes M$, and the maps $\ker \beta \rightarrow B_n\otimes M$ and $Z_n\otimes M \rightarrow \coker \alpha$ are the identity maps! This gives that taking the homology does not change the outer terms. Now, we want to investigate where $\del$ maps $b\otimes m \in \ker \beta =B_n \otimes M$ (it will become clear why in a second), so let us just go through the same process as proving the snake lemma again. Surjectivity of $d\otimes \id$ yields some $c\otimes m'$ that maps to $b\otimes m$, and taking the vertical map $d\otimes \id$ just maps $c\otimes m'$ to $b \otimes m$ again. The natural map $\del$ by definition maps $b\otimes m$ to some $z'' \otimes m'' \in \coker \alpha$ which satisfies  
+    $$\iota \otimes \id (z'' \otimes m'')  =d\otimes \id(c\otimes m')$$
+    Moreover, such $z'' \otimes m''$ is unique in $\coker \alpha$. However, $\coker \alpha = Z_n\otimes M$, and choosing $z'' = b \in B_n \subseteq Z_n$ and $m'' = m$ gives a choice of $z'' \otimes m''$ satisfying the above once we recall $d\otimes \id(c\otimes m') = b\otimes m$. Therefore, the natural map $\del$ must map $b \otimes m$ to $b\otimes m$! Thus, when taking the long exact sequence of homology
+    $$\cdots \rightarrow B_n \otimes M\rightarrow Z_n \otimes M \rightarrow H_n(C_*\otimes M) \rightarrow B_{n-1}\otimes M \rightarrow \cdots$$
+    where the natural map $\del_{n+1}$ is just the inclusion $B_n \mono Z_n$ tensored with the identity on $M$. 
+    
+    Let us now consider another short exact sequence of chain complexes
+    $$0 \rightarrow B_* \mono Z_* \epi H_*(C_*) \rightarrow 0$$
+    Since both $B_*$ and $Z_*$ are free and each of the sequences are exact, we actually have a chain complex where each sequence gives a projective resolution for $H_*(C_*)$! Therefore, after tensoring with $M$, we get exact sequences of the form
+    $$0 \rightarrow \Tor_1^R(C_n,M)\rightarrow B_n \otimes M \rightarrow  Z_n \otimes M \rightarrow  H_n(C_*) \otimes M \rightarrow 0$$
+    However, the map $B_*\otimes M \rightarrow Z_* \otimes M$ are exactly the inclusions tensored with the identity on $M$, and we checked that this is exactly the natural map $\del$. We can split our first long exact sequence into
+    $$0 \rightarrow \coker \del_{n+1} \rightarrow H_n(C_*\otimes M)\rightarrow \ker  \del_{n} \rightarrow 0$$
+    Looking at $\del$ in the other exact sequence, we get that
+    \begin{align*}
+        \coker \del_{n+1} &=  H_n(C_*)\otimes M \\
+        \ker \del_n &=  \Tor_1^R(H_{n-1}(C_*),M)
+    \end{align*}
+    which gives the following sequence is exact
+    $$0 \rightarrow H_n(C_*)\otimes M \rightarrow H_n(C_*\otimes M)\rightarrow  \Tor_1^R(H_{n-1}(C_*),M) \rightarrow 0$$
+
+    Let us now verify that each sequence splits.  Looking back at the segment 
+    $$\cdots \rightarrow Z_n \otimes M \rightarrow H_n(C_*) \otimes M \rightarrow 0$$
+    By the way that we tensored the original sequence $0 \rightarrow B_n\rightarrow Z_n \rightarrow H_n(C_*) \rightarrow 0$, the map $Z_n \otimes M \rightarrow H_n(C_*)$ is given by $z \otimes m \mapsto [z]\otimes m$. Now, looking at the first exact sequence  
+    $$\cdots\rightarrow  B_n\rightarrow Z_n\rightarrow H_n(C_*\otimes M) \rightarrow \cdots$$
+    Since the map $B_n \rightarrow Z_n$ is exactly the same as $\del$, $Z_n\rightarrow H_n(C_*\otimes M)$ first factors through the map $z \otimes m \mapsto [z]\otimes m$. The overall map sends $z\otimes m$ to $[z\otimes m]$, so we must have that the map $H_n(C_*)\otimes M \rightarrow H_n(C_*\otimes M)$ is given by the (natural) map 
+    $$[c] \otimes m \mapsto [c\otimes m]$$
+    Pick now the inverse map to be $[c\otimes m] \mapsto [c]\otimes m$. Now, the differential $D$ in the complex
+    $$ \cdots \rightarrow C_n\otimes M \xrightarrow{D} C_{n-1} \otimes M \rightarrow \cdots$$
+    is obtained from passing $d\otimes \id $ into the homology of the chain complex, so if we have $c\otimes m  + \sum_{i=1}^r c_i\otimes m_i$ where $D(\sum_{i=1}^r c_i\otimes m_i )= 0 $, linearity of $D$ guarantees that 
+    \begin{align*}
+        D\left(\sum_{i=1}^r c_i\otimes m_i \right ) &= \sum_{i=1}^rD( c_i\otimes m_i) \\
+        &= \sum_{i=1}^r(d\otimes \id)( c_i\otimes m_i)  \\
+        &= \sum_{i=1}^rdc_i\otimes m_i
+    \end{align*} 
+    So that $\sum_{i=1}^r[c_i]\otimes m_i = 0$, and thus the map $[c\otimes m] \mapsto [c]\otimes m$ is well defined. Applying the splitting lemma now tells us that our desired sequence splits.
+\end{proof}
+\begin{exercise}
+    Let $k$ be a field, $R = k[x_1,\cdots,x_n]/(f_1,\cdots,f_m)$ where each $f_i$ has no constant term and also no linear term (i.e. the sum of exponents in each term is at least 2). Prove that the ideal $I=(x_1,\cdots,x_n)$ in $R$ cannot be generated by less than $n-$elements. \textit{Hint: Tensor a suitable (right) exact sequence with $R/I$}
+\end{exercise}
+\printbibliography
+\end{document}
